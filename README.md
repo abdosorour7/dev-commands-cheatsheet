@@ -4,7 +4,7 @@
 
 ### A fast, searchable, professional reference for Git commands
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-00ff9d?style=for-the-badge&labelColor=0a0e17)](https://abdosorour7.github.io/git-commands-cheatsheet) <!-- [![Stars](https://img.shields.io/github/stars/abdosorour7/git-commands-cheatsheet?style=for-the-badge&color=ffd166&labelColor=0a0e17)](https://github.com/abdosorour7/git-commands-cheatsheet/stargazers) --> [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa?style=for-the-badge&labelColor=0a0e17)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00cfff?style=for-the-badge&labelColor=0a0e17)](https://github.com/abdosorour7/git-commands-cheatsheet/issues)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-00ff9d?style=for-the-badge&labelColor=0a0e17)](https://abdosorour7.github.io/git-commands-cheatsheet) <!-- [![Stars](https://img.shields.io/github/stars/abdosorour7/git-commands-cheatsheet?style=for-the-badge&color=ffd166&labelColor=0a0e17)](https://github.com/abdosorour7/git-commands-cheatsheet/stargazers) --> [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00cfff?style=for-the-badge&labelColor=0a0e17)](https://github.com/abdosorour7/git-commands-cheatsheet/issues)
 
 <br/>
 

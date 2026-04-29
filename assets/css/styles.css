@@ -430,7 +430,7 @@ main { position: relative; z-index: 1; padding: 40px 24px 80px; }
 
 footer {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   border-top: 1px solid var(--border);
   padding: 40px 24px;
   text-align: center;
@@ -444,8 +444,19 @@ footer {
   color: var(--text3);
 }
 
-.footer-text a { color: var(--green); text-decoration: none; }
-.footer-text a:hover { text-decoration: underline; }
+.footer-text a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-text a.footer-star-btn {
+  color: var(--yellow);
+}
+
 .footer-heart { color: var(--red); }
 
 #scrollTop {

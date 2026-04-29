@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Git Commands Cheatsheet">
+  <rect width="32" height="32" rx="8" fill="#0a0e17"/>
+  <!-- branch lines -->
+  <path
+    d="M16 8v6M16 14L10 20M16 14l6 6"
+    fill="none"
+    stroke="#00cfff"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- three commit nodes -->
+  <circle cx="16" cy="8" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
+  <circle cx="10" cy="22" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
+  <circle cx="22" cy="22" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
+</svg>
