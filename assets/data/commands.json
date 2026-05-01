@@ -690,6 +690,70 @@
       ]
     },
     {
+      "key": "worktrees",
+      "title": "Worktrees",
+      "icon": "🌲",
+      "color": "#34d399",
+      "commands": [
+        {
+          "command": "git worktree add path branch",
+          "searchDescription": "Add new worktree for branch",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Check out an existing branch into a new directory — lets you work on two branches simultaneously",
+          "danger": false
+        },
+        {
+          "command": "git worktree add -b branch path",
+          "searchDescription": "Create branch and add worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;branch&gt;</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Create a new branch and check it out in a new directory in one step",
+          "danger": false
+        },
+        {
+          "command": "git worktree list",
+          "searchDescription": "List all worktrees",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree list</span>",
+          "descriptionHtml": "Show all linked worktrees and their checked-out branches",
+          "danger": false
+        },
+        {
+          "command": "git worktree remove path",
+          "searchDescription": "Remove a worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree remove</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Delete a worktree directory and clean up its metadata",
+          "danger": false
+        },
+        {
+          "command": "git worktree prune",
+          "searchDescription": "Clean up stale worktrees",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree prune</span>",
+          "descriptionHtml": "Remove stale worktree records for directories that no longer exist",
+          "danger": false
+        },
+        {
+          "command": "git worktree lock path",
+          "searchDescription": "Lock a worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree lock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Lock a worktree to prevent it from being pruned (e.g., on a removable drive)",
+          "danger": false
+        },
+        {
+          "command": "git worktree unlock path",
+          "searchDescription": "Unlock a worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree unlock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Unlock a previously locked worktree so it can be removed or pruned",
+          "danger": false
+        },
+        {
+          "command": "git worktree move path newpath",
+          "searchDescription": "Move a worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree move</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;new-path&gt;</span>",
+          "descriptionHtml": "Relocate a worktree to a new directory and update Git's internal references",
+          "danger": false
+        }
+      ]
+    },
+    {
       "key": "advanced",
       "title": "Advanced Branching & Collaboration",
       "icon": "🚀",
