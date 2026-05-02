@@ -690,6 +690,70 @@
       ]
     },
     {
+      "key": "worktrees",
+      "title": "Worktrees",
+      "icon": "🌲",
+      "color": "#34d399",
+      "commands": [
+        {
+          "command": "git worktree add path branch",
+          "searchDescription": "Aggiungi un nuovo worktree per un branch",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Esegui il checkout di un branch esistente in una nuova directory — permette di lavorare su due branch contemporaneamente",
+          "danger": false
+        },
+        {
+          "command": "git worktree add -b branch path",
+          "searchDescription": "Crea un branch e aggiungi un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;branch&gt;</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Crea un nuovo branch ed esegui il checkout in una nuova directory in un unico passaggio",
+          "danger": false
+        },
+        {
+          "command": "git worktree list",
+          "searchDescription": "Elenca tutti i worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree list</span>",
+          "descriptionHtml": "Mostra tutti i worktree collegati e i loro branch in checkout",
+          "danger": false
+        },
+        {
+          "command": "git worktree remove path",
+          "searchDescription": "Rimuovi un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree remove</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Elimina la directory di un worktree e ripulisci i suoi metadati",
+          "danger": false
+        },
+        {
+          "command": "git worktree prune",
+          "searchDescription": "Rimuovi i worktree obsoleti",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree prune</span>",
+          "descriptionHtml": "Rimuovi i record di worktree obsoleti per le directory che non esistono più",
+          "danger": false
+        },
+        {
+          "command": "git worktree lock path",
+          "searchDescription": "Blocca un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree lock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Blocca un worktree per evitare che venga eliminato dalla potatura (es. su un'unità rimovibile)",
+          "danger": false
+        },
+        {
+          "command": "git worktree unlock path",
+          "searchDescription": "Sblocca un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree unlock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Sblocca un worktree precedentemente bloccato in modo che possa essere rimosso o potato",
+          "danger": false
+        },
+        {
+          "command": "git worktree move path newpath",
+          "searchDescription": "Sposta un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree move</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;new-path&gt;</span>",
+          "descriptionHtml": "Sposta un worktree in una nuova directory e aggiorna i riferimenti interni di Git",
+          "danger": false
+        }
+      ]
+    },
+    {
       "key": "advanced",
       "title": "Ramificazione Avanzata e Collaborazione",
       "icon": "🚀",
