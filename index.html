@@ -17,15 +17,20 @@
 
 <header>
   <div class="container">
+    <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language" data-i18n-aria-label="langSelectLabel">
+      <button class="lang-btn active" data-lang="en" aria-pressed="true">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="it" aria-pressed="false">🇮🇹 IT</button>
+      <button class="lang-btn" data-lang="fr" aria-pressed="false">🇫🇷 FR</button>
+    </div>
     <div class="header-badge">
-      <span></span>
-      The Ultimate Reference for Git Commands
+      <span class="badge-dot"></span>
+      <span data-i18n="badge">The Ultimate Reference for Git Commands</span>
     </div>
     <h1>
-      <span class="dim">Master</span> <span class="accent">Git</span><br />
-      <span class="dim">Commands</span>
+      <span class="dim" data-i18n="h1_master">Master</span> <span class="accent">Git</span><br />
+      <span class="dim" data-i18n="h1_commands">Commands</span>
     </h1>
-    <p class="header-sub">
+    <p class="header-sub" data-i18n="subtitle">
       Every Git command you'll ever need — searchable, copy-ready, and organized by category.
       Built for developers, by developers.
     </p>
@@ -36,7 +41,7 @@
             <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38l-.01-1.33c-2.23.48-2.7-.95-2.7-.95-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.81.06 1.24.83 1.24.83.72 1.24 1.9.88 2.36.67.07-.52.28-.88.5-1.08-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.19c0 .21.14.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
           </svg>
         </span>
-        View Repo on GitHub
+        <span data-i18n="viewRepo">View Repo on GitHub</span>
       </a>
     </div>
 
@@ -44,27 +49,27 @@
       <div class="stat">
         <div>
           <div class="stat-num" id="total-count">0</div>
-          <div class="stat-label">Commands</div>
+          <div class="stat-label" data-i18n="stat_commands">Commands</div>
         </div>
       </div>
       <div class="stat">
         <div>
           <div class="stat-num" id="category-count">0</div>
-          <div class="stat-label">Categories</div>
+          <div class="stat-label" data-i18n="stat_categories">Categories</div>
         </div>
       </div>
       <div class="stat">
         <div>
           <div class="stat-num">∞</div>
-          <div class="stat-label">Hours Saved</div>
+          <div class="stat-label" data-i18n="stat_hours">Hours Saved</div>
         </div>
       </div>
     </div>
 
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
-      <input id="search" type="text" placeholder="Search any command or description..." autocomplete="off" spellcheck="false" />
-      <span class="search-hint">/ to focus</span>
+      <input id="search" type="text" placeholder="Search any command or description..." autocomplete="off" spellcheck="false" data-i18n-placeholder="searchPlaceholder" />
+      <span class="search-hint" data-i18n="searchHint">/ to focus</span>
     </div>
   </div>
 </header>
@@ -77,7 +82,7 @@
   <div class="grid" id="grid">
     <div id="no-results">
       <div class="no-res-icon">⌀</div>
-      <div class="no-res-text">No commands found</div>
+      <div class="no-res-text" data-i18n="noResults">No commands found</div>
       <div class="no-res-sub" id="no-res-query"></div>
     </div>
   </div>
@@ -86,15 +91,15 @@
 <footer>
   <div class="footer-inner">
     <p class="footer-text">
-      Made with <span class="footer-heart">♥</span> for the developer community &nbsp;·&nbsp;
-      Created by <a href="https://github.com/abdosorour7" target="_blank" rel="noopener noreferrer">@abdosorour7</a> &nbsp;·&nbsp;
-      <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">Official Git Docs</a> &nbsp;·&nbsp;
-      <a class="footer-star-btn" href="https://github.com/abdosorour7/git-commands-cheatsheet" target="_blank" rel="noopener noreferrer" aria-label="Open the GitHub repository to star it if it helped you">Star ⭐ this repo if it helped you!</a>
+      <span data-i18n="footerMade">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footerCommunity">for the developer community</span> &nbsp;·&nbsp;
+      <span data-i18n="footerCreated">Created by</span> <a href="https://github.com/abdosorour7" target="_blank" rel="noopener noreferrer">@abdosorour7</a> &nbsp;·&nbsp;
+      <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer" data-i18n="footerDocs">Official Git Docs</a> &nbsp;·&nbsp;
+      <a class="footer-star-btn" href="https://github.com/abdosorour7/git-commands-cheatsheet" target="_blank" rel="noopener noreferrer" aria-label="Open the GitHub repository to star it if it helped you" data-i18n-aria-label="footerStarAriaLabel" data-i18n="footerStar">Star ⭐ this repo if it helped you!</a>
     </p>
   </div>
 </footer>
 
-<button id="scrollTop" title="Back to top">↑</button>
+<button id="scrollTop" title="Back to top" data-i18n-title="backToTop">↑</button>
 
 <script type="module" src="assets/js/app.js"></script>
 </body>
