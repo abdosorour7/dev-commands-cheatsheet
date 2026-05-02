@@ -54,14 +54,16 @@ function clearGrid() {
 }
 
 async function switchLanguage(lang, allStrings) {
+  let effectiveLang = lang;
   let data;
   try {
     data = await loadCommandsData(lang);
   } catch {
     data = await loadCommandsData("en");
+    effectiveLang = "en";
   }
 
-  const strings = allStrings[lang] ?? allStrings["en"];
+  const strings = allStrings[effectiveLang] ?? allStrings["en"];
 
   clearGrid();
   ctx.state = createAppState(data.categories);
@@ -75,6 +77,8 @@ async function switchLanguage(lang, allStrings) {
   bindCopyButtons();
   applyCardAnimationDelays();
   applyVisibility();
+
+  return effectiveLang;
 }
 
 async function init() {
@@ -105,10 +109,24 @@ async function init() {
     const newLang = btn.dataset.lang;
     if (btn.classList.contains("active")) return;
 
-    setStoredLang(newLang);
-    updateLangSwitcher(newLang);
-    applyUiStrings(newLang, allStrings);
-    await switchLanguage(newLang, allStrings);
+    // Disable the switcher for the duration of the async load to prevent race conditions
+    const allBtns = langSwitcher.querySelectorAll(".lang-btn");
+    allBtns.forEach((b) => { b.disabled = true; });
+
+    try {
+      setStoredLang(newLang);
+      updateLangSwitcher(newLang);
+      applyUiStrings(newLang, allStrings);
+      const effectiveLang = await switchLanguage(newLang, allStrings);
+      // If fetch failed and fell back to English, sync all UI state
+      if (effectiveLang !== newLang) {
+        setStoredLang(effectiveLang);
+        updateLangSwitcher(effectiveLang);
+        applyUiStrings(effectiveLang, allStrings);
+      }
+    } finally {
+      allBtns.forEach((b) => { b.disabled = false; });
+    }
   });
 }
 

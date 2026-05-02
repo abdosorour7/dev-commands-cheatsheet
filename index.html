@@ -17,7 +17,7 @@
 
 <header>
   <div class="container">
-    <div class="lang-switcher" id="lang-switcher" aria-label="Language" data-i18n-aria-label="langSelectLabel">
+    <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language" data-i18n-aria-label="langSelectLabel">
       <button class="lang-btn active" data-lang="en" aria-pressed="true">🇬🇧 EN</button>
       <button class="lang-btn" data-lang="it" aria-pressed="false">🇮🇹 IT</button>
       <button class="lang-btn" data-lang="fr" aria-pressed="false">🇫🇷 FR</button>
@@ -69,7 +69,7 @@
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
       <input id="search" type="text" placeholder="Search any command or description..." autocomplete="off" spellcheck="false" data-i18n-placeholder="searchPlaceholder" />
-      <span class="search-hint">/ to focus</span>
+      <span class="search-hint" data-i18n="searchHint">/ to focus</span>
     </div>
   </div>
 </header>
@@ -94,7 +94,7 @@
       <span data-i18n="footerMade">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footerCommunity">for the developer community</span> &nbsp;·&nbsp;
       <span data-i18n="footerCreated">Created by</span> <a href="https://github.com/abdosorour7" target="_blank" rel="noopener noreferrer">@abdosorour7</a> &nbsp;·&nbsp;
       <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer" data-i18n="footerDocs">Official Git Docs</a> &nbsp;·&nbsp;
-      <a class="footer-star-btn" href="https://github.com/abdosorour7/git-commands-cheatsheet" target="_blank" rel="noopener noreferrer" aria-label="Open the GitHub repository to star it if it helped you" data-i18n="footerStar">Star ⭐ this repo if it helped you!</a>
+      <a class="footer-star-btn" href="https://github.com/abdosorour7/git-commands-cheatsheet" target="_blank" rel="noopener noreferrer" aria-label="Open the GitHub repository to star it if it helped you" data-i18n-aria-label="footerStarAriaLabel" data-i18n="footerStar">Star ⭐ this repo if it helped you!</a>
     </p>
   </div>
 </footer>

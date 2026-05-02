@@ -23,7 +23,9 @@
     "footerDocs": "Official Git Docs",
     "footerStar": "Star ⭐ this repo if it helped you!",
     "backToTop": "Back to top",
-    "langSelectLabel": "Language"
+    "langSelectLabel": "Language",
+    "searchHint": "/ to focus",
+    "footerStarAriaLabel": "Open the GitHub repository to star it if it helped you"
   },
   "it": {
     "pageTitle": "Git Commands Cheatsheet — Il Riferimento Definitivo",
@@ -49,7 +51,9 @@
     "footerDocs": "Documentazione Git Ufficiale",
     "footerStar": "Metti ⭐ a questo repository se ti è stato utile!",
     "backToTop": "Torna su",
-    "langSelectLabel": "Lingua"
+    "langSelectLabel": "Lingua",
+    "searchHint": "/ per attivare",
+    "footerStarAriaLabel": "Apri il repository GitHub per mettere una stella se ti è stato utile"
   },
   "fr": {
     "pageTitle": "Git Commands Cheatsheet — La Référence Ultime",
@@ -75,6 +79,8 @@
     "footerDocs": "Documentation Git Officielle",
     "footerStar": "Mettez ⭐ à ce dépôt si cela vous a aidé !",
     "backToTop": "Retour en haut",
-    "langSelectLabel": "Langue"
+    "langSelectLabel": "Langue",
+    "searchHint": "/ pour activer",
+    "footerStarAriaLabel": "Ouvrir le dépôt GitHub pour lui donner une étoile si cela vous a aidé"
   }
 }
