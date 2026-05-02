@@ -35,9 +35,10 @@ export async function loadUiStrings() {
 }
 
 export function applyUiStrings(lang, allStrings) {
-  const strings = allStrings[lang] ?? allStrings[DEFAULT_LANG];
+  const effectiveLang = allStrings[lang] ? lang : DEFAULT_LANG;
+  const strings = allStrings[effectiveLang];
 
-  document.documentElement.lang = lang;
+  document.documentElement.lang = effectiveLang;
 
   if (strings.pageTitle) {
     document.title = strings.pageTitle;
