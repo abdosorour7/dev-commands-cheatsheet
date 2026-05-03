@@ -741,7 +741,7 @@
           "command": "git worktree unlock path",
           "searchDescription": "Sblocca un worktree",
           "codeHtml": "<span class=\"cmd-keyword\">git worktree unlock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
-          "descriptionHtml": "Sblocca un worktree precedentemente bloccato in modo che possa essere rimosso o potato",
+          "descriptionHtml": "Sblocca un worktree precedentemente bloccato in modo che possa essere rimosso o eliminato durante la pulizia (pruning)",
           "danger": false
         },
         {
