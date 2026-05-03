@@ -1,0 +1,800 @@
+{
+  "categories": [
+    {
+      "key": "setup",
+      "title": "Configuration",
+      "icon": "⚙️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "git config --global user.name",
+          "searchDescription": "Définir votre nom d'utilisateur global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global user.name <span class=\"cmd-arg\">\"Your Name\"</span>",
+          "descriptionHtml": "Définir votre nom d'utilisateur Git global pour tous les dépôts",
+          "danger": false
+        },
+        {
+          "command": "git config --global user.email",
+          "searchDescription": "Définir votre email global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global user.email <span class=\"cmd-arg\">\"you@example.com\"</span>",
+          "descriptionHtml": "Définir votre adresse email Git globale",
+          "danger": false
+        },
+        {
+          "command": "git config --list",
+          "searchDescription": "Lister toutes les configurations",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> <span class=\"cmd-flag\">--list</span>",
+          "descriptionHtml": "Lister tous les paramètres de configuration Git",
+          "danger": false
+        },
+        {
+          "command": "git help",
+          "searchDescription": "Obtenir de l'aide sur une commande Git",
+          "codeHtml": "<span class=\"cmd-keyword\">git help</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Obtenir de l'aide et de la documentation pour n'importe quelle commande Git",
+          "danger": false
+        },
+        {
+          "command": "git config alias.co checkout",
+          "searchDescription": "Créer un alias",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> alias.co checkout",
+          "descriptionHtml": "Créer un alias raccourci (ex. <code style=\"color:var(--green)\">git co</code> → <code style=\"color:var(--green)\">git checkout</code>)",
+          "danger": false
+        },
+        {
+          "command": "git config --global color.ui auto",
+          "searchDescription": "Activer la sortie colorée",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global color.ui auto",
+          "descriptionHtml": "Activer la sortie colorée automatique dans le terminal pour une lecture plus facile",
+          "danger": false
+        },
+        {
+          "command": "git config --global core.excludesfile",
+          "searchDescription": "Fichier gitignore global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global core.excludesfile <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Définir un <code style=\"color:var(--green)\">.gitignore</code> global — ignore les motifs sur tous vos dépôts",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "repo",
+      "title": "Créer un Dépôt",
+      "icon": "📁",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "git init",
+          "searchDescription": "Démarrer un nouveau dépôt local",
+          "codeHtml": "<span class=\"cmd-keyword\">git init</span>",
+          "descriptionHtml": "Initialiser un tout nouveau dépôt Git local",
+          "danger": false
+        },
+        {
+          "command": "git clone",
+          "searchDescription": "Cloner un dépôt distant",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Cloner un dépôt distant sur votre machine locale",
+          "danger": false
+        },
+        {
+          "command": "git clone --branch",
+          "searchDescription": "Cloner une branche spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-flag\">--branch</span> <span class=\"cmd-arg\">&lt;branch&gt;</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Cloner uniquement une branche spécifique d'un dépôt distant",
+          "danger": false
+        },
+        {
+          "command": "git clone --depth=1",
+          "searchDescription": "Clone superficiel plus rapide",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-flag\">--depth=1</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Clone superficiel — téléchargement plus rapide, ne récupère que le dernier instantané",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "workflow",
+      "title": "Flux de Travail de Base",
+      "icon": "🔄",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "git status",
+          "searchDescription": "Vérifier l'état du dépôt",
+          "codeHtml": "<span class=\"cmd-keyword\">git status</span>",
+          "descriptionHtml": "Afficher l'état de l'arbre de travail — fichiers indexés, non indexés et non suivis",
+          "danger": false
+        },
+        {
+          "command": "git add",
+          "searchDescription": "Indexer un fichier",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Indexer un fichier spécifique pour le prochain commit",
+          "danger": false
+        },
+        {
+          "command": "git add -A",
+          "searchDescription": "Indexer toutes les modifications",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">.</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">-A</span>",
+          "descriptionHtml": "Indexer toutes les modifications dans le répertoire courant",
+          "danger": false
+        },
+        {
+          "command": "git commit -m",
+          "searchDescription": "Committer les modifications indexées avec un message",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Committer toutes les modifications indexées avec un message descriptif",
+          "danger": false
+        },
+        {
+          "command": "git commit --amend",
+          "searchDescription": "Modifier le dernier commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">--amend</span>",
+          "descriptionHtml": "Modifier le commit le plus récent — changer son message ou ajouter plus de fichiers",
+          "danger": false
+        },
+        {
+          "command": "git commit -am",
+          "searchDescription": "Indexer et committer les fichiers suivis",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">-am</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Indexer tous les fichiers suivis et committer en une seule commande",
+          "danger": false
+        },
+        {
+          "command": "git log",
+          "searchDescription": "Afficher l'historique des commits",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span>",
+          "descriptionHtml": "Afficher l'historique complet des commits avec auteur, date et message",
+          "danger": false
+        },
+        {
+          "command": "git log --oneline --graph --decorate",
+          "searchDescription": "Vue du journal embellie",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--oneline --graph --decorate</span>",
+          "descriptionHtml": "Arbre visuel des commits — branches, fusions et étiquettes en un coup d'œil",
+          "danger": false
+        },
+        {
+          "command": "git diff",
+          "searchDescription": "Afficher les modifications non indexées",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span>",
+          "descriptionHtml": "Afficher toutes les modifications non indexées (pas encore ajoutées)",
+          "danger": false
+        },
+        {
+          "command": "git diff --staged",
+          "searchDescription": "Afficher le diff indexé",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--staged</span>",
+          "descriptionHtml": "Afficher les modifications indexées et prêtes à être commitées",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "branch",
+      "title": "Branches",
+      "icon": "🌿",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "git branch",
+          "searchDescription": "Lister les branches",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span>",
+          "descriptionHtml": "Lister toutes les branches locales — la branche courante est mise en évidence",
+          "danger": false
+        },
+        {
+          "command": "git branch name",
+          "searchDescription": "Créer une nouvelle branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Créer une nouvelle branche sans y basculer",
+          "danger": false
+        },
+        {
+          "command": "git checkout switch name",
+          "searchDescription": "Basculer vers une branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> <span class=\"cmd-arg\">&lt;name&gt;</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git switch</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Basculer vers une branche existante",
+          "danger": false
+        },
+        {
+          "command": "git checkout -b switch -c",
+          "searchDescription": "Créer et basculer vers une branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;name&gt;</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git switch</span> <span class=\"cmd-flag\">-c</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Créer une nouvelle branche et y basculer immédiatement",
+          "danger": false
+        },
+        {
+          "command": "git merge branch",
+          "searchDescription": "Fusionner une branche dans la courante",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Fusionner une branche dans votre branche courante",
+          "danger": false
+        },
+        {
+          "command": "git rebase branch",
+          "searchDescription": "Rebaser sur une autre branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Réappliquer vos commits au-dessus d'une autre branche",
+          "danger": false
+        },
+        {
+          "command": "git branch -d name",
+          "searchDescription": "Supprimer la branche locale",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-d</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Supprimer une branche locale (sûr — ne supprime pas si non fusionnée)",
+          "danger": false
+        },
+        {
+          "command": "git branch -D name",
+          "searchDescription": "Forcer la suppression de la branche locale",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-D</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "⚠️ Forcer la suppression d'une branche quel que soit l'état de fusion",
+          "danger": true
+        },
+        {
+          "command": "git branch -m old new",
+          "searchDescription": "Renommer une branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">&lt;old&gt;</span> <span class=\"cmd-arg\">&lt;new&gt;</span>",
+          "descriptionHtml": "Renommer une branche locale",
+          "danger": false
+        },
+        {
+          "command": "git push --delete origin",
+          "searchDescription": "Supprimer une branche distante",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--delete</span> origin <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Supprimer une branche du dépôt distant",
+          "danger": false
+        },
+        {
+          "command": "git cherry-pick",
+          "searchDescription": "Appliquer un commit spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git cherry-pick</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Appliquer un commit spécifique d'une autre branche sur la courante",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "remote",
+      "title": "Distant (GitHub)",
+      "icon": "☁️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "git remote -v",
+          "searchDescription": "Afficher les distants",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote</span> <span class=\"cmd-flag\">-v</span>",
+          "descriptionHtml": "Lister toutes les connexions distantes avec leurs URL",
+          "danger": false
+        },
+        {
+          "command": "git remote add origin",
+          "searchDescription": "Ajouter le distant origin",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote add</span> origin <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Connecter votre dépôt local à un dépôt distant",
+          "danger": false
+        },
+        {
+          "command": "git push -u origin branch",
+          "searchDescription": "Pousser la branche et définir l'amont",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">-u</span> origin <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Pousser la branche vers le distant et la définir comme branche de suivi amont",
+          "danger": false
+        },
+        {
+          "command": "git push",
+          "searchDescription": "Pousser les modifications",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span>",
+          "descriptionHtml": "Pousser vos commits locaux vers la branche distante",
+          "danger": false
+        },
+        {
+          "command": "git push --force-with-lease",
+          "searchDescription": "Force push sécurisé",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--force-with-lease</span>",
+          "descriptionHtml": "Force push plus sûr — échoue si le distant a de nouveaux commits que vous n'avez pas vus",
+          "danger": false
+        },
+        {
+          "command": "git push --tags",
+          "searchDescription": "Pousser toutes les étiquettes",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Pousser toutes les étiquettes locales vers le dépôt distant",
+          "danger": false
+        },
+        {
+          "command": "git pull",
+          "searchDescription": "Tirer les dernières modifications",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span>",
+          "descriptionHtml": "Récupérer et fusionner les modifications depuis la branche distante",
+          "danger": false
+        },
+        {
+          "command": "git pull origin branch",
+          "searchDescription": "Tirer une branche spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> origin <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Tirer depuis une branche distante spécifique",
+          "danger": false
+        },
+        {
+          "command": "git pull --rebase",
+          "searchDescription": "Tirer avec rebase",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> <span class=\"cmd-flag\">--rebase</span>",
+          "descriptionHtml": "Tirer et rebaser au lieu de fusionner — garde l'historique linéaire",
+          "danger": false
+        },
+        {
+          "command": "git fetch",
+          "searchDescription": "Récupérer les branches et étiquettes",
+          "codeHtml": "<span class=\"cmd-keyword\">git fetch</span>",
+          "descriptionHtml": "Télécharger les modifications depuis le distant sans fusionner",
+          "danger": false
+        },
+        {
+          "command": "git fetch --prune",
+          "searchDescription": "Supprimer les distants supprimés",
+          "codeHtml": "<span class=\"cmd-keyword\">git fetch</span> <span class=\"cmd-flag\">--prune</span>",
+          "descriptionHtml": "Récupérer et supprimer les références locales aux branches distantes supprimées",
+          "danger": false
+        },
+        {
+          "command": "git merge alias/branch",
+          "searchDescription": "Fusionner la branche distante dans la courante",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-arg\">&lt;alias&gt;</span>/<span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Fusionner une branche distante directement dans votre branche courante après le fetch",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "undo",
+      "title": "Annuler et Corriger",
+      "icon": "↩️",
+      "color": "#ff5f5f",
+      "commands": [
+        {
+          "command": "git restore file",
+          "searchDescription": "Annuler les modifications locales",
+          "codeHtml": "<span class=\"cmd-keyword\">git restore</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "⚠️ Annuler toutes les modifications d'un fichier (ne peut pas être annulé)",
+          "danger": true
+        },
+        {
+          "command": "git restore --staged file",
+          "searchDescription": "Désindexer un fichier",
+          "codeHtml": "<span class=\"cmd-keyword\">git restore</span> <span class=\"cmd-flag\">--staged</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Désindexer un fichier tout en gardant ses modifications dans le répertoire de travail",
+          "danger": false
+        },
+        {
+          "command": "git reset HEAD file",
+          "searchDescription": "Désindexer un fichier",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> HEAD <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Retirer un fichier de la zone d'index (ancienne syntaxe)",
+          "danger": false
+        },
+        {
+          "command": "git reset --hard HEAD",
+          "searchDescription": "Réinitialiser au dernier commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--hard</span> HEAD",
+          "descriptionHtml": "⚠️ Annuler TOUTES les modifications non commitées — ceci ne peut pas être annulé",
+          "danger": true
+        },
+        {
+          "command": "git reset --soft HEAD~1",
+          "searchDescription": "Annuler le dernier commit en gardant les modifications",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--soft</span> HEAD~1",
+          "descriptionHtml": "Annuler le dernier commit mais garder toutes les modifications indexées",
+          "danger": false
+        },
+        {
+          "command": "git revert commit",
+          "searchDescription": "Nouveau commit annulant l'ancien",
+          "codeHtml": "<span class=\"cmd-keyword\">git revert</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Annuler un commit en toute sécurité en créant un nouveau commit d'inversion (sûr pour les branches partagées)",
+          "danger": false
+        },
+        {
+          "command": "git reflog",
+          "searchDescription": "Voir tous les refs filet de sécurité",
+          "codeHtml": "<span class=\"cmd-keyword\">git reflog</span>",
+          "descriptionHtml": "🛟 Le filet de sécurité ultime — voir chaque mouvement de HEAD et récupérer les commits perdus",
+          "danger": false
+        },
+        {
+          "command": "git clean -fd",
+          "searchDescription": "Supprimer les fichiers non suivis",
+          "codeHtml": "<span class=\"cmd-keyword\">git clean</span> <span class=\"cmd-flag\">-fd</span>",
+          "descriptionHtml": "⚠️ Supprimer tous les fichiers et répertoires non suivis",
+          "danger": true
+        },
+        {
+          "command": "git checkout -- file",
+          "searchDescription": "Annuler les modifications locales ancienne syntaxe",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> -- <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "⚠️ Annuler les modifications locales d'un fichier (ancienne syntaxe)",
+          "danger": true
+        },
+        {
+          "command": "git reset file",
+          "searchDescription": "Désindexer un fichier",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Retirer un fichier spécifique de la zone d'index",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "stash",
+      "title": "Remisage",
+      "icon": "📦",
+      "color": "#ff9f43",
+      "commands": [
+        {
+          "command": "git stash",
+          "searchDescription": "Sauvegarder les modifications non commitées",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash</span>",
+          "descriptionHtml": "Sauvegarder temporairement toutes les modifications non commitées dans une pile de remisage",
+          "danger": false
+        },
+        {
+          "command": "git stash pop",
+          "searchDescription": "Appliquer le dernier remisage",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash pop</span>",
+          "descriptionHtml": "Réappliquer le remisage le plus récent et le retirer de la pile",
+          "danger": false
+        },
+        {
+          "command": "git stash list",
+          "searchDescription": "Afficher la liste des remisages",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash list</span>",
+          "descriptionHtml": "Lister tous les ensembles de modifications remisés",
+          "danger": false
+        },
+        {
+          "command": "git stash apply",
+          "searchDescription": "Appliquer un remisage spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash apply</span> stash@{<span class=\"cmd-arg\">n</span>}",
+          "descriptionHtml": "Appliquer un remisage spécifique sans le retirer de la pile",
+          "danger": false
+        },
+        {
+          "command": "git stash drop",
+          "searchDescription": "Supprimer un remisage spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash drop</span> stash@{<span class=\"cmd-arg\">n</span>}",
+          "descriptionHtml": "Supprimer une entrée de remisage spécifique de la pile",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "tags",
+      "title": "Étiquettes",
+      "icon": "🏷️",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "git tag name",
+          "searchDescription": "Créer une étiquette",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Créer une étiquette légère au commit courant",
+          "danger": false
+        },
+        {
+          "command": "git tag",
+          "searchDescription": "Lister les étiquettes",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span>",
+          "descriptionHtml": "Lister toutes les étiquettes dans le dépôt",
+          "danger": false
+        },
+        {
+          "command": "git tag -d",
+          "searchDescription": "Supprimer une étiquette",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-d</span> <span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Supprimer une étiquette locale",
+          "danger": false
+        },
+        {
+          "command": "git push origin tag",
+          "searchDescription": "Pousser une seule étiquette",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> origin <span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Pousser une étiquette spécifique vers le distant",
+          "danger": false
+        },
+        {
+          "command": "git push origin --tags",
+          "searchDescription": "Pousser toutes les étiquettes",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> origin <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Pousser toutes les étiquettes locales vers le distant en une fois",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "history",
+      "title": "Historique et Diff",
+      "icon": "🔍",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "git diff commit1 commit2",
+          "searchDescription": "Diff entre commits",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-arg\">&lt;commit1&gt;</span> <span class=\"cmd-arg\">&lt;commit2&gt;</span>",
+          "descriptionHtml": "Afficher les différences entre deux commits spécifiques",
+          "danger": false
+        },
+        {
+          "command": "git diff --staged commit",
+          "searchDescription": "Diff indexé vs commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--staged</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Comparer les modifications indexées avec un commit spécifique",
+          "danger": false
+        },
+        {
+          "command": "git diff --cached",
+          "searchDescription": "Diff de toutes les modifications indexées",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--cached</span>",
+          "descriptionHtml": "Afficher toutes les modifications indexées par rapport au dernier commit",
+          "danger": false
+        },
+        {
+          "command": "git show commit",
+          "searchDescription": "Afficher un commit spécifique",
+          "codeHtml": "<span class=\"cmd-keyword\">git show</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Afficher les informations détaillées et le diff d'un commit spécifique",
+          "danger": false
+        },
+        {
+          "command": "git blame file",
+          "searchDescription": "Qui a modifié quoi",
+          "codeHtml": "<span class=\"cmd-keyword\">git blame</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Afficher qui a modifié en dernier chaque ligne d'un fichier et quand",
+          "danger": false
+        },
+        {
+          "command": "git shortlog -sn",
+          "searchDescription": "Afficher les commits par auteur",
+          "codeHtml": "<span class=\"cmd-keyword\">git shortlog</span> <span class=\"cmd-flag\">-sn</span>",
+          "descriptionHtml": "Résumé des commits regroupés et triés par auteur",
+          "danger": false
+        },
+        {
+          "command": "git log --since=\"1 week ago\"",
+          "searchDescription": "Filtrer les commits par date",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--since=</span><span class=\"cmd-arg\">\"1 week ago\"</span>",
+          "descriptionHtml": "Filtrer les commits par date — fonctionne aussi avec \"hier\", \"il y a 2 jours\", etc.",
+          "danger": false
+        },
+        {
+          "command": "git log -p file",
+          "searchDescription": "Afficher l'historique des patchs",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">-p</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Afficher l'historique complet des diffs pour un fichier spécifique",
+          "danger": false
+        },
+        {
+          "command": "git log --stat",
+          "searchDescription": "Afficher les statistiques par commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--stat</span>",
+          "descriptionHtml": "Afficher le nombre d'insertions/suppressions par fichier pour chaque commit",
+          "danger": false
+        },
+        {
+          "command": "git log --oneline",
+          "searchDescription": "Journal condensé",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--oneline</span>",
+          "descriptionHtml": "Vue compacte de l'historique avec un commit par ligne",
+          "danger": false
+        },
+        {
+          "command": "git log --graph --decorate --all",
+          "searchDescription": "Vue graphique de toutes les refs",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--graph --decorate --all</span>",
+          "descriptionHtml": "Graphique ASCII visuel de toutes les branches, fusions et étiquettes",
+          "danger": false
+        },
+        {
+          "command": "git log -p",
+          "searchDescription": "Afficher le dernier commit avec patch",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">-p</span>",
+          "descriptionHtml": "Afficher les diffs de patchs complets avec chaque commit dans le journal",
+          "danger": false
+        },
+        {
+          "command": "git log branchB..branchA",
+          "searchDescription": "Commits dans branchA pas dans branchB",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-arg\">branchB</span>..<span class=\"cmd-arg\">branchA</span>",
+          "descriptionHtml": "Afficher les commits qui existent dans branchA mais pas encore dans branchB — idéal pour les revues de PR",
+          "danger": false
+        },
+        {
+          "command": "git log --follow file",
+          "searchDescription": "Afficher l'historique entre renommages",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--follow</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Afficher l'historique complet des commits pour un fichier, même s'il a été renommé",
+          "danger": false
+        },
+        {
+          "command": "git diff branchB...branchA",
+          "searchDescription": "Diff branchA vs branchB",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-arg\">branchB</span>...<span class=\"cmd-arg\">branchA</span>",
+          "descriptionHtml": "Afficher ce qui est dans branchA qui n'est pas dans branchB — utile pour revoir les modifications de branche",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "maintenance",
+      "title": "Nettoyage et Maintenance",
+      "icon": "🧹",
+      "color": "#94a3b8",
+      "commands": [
+        {
+          "command": "git gc",
+          "searchDescription": "Nettoyer les fichiers inutiles",
+          "codeHtml": "<span class=\"cmd-keyword\">git gc</span>",
+          "descriptionHtml": "Exécuter la collecte des déchets pour optimiser le dépôt local",
+          "danger": false
+        },
+        {
+          "command": "git prune",
+          "searchDescription": "Supprimer les objets inaccessibles",
+          "codeHtml": "<span class=\"cmd-keyword\">git prune</span>",
+          "descriptionHtml": "Supprimer les objets qui ne sont plus référencés par aucun commit",
+          "danger": false
+        },
+        {
+          "command": "git fsck",
+          "searchDescription": "Vérifier l'intégrité du dépôt",
+          "codeHtml": "<span class=\"cmd-keyword\">git fsck</span>",
+          "descriptionHtml": "Vérifier l'intégrité de la base de données d'objets Git",
+          "danger": false
+        },
+        {
+          "command": "git rm file",
+          "searchDescription": "Supprimer le fichier et indexer",
+          "codeHtml": "<span class=\"cmd-keyword\">git rm</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Supprimer un fichier à la fois de l'arbre de travail et de l'index",
+          "danger": false
+        },
+        {
+          "command": "git mv old new",
+          "searchDescription": "Renommer ou déplacer un fichier",
+          "codeHtml": "<span class=\"cmd-keyword\">git mv</span> <span class=\"cmd-arg\">&lt;old&gt;</span> <span class=\"cmd-arg\">&lt;new&gt;</span>",
+          "descriptionHtml": "Renommer ou déplacer un fichier et indexer automatiquement la modification",
+          "danger": false
+        },
+        {
+          "command": "git bisect start",
+          "searchDescription": "Démarrer la bisection",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect start</span>",
+          "descriptionHtml": "Commencer la recherche binaire dans l'historique pour trouver le commit introduisant un bug",
+          "danger": false
+        },
+        {
+          "command": "git bisect good",
+          "searchDescription": "Marquer le commit comme bon",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect good</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Marquer un commit comme fonctionnel (bon) pendant la recherche bisect",
+          "danger": false
+        },
+        {
+          "command": "git bisect bad",
+          "searchDescription": "Marquer le commit comme mauvais",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect bad</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Marquer un commit comme cassé (mauvais) pendant la recherche bisect",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "worktrees",
+      "title": "Répertoires de travail",
+      "icon": "🌲",
+      "color": "#34d399",
+      "commands": [
+        {
+          "command": "git worktree add path branch",
+          "searchDescription": "Ajouter un nouveau répertoire de travail pour une branche",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Extraire une branche existante dans un nouveau répertoire — permet de travailler sur deux branches simultanément",
+          "danger": false
+        },
+        {
+          "command": "git worktree add -b branch path",
+          "searchDescription": "Créer une branche et ajouter un répertoire de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;branch&gt;</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Créer une nouvelle branche et l'extraire dans un nouveau répertoire en une seule étape",
+          "danger": false
+        },
+        {
+          "command": "git worktree list",
+          "searchDescription": "Lister tous les répertoires de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree list</span>",
+          "descriptionHtml": "Afficher tous les répertoires de travail liés et leurs branches extraites",
+          "danger": false
+        },
+        {
+          "command": "git worktree remove path",
+          "searchDescription": "Supprimer un répertoire de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree remove</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Supprimer un répertoire de travail et nettoyer ses métadonnées",
+          "danger": false
+        },
+        {
+          "command": "git worktree prune",
+          "searchDescription": "Nettoyer les répertoires de travail obsolètes",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree prune</span>",
+          "descriptionHtml": "Supprimer les enregistrements de répertoires de travail obsolètes pour les répertoires qui n'existent plus",
+          "danger": false
+        },
+        {
+          "command": "git worktree lock path",
+          "searchDescription": "Verrouiller un répertoire de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree lock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Verrouiller un répertoire de travail pour éviter qu'il soit élagué (ex. sur un lecteur amovible)",
+          "danger": false
+        },
+        {
+          "command": "git worktree unlock path",
+          "searchDescription": "Déverrouiller un répertoire de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree unlock</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Déverrouiller un répertoire de travail précédemment verrouillé afin qu'il puisse être supprimé ou élagué",
+          "danger": false
+        },
+        {
+          "command": "git worktree move path new-path",
+          "searchDescription": "Déplacer un répertoire de travail",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree move</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;new-path&gt;</span>",
+          "descriptionHtml": "Déplacer un répertoire de travail vers un nouveau répertoire et mettre à jour les références internes de Git",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "advanced",
+      "title": "Branches Avancées et Collaboration",
+      "icon": "🚀",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "git rebase -i HEAD~n",
+          "searchDescription": "Rebase interactif",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">-i</span> HEAD~<span class=\"cmd-arg\">n</span>",
+          "descriptionHtml": "Réécrire, écraser, réordonner ou supprimer interactivement les n derniers commits",
+          "danger": false
+        },
+        {
+          "command": "git merge --no-ff branch",
+          "searchDescription": "Garder l'historique de fusion",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--no-ff</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Fusionner en préservant un commit de fusion — garde l'historique de la branche feature visible",
+          "danger": false
+        },
+        {
+          "command": "git remote rename origin upstream",
+          "searchDescription": "Renommer le distant",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote rename</span> origin upstream",
+          "descriptionHtml": "Renommer une connexion distante (utile lors du fork de dépôts)",
+          "danger": false
+        },
+        {
+          "command": "git remote set-url origin",
+          "searchDescription": "Changer l'URL du distant",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote set-url</span> origin <span class=\"cmd-arg\">&lt;new-url&gt;</span>",
+          "descriptionHtml": "Mettre à jour l'URL d'un distant existant (utile après la migration du dépôt)",
+          "danger": false
+        },
+        {
+          "command": "git pull --rebase advanced",
+          "searchDescription": "Rebaser au lieu de fusionner",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> <span class=\"cmd-flag\">--rebase</span>",
+          "descriptionHtml": "Intégrer les modifications distantes en rebasant — garde un historique linéaire propre",
+          "danger": false
+        }
+      ]
+    }
+  ]
+}
