@@ -29,7 +29,6 @@
 
 ## ✨ Features
 
-- ✨ **Multilingual** — Switch between English 🇬🇧, Italian 🇮🇹, and French 🇫🇷 with the language switcher; your choice is remembered across visits
 - 🔍 **Instant search** — filter any command or description in real time
 - 📋 **One-click copy** — click any command to copy it to your clipboard
 - 🗂️ **12 categories** — organized from Setup to Advanced Branching
@@ -47,21 +46,15 @@ This project uses a clean static architecture with no framework and no build req
 
 - **`index.html`**: page shell and semantic structure
 - **`assets/css/styles.css`**: visual design, layout, responsive styles
-- **`assets/data/commands.en.json`**: English command data (canonical source of truth)
-- **`assets/data/commands.it.json`**: Italian translations
-- **`assets/data/commands.fr.json`**: French translations
-- **`assets/data/ui.json`**: all UI strings keyed by locale (`en`, `it`, `fr`)
+- **`assets/data/commands.json`**: single source of truth for all categories and commands
 - **`assets/js/app.js`**: app bootstrap and orchestration
 - **`assets/js/modules/`**:
-  - `data-loader.js` for data fetching (accepts a `lang` param, loads `commands.{lang}.json`)
+  - `data-loader.js` for data fetching
   - `render.js` for UI rendering
   - `state.js` for filtering/state logic
   - `interactions.js` for copy, keyboard, and scroll behavior
-  - `i18n.js` for language switching, UI string application, and `localStorage` persistence
 
 This keeps the app easy to maintain, easy to extend, and contributor-friendly.
-
-> **Adding a new language:** create `assets/data/commands.{lang}.json` (translate `title`, `searchDescription`, and `descriptionHtml` fields — leave `command`, `key`, `icon`, `color`, `codeHtml` as-is), add the locale's UI strings to `assets/data/ui.json`, and add a button to the `#lang-switcher` in `index.html`.
 
 ---
 
@@ -132,15 +125,11 @@ git-commands-cheatsheet/
 │  ├─ css/
 │  │  └─ styles.css
 │  ├─ data/
-│  │  ├─ commands.en.json   ← English (canonical source of truth)
-│  │  ├─ commands.it.json   ← Italian translations
-│  │  ├─ commands.fr.json   ← French translations
-│  │  └─ ui.json            ← UI strings for all locales
+│  │  └─ commands.json
 │  └─ js/
 │     ├─ app.js
 │     └─ modules/
 │        ├─ data-loader.js
-│        ├─ i18n.js
 │        ├─ interactions.js
 │        ├─ render.js
 │        └─ state.js
