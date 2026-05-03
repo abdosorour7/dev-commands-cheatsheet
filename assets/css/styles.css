@@ -77,12 +77,13 @@ header {
   margin-bottom: 28px;
   animation: fadeDown .6s ease both;
 }
-.header-badge span {
+.header-badge .badge-dot {
   width: 6px;
   height: 6px;
   background: var(--green);
   border-radius: 50%;
   animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 
 h1 {
@@ -505,4 +506,47 @@ footer {
   .grid { grid-template-columns: 1fr; }
   h1 { letter-spacing: -1px; }
   .stats { gap: 8px; }
+}
+
+/* ── Language Switcher ───────────────────────────────────────────────────── */
+
+.lang-switcher {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  animation: fadeDown .5s ease both;
+}
+
+.lang-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .72rem;
+  padding: 5px 11px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all .18s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.lang-btn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+  background: var(--surface2);
+}
+
+.lang-btn.active {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(0, 255, 157, .06);
+}
+
+@media (max-width: 480px) {
+  .lang-btn {
+    font-size: .65rem;
+    padding: 4px 8px;
+  }
 }
