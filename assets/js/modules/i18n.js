@@ -1,4 +1,4 @@
-export const SUPPORTED_LANGS = ["en", "it", "fr"];
+export const SUPPORTED_LANGS = ["en", "it", "fr", "es"];
 export const DEFAULT_LANG = "en";
 const STORAGE_KEY = "cheatsheet-lang";
 

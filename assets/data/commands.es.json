@@ -1,0 +1,905 @@
+{
+  "categories": [
+    {
+      "key": "setup",
+      "title": "Configuración inicial",
+      "icon": "⚙️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "git config --global user.name",
+          "searchDescription": "Establecer nombre de usuario global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global user.name <span class=\"cmd-arg\">\"Tu Nombre\"</span>",
+          "descriptionHtml": "Establecer tu nombre de usuario global de Git para todos los repositorios",
+          "danger": false
+        },
+        {
+          "command": "git config --global user.email",
+          "searchDescription": "Establecer email global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global user.email <span class=\"cmd-arg\">\"tu@ejemplo.com\"</span>",
+          "descriptionHtml": "Establecer tu dirección de email global de Git",
+          "danger": false
+        },
+        {
+          "command": "git config --list",
+          "searchDescription": "Listar todas las configuraciones",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> <span class=\"cmd-flag\">--list</span>",
+          "descriptionHtml": "Listar todas las configuraciones de Git",
+          "danger": false
+        },
+        {
+          "command": "git help",
+          "searchDescription": "Obtener ayuda sobre un comando de Git",
+          "codeHtml": "<span class=\"cmd-keyword\">git help</span> <span class=\"cmd-arg\">&lt;comando&gt;</span>",
+          "descriptionHtml": "Obtener ayuda y documentación para cualquier comando de Git",
+          "danger": false
+        },
+        {
+          "command": "git config alias.co checkout",
+          "searchDescription": "Crear alias",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> alias.co checkout",
+          "descriptionHtml": "Crear un alias atajo (ej: <code style=\"color:var(--green)\">git co</code> → <code style=\"color:var(--green)\">git checkout</code>)",
+          "danger": false
+        },
+        {
+          "command": "git config --global color.ui auto",
+          "searchDescription": "Habilitar salida con colores",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global color.ui auto",
+          "descriptionHtml": "Habilitar la salida con colores automática en la terminal para facilitar la lectura",
+          "danger": false
+        },
+        {
+          "command": "git config --global core.excludesfile",
+          "searchDescription": "Archivo gitignore global",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> --global core.excludesfile <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Establecer un <code style=\"color:var(--green)\">.gitignore</code> global — ignora patrones en todos tus repositorios",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "repo",
+      "title": "Iniciar un repositorio",
+      "icon": "📁",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "git init",
+          "searchDescription": "Crear nuevo repositorio local",
+          "codeHtml": "<span class=\"cmd-keyword\">git init</span>",
+          "descriptionHtml": "Inicializar un nuevo repositorio Git local",
+          "danger": false
+        },
+        {
+          "command": "git clone",
+          "searchDescription": "Clonar repo desde remoto",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Clonar un repositorio remoto a tu máquina local",
+          "danger": false
+        },
+        {
+          "command": "git clone --branch",
+          "searchDescription": "Clonar rama específica",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-flag\">--branch</span> <span class=\"cmd-arg\">&lt;rama&gt;</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Clonar solo una rama específica de un repositorio remoto",
+          "danger": false
+        },
+        {
+          "command": "git clone --depth=1",
+          "searchDescription": "Clonado superficial más rápido",
+          "codeHtml": "<span class=\"cmd-keyword\">git clone</span> <span class=\"cmd-flag\">--depth=1</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Clonado superficial — descarga más rápida, solo obtiene el último snapshot",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "workflow",
+      "title": "Flujo de trabajo básico",
+      "icon": "🔄",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "git status",
+          "searchDescription": "Verificar estado del repositorio",
+          "codeHtml": "<span class=\"cmd-keyword\">git status</span>",
+          "descriptionHtml": "Mostrar el estado del árbol de trabajo — archivos en staging, sin staging y sin seguimiento",
+          "danger": false
+        },
+        {
+          "command": "git add",
+          "searchDescription": "Agregar archivo al staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Agregar un archivo específico al staging para el próximo commit",
+          "danger": false
+        },
+        {
+          "command": "git add -A",
+          "searchDescription": "Agregar todos los cambios al staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">.</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">-A</span>",
+          "descriptionHtml": "Agregar todos los cambios del directorio actual al staging",
+          "danger": false
+        },
+        {
+          "command": "git commit -m",
+          "searchDescription": "Commitear cambios con mensaje",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"mensaje\"</span>",
+          "descriptionHtml": "Commitear todos los cambios en staging con un mensaje descriptivo",
+          "danger": false
+        },
+        {
+          "command": "git commit --amend",
+          "searchDescription": "Editar último commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">--amend</span>",
+          "descriptionHtml": "Modificar el commit más reciente — cambiar su mensaje o agregar más archivos",
+          "danger": false
+        },
+        {
+          "command": "git commit -am",
+          "searchDescription": "Agregar al staging y commitear archivos rastreados",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">-am</span> <span class=\"cmd-arg\">\"mensaje\"</span>",
+          "descriptionHtml": "Agregar al staging todos los archivos rastreados y commitear en un solo comando",
+          "danger": false
+        },
+        {
+          "command": "git add -p",
+          "searchDescription": "Staging interactivo por fragmentos",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">-p</span>",
+          "descriptionHtml": "Elegir interactivamente qué fragmentos agregar al staging — ideal para dividir cambios en commits enfocados",
+          "danger": false
+        },
+        {
+          "command": "git log",
+          "searchDescription": "Mostrar historial de commits",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span>",
+          "descriptionHtml": "Mostrar el historial completo de commits con autor, fecha y mensaje",
+          "danger": false
+        },
+        {
+          "command": "git log --oneline --graph --decorate",
+          "searchDescription": "Vista de log visual",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--oneline --graph --decorate</span>",
+          "descriptionHtml": "Árbol visual de commits — ramas, merges y etiquetas de un vistazo",
+          "danger": false
+        },
+        {
+          "command": "git diff",
+          "searchDescription": "Mostrar cambios sin staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span>",
+          "descriptionHtml": "Mostrar todos los cambios sin staging (aún no agregados)",
+          "danger": false
+        },
+        {
+          "command": "git diff --staged",
+          "searchDescription": "Mostrar diff en staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--staged</span>",
+          "descriptionHtml": "Mostrar los cambios que están en staging y listos para commitear",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "branch",
+      "title": "Ramas",
+      "icon": "🌿",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "git branch",
+          "searchDescription": "Listar ramas",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span>",
+          "descriptionHtml": "Listar todas las ramas locales — la rama actual aparece resaltada",
+          "danger": false
+        },
+        {
+          "command": "git branch name",
+          "searchDescription": "Crear nueva rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "Crear una nueva rama sin cambiar a ella",
+          "danger": false
+        },
+        {
+          "command": "git checkout switch name",
+          "searchDescription": "Cambiar a una rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git switch</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "Cambiar a una rama existente",
+          "danger": false
+        },
+        {
+          "command": "git checkout -b switch -c",
+          "searchDescription": "Crear y cambiar a nueva rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">git switch</span> <span class=\"cmd-flag\">-c</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "Crear una nueva rama y cambiar a ella inmediatamente",
+          "danger": false
+        },
+        {
+          "command": "git merge branch",
+          "searchDescription": "Mergear rama en la actual",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Mergear una rama en tu rama actual",
+          "danger": false
+        },
+        {
+          "command": "git rebase branch",
+          "searchDescription": "Rebase sobre otra rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Reaplicar tus commits encima de otra rama",
+          "danger": false
+        },
+        {
+          "command": "git branch -d name",
+          "searchDescription": "Eliminar rama local",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-d</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "Eliminar una rama local (seguro — no elimina si no está mergeada)",
+          "danger": false
+        },
+        {
+          "command": "git branch -D name",
+          "searchDescription": "Forzar eliminación de rama local",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-D</span> <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "⚠️ Forzar la eliminación de una rama sin importar el estado del merge",
+          "danger": true
+        },
+        {
+          "command": "git branch -m old new",
+          "searchDescription": "Renombrar rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">&lt;viejo&gt;</span> <span class=\"cmd-arg\">&lt;nuevo&gt;</span>",
+          "descriptionHtml": "Renombrar una rama local",
+          "danger": false
+        },
+        {
+          "command": "git push --delete origin",
+          "searchDescription": "Eliminar rama remota",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--delete</span> origin <span class=\"cmd-arg\">&lt;nombre&gt;</span>",
+          "descriptionHtml": "Eliminar una rama del repositorio remoto",
+          "danger": false
+        },
+        {
+          "command": "git cherry-pick",
+          "searchDescription": "Aplicar commit específico",
+          "codeHtml": "<span class=\"cmd-keyword\">git cherry-pick</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Aplicar un commit específico de otra rama en la rama actual",
+          "danger": false
+        },
+        {
+          "command": "git cherry-pick --no-commit",
+          "searchDescription": "Cherry-pick sin commitear",
+          "codeHtml": "<span class=\"cmd-keyword\">git cherry-pick</span> <span class=\"cmd-flag\">--no-commit</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Aplicar los cambios de un commit al árbol de trabajo sin crear un nuevo commit",
+          "danger": false
+        },
+        {
+          "command": "git branch -r",
+          "searchDescription": "Listar ramas remotas",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-r</span>",
+          "descriptionHtml": "Listar todas las ramas de seguimiento remoto",
+          "danger": false
+        },
+        {
+          "command": "git branch -a",
+          "searchDescription": "Listar todas las ramas locales y remotas",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "Listar todas las ramas locales y remotas",
+          "danger": false
+        },
+        {
+          "command": "git merge --squash",
+          "searchDescription": "Aplastar rama en un commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--squash</span> <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Colapsar todos los commits de una rama en un único cambio en staging — luego commitear manualmente",
+          "danger": false
+        },
+        {
+          "command": "git rebase --continue",
+          "searchDescription": "Continuar rebase tras conflicto",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">--continue</span>",
+          "descriptionHtml": "Reanudar un rebase después de resolver conflictos",
+          "danger": false
+        },
+        {
+          "command": "git rebase --abort",
+          "searchDescription": "Cancelar rebase en progreso",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">--abort</span>",
+          "descriptionHtml": "Abortar un rebase en curso y volver al estado original de la rama",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "remote",
+      "title": "Remoto (GitHub)",
+      "icon": "☁️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "git remote -v",
+          "searchDescription": "Mostrar remotos",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote</span> <span class=\"cmd-flag\">-v</span>",
+          "descriptionHtml": "Listar todas las conexiones remotas con sus URLs",
+          "danger": false
+        },
+        {
+          "command": "git remote add origin",
+          "searchDescription": "Agregar remote origin",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote add</span> origin <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Conectar tu repo local a un repositorio remoto",
+          "danger": false
+        },
+        {
+          "command": "git push -u origin branch",
+          "searchDescription": "Pushear rama y configurar upstream",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">-u</span> origin <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Pushear rama al remoto y establecerla como rama de seguimiento upstream",
+          "danger": false
+        },
+        {
+          "command": "git push",
+          "searchDescription": "Pushear cambios",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span>",
+          "descriptionHtml": "Pushear tus commits locales a la rama remota",
+          "danger": false
+        },
+        {
+          "command": "git push --force-with-lease",
+          "searchDescription": "Force push seguro",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--force-with-lease</span>",
+          "descriptionHtml": "Force push más seguro — falla si el remoto tiene commits nuevos que no viste",
+          "danger": false
+        },
+        {
+          "command": "git push --force",
+          "searchDescription": "Force push sobreescribir remoto",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--force</span>",
+          "descriptionHtml": "⚠️ Sobreescribir la rama remota por la fuerza — puede destruir el trabajo de otros; preferir --force-with-lease",
+          "danger": true
+        },
+        {
+          "command": "git push --tags",
+          "searchDescription": "Pushear todas las etiquetas",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Pushear todas las etiquetas locales al repositorio remoto",
+          "danger": false
+        },
+        {
+          "command": "git pull",
+          "searchDescription": "Obtener últimos cambios",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span>",
+          "descriptionHtml": "Obtener y mergear los cambios de la rama remota",
+          "danger": false
+        },
+        {
+          "command": "git pull origin branch",
+          "searchDescription": "Pullear rama específica",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> origin <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Pullear desde una rama remota específica",
+          "danger": false
+        },
+        {
+          "command": "git pull --rebase",
+          "searchDescription": "Pullear con rebase",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> <span class=\"cmd-flag\">--rebase</span>",
+          "descriptionHtml": "Pullear y hacer rebase en lugar de merge — mantiene el historial lineal",
+          "danger": false
+        },
+        {
+          "command": "git fetch",
+          "searchDescription": "Obtener ramas y etiquetas",
+          "codeHtml": "<span class=\"cmd-keyword\">git fetch</span>",
+          "descriptionHtml": "Descargar cambios del remoto sin mergear",
+          "danger": false
+        },
+        {
+          "command": "git fetch --prune",
+          "searchDescription": "Eliminar remotos borrados",
+          "codeHtml": "<span class=\"cmd-keyword\">git fetch</span> <span class=\"cmd-flag\">--prune</span>",
+          "descriptionHtml": "Obtener y eliminar las referencias locales a ramas remotas eliminadas",
+          "danger": false
+        },
+        {
+          "command": "git merge alias/branch",
+          "searchDescription": "Mergear rama remota en la actual",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-arg\">&lt;alias&gt;</span>/<span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Mergear una rama remota directamente en tu rama actual después de hacer fetch",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "undo",
+      "title": "Deshacer & Corregir",
+      "icon": "↩️",
+      "color": "#ff5f5f",
+      "commands": [
+        {
+          "command": "git restore file",
+          "searchDescription": "Descartar cambios locales",
+          "codeHtml": "<span class=\"cmd-keyword\">git restore</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "⚠️ Descartar todos los cambios de un archivo (no se puede deshacer)",
+          "danger": true
+        },
+        {
+          "command": "git restore --staged file",
+          "searchDescription": "Quitar archivo del staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git restore</span> <span class=\"cmd-flag\">--staged</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Quitar un archivo del staging conservando sus cambios en el directorio de trabajo",
+          "danger": false
+        },
+        {
+          "command": "git reset HEAD file",
+          "searchDescription": "Quitar archivo del staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> HEAD <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Quitar un archivo del área de staging (sintaxis antigua)",
+          "danger": false
+        },
+        {
+          "command": "git reset --hard HEAD",
+          "searchDescription": "Resetear al último commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--hard</span> HEAD",
+          "descriptionHtml": "⚠️ Descartar TODOS los cambios sin commitear — no se puede deshacer",
+          "danger": true
+        },
+        {
+          "command": "git reset --soft HEAD~1",
+          "searchDescription": "Deshacer último commit conservando cambios",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--soft</span> HEAD~1",
+          "descriptionHtml": "Deshacer el último commit pero mantener todos los cambios en staging",
+          "danger": false
+        },
+        {
+          "command": "git reset --mixed HEAD~1",
+          "searchDescription": "Deshacer último commit quitando del staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--mixed</span> HEAD~1",
+          "descriptionHtml": "Deshacer el último commit y quitar los cambios del staging — los archivos quedan modificados en el árbol de trabajo (modo reset por defecto)",
+          "danger": false
+        },
+        {
+          "command": "git revert commit",
+          "searchDescription": "Nuevo commit que deshace uno anterior",
+          "codeHtml": "<span class=\"cmd-keyword\">git revert</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Deshacer un commit de forma segura creando un nuevo commit que lo revierte (seguro para ramas compartidas)",
+          "danger": false
+        },
+        {
+          "command": "git reflog",
+          "searchDescription": "Ver todos los refs red de seguridad",
+          "codeHtml": "<span class=\"cmd-keyword\">git reflog</span>",
+          "descriptionHtml": "🛟 La red de seguridad definitiva — ver cada movimiento de HEAD y recuperar commits perdidos",
+          "danger": false
+        },
+        {
+          "command": "git clean -fd",
+          "searchDescription": "Eliminar archivos sin seguimiento",
+          "codeHtml": "<span class=\"cmd-keyword\">git clean</span> <span class=\"cmd-flag\">-fd</span>",
+          "descriptionHtml": "⚠️ Eliminar todos los archivos y directorios sin seguimiento",
+          "danger": true
+        },
+        {
+          "command": "git checkout -- file",
+          "searchDescription": "Descartar cambios locales sintaxis antigua",
+          "codeHtml": "<span class=\"cmd-keyword\">git checkout</span> -- <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "⚠️ Descartar cambios locales en un archivo (sintaxis antigua)",
+          "danger": true
+        },
+        {
+          "command": "git reset file",
+          "searchDescription": "Quitar archivo del staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Quitar un archivo específico del área de staging",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "stash",
+      "title": "Stash",
+      "icon": "📦",
+      "color": "#ff9f43",
+      "commands": [
+        {
+          "command": "git stash",
+          "searchDescription": "Guardar cambios sin commitear",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash</span>",
+          "descriptionHtml": "Guardar temporalmente todos los cambios sin commitear en una pila de stash",
+          "danger": false
+        },
+        {
+          "command": "git stash pop",
+          "searchDescription": "Aplicar último stash",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash pop</span>",
+          "descriptionHtml": "Reaplicar el stash más reciente y eliminarlo de la pila",
+          "danger": false
+        },
+        {
+          "command": "git stash list",
+          "searchDescription": "Mostrar lista de stashes",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash list</span>",
+          "descriptionHtml": "Listar todos los conjuntos de cambios guardados en el stash",
+          "danger": false
+        },
+        {
+          "command": "git stash apply",
+          "searchDescription": "Aplicar stash específico",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash apply</span> stash@{<span class=\"cmd-arg\">n</span>}",
+          "descriptionHtml": "Aplicar un stash específico sin eliminarlo de la pila",
+          "danger": false
+        },
+        {
+          "command": "git stash drop",
+          "searchDescription": "Eliminar stash específico",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash drop</span> stash@{<span class=\"cmd-arg\">n</span>}",
+          "descriptionHtml": "Eliminar una entrada específica del stash",
+          "danger": false
+        },
+        {
+          "command": "git stash push -m",
+          "searchDescription": "Guardar stash con nombre",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash push</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"mensaje\"</span>",
+          "descriptionHtml": "Guardar un stash con un nombre descriptivo para identificarlo en la lista más tarde",
+          "danger": false
+        },
+        {
+          "command": "git stash --include-untracked",
+          "searchDescription": "Guardar stash incluyendo archivos sin seguimiento",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash</span> <span class=\"cmd-flag\">--include-untracked</span>",
+          "descriptionHtml": "Guardar todos los cambios incluyendo archivos nuevos sin seguimiento",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "tags",
+      "title": "Etiquetas",
+      "icon": "🏷️",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "git tag name",
+          "searchDescription": "Crear etiqueta",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-arg\">&lt;etiqueta&gt;</span>",
+          "descriptionHtml": "Crear una etiqueta ligera en el commit actual",
+          "danger": false
+        },
+        {
+          "command": "git tag -a",
+          "searchDescription": "Crear etiqueta anotada con mensaje",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-a</span> <span class=\"cmd-arg\">&lt;etiqueta&gt;</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"mensaje\"</span>",
+          "descriptionHtml": "Crear una etiqueta anotada con mensaje — recomendada para releases ya que guarda autor y fecha",
+          "danger": false
+        },
+        {
+          "command": "git tag",
+          "searchDescription": "Listar etiquetas",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span>",
+          "descriptionHtml": "Listar todas las etiquetas del repositorio",
+          "danger": false
+        },
+        {
+          "command": "git tag -d",
+          "searchDescription": "Eliminar etiqueta",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-d</span> <span class=\"cmd-arg\">&lt;etiqueta&gt;</span>",
+          "descriptionHtml": "Eliminar una etiqueta local",
+          "danger": false
+        },
+        {
+          "command": "git push origin tag",
+          "searchDescription": "Pushear etiqueta individual",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> origin <span class=\"cmd-arg\">&lt;etiqueta&gt;</span>",
+          "descriptionHtml": "Pushear una etiqueta específica al remoto",
+          "danger": false
+        },
+        {
+          "command": "git push origin --tags",
+          "searchDescription": "Pushear todas las etiquetas",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> origin <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Pushear todas las etiquetas locales al remoto de una vez",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "history",
+      "title": "Historial & Diferencias",
+      "icon": "🔍",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "git diff commit1 commit2",
+          "searchDescription": "Diferencias entre commits",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-arg\">&lt;commit1&gt;</span> <span class=\"cmd-arg\">&lt;commit2&gt;</span>",
+          "descriptionHtml": "Mostrar las diferencias entre dos commits específicos",
+          "danger": false
+        },
+        {
+          "command": "git diff --staged commit",
+          "searchDescription": "Diff staging vs commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--staged</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Comparar los cambios en staging contra un commit específico",
+          "danger": false
+        },
+        {
+          "command": "git diff --cached",
+          "searchDescription": "Diff de todos los cambios en staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-flag\">--cached</span>",
+          "descriptionHtml": "Mostrar todos los cambios en staging vs el último commit",
+          "danger": false
+        },
+        {
+          "command": "git show commit",
+          "searchDescription": "Mostrar commit específico",
+          "codeHtml": "<span class=\"cmd-keyword\">git show</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Mostrar información detallada y diff de un commit específico",
+          "danger": false
+        },
+        {
+          "command": "git blame file",
+          "searchDescription": "Quién cambió qué",
+          "codeHtml": "<span class=\"cmd-keyword\">git blame</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Mostrar quién modificó por última vez cada línea de un archivo y cuándo",
+          "danger": false
+        },
+        {
+          "command": "git shortlog -sn",
+          "searchDescription": "Mostrar commits por autor",
+          "codeHtml": "<span class=\"cmd-keyword\">git shortlog</span> <span class=\"cmd-flag\">-sn</span>",
+          "descriptionHtml": "Resumen de commits agrupados y ordenados por autor",
+          "danger": false
+        },
+        {
+          "command": "git log --since=\"1 week ago\"",
+          "searchDescription": "Filtrar commits por fecha",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--since=</span><span class=\"cmd-arg\">\"1 week ago\"</span>",
+          "descriptionHtml": "Filtrar commits por fecha — también funciona con \"yesterday\", \"2 days ago\", etc.",
+          "danger": false
+        },
+        {
+          "command": "git log -p file",
+          "searchDescription": "Mostrar historial de parches",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">-p</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Mostrar el historial de diffs completo para un archivo específico",
+          "danger": false
+        },
+        {
+          "command": "git log --stat",
+          "searchDescription": "Mostrar estadísticas por commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--stat</span>",
+          "descriptionHtml": "Mostrar la cantidad de inserciones/eliminaciones por archivo en cada commit",
+          "danger": false
+        },
+        {
+          "command": "git log --oneline",
+          "searchDescription": "Log compacto",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--oneline</span>",
+          "descriptionHtml": "Vista del historial compacta con un commit por línea",
+          "danger": false
+        },
+        {
+          "command": "git log --graph --decorate --all",
+          "searchDescription": "Vista en grafo de todas las refs",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--graph --decorate --all</span>",
+          "descriptionHtml": "Gráfico ASCII visual de todas las ramas, merges y etiquetas",
+          "danger": false
+        },
+        {
+          "command": "git log -p",
+          "searchDescription": "Mostrar último commit con parche",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">-p</span>",
+          "descriptionHtml": "Mostrar diffs completos junto a cada commit del log",
+          "danger": false
+        },
+        {
+          "command": "git log branchB..branchA",
+          "searchDescription": "Commits en branchA que no están en branchB",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-arg\">branchB</span>..<span class=\"cmd-arg\">branchA</span>",
+          "descriptionHtml": "Mostrar commits que existen en branchA pero aún no están en branchB — ideal para revisiones de PR",
+          "danger": false
+        },
+        {
+          "command": "git log --follow file",
+          "searchDescription": "Mostrar historial a través de renombres",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--follow</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Mostrar el historial completo de un archivo, incluso si fue renombrado en algún momento",
+          "danger": false
+        },
+        {
+          "command": "git diff branchB...branchA",
+          "searchDescription": "Diff branchA vs branchB",
+          "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-arg\">branchB</span>...<span class=\"cmd-arg\">branchA</span>",
+          "descriptionHtml": "Mostrar qué tiene branchA que no está en branchB — útil para revisar cambios de una rama",
+          "danger": false
+        },
+        {
+          "command": "git log --author",
+          "searchDescription": "Filtrar commits por autor",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--author=</span><span class=\"cmd-arg\">\"Nombre\"</span>",
+          "descriptionHtml": "Mostrar solo los commits realizados por un autor específico",
+          "danger": false
+        },
+        {
+          "command": "git grep",
+          "searchDescription": "Buscar patrón en archivos rastreados",
+          "codeHtml": "<span class=\"cmd-keyword\">git grep</span> <span class=\"cmd-arg\">\"patrón\"</span>",
+          "descriptionHtml": "Buscar una cadena o patrón en todos los archivos rastreados — más rápido que grep en repos grandes",
+          "danger": false
+        },
+        {
+          "command": "git describe",
+          "searchDescription": "Describir commit usando la etiqueta más cercana",
+          "codeHtml": "<span class=\"cmd-keyword\">git describe</span> <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Generar una etiqueta legible para un commit basada en la etiqueta más cercana (ej: v1.2-3-gabcdef)",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "maintenance",
+      "title": "Limpieza & Mantenimiento",
+      "icon": "🧹",
+      "color": "#94a3b8",
+      "commands": [
+        {
+          "command": "git gc",
+          "searchDescription": "Limpiar archivos innecesarios",
+          "codeHtml": "<span class=\"cmd-keyword\">git gc</span>",
+          "descriptionHtml": "Ejecutar la recolección de basura para optimizar el repositorio local",
+          "danger": false
+        },
+        {
+          "command": "git prune",
+          "searchDescription": "Eliminar objetos inalcanzables",
+          "codeHtml": "<span class=\"cmd-keyword\">git prune</span>",
+          "descriptionHtml": "Eliminar objetos que ya no son referenciados por ningún commit",
+          "danger": false
+        },
+        {
+          "command": "git fsck",
+          "searchDescription": "Verificar integridad del repo",
+          "codeHtml": "<span class=\"cmd-keyword\">git fsck</span>",
+          "descriptionHtml": "Verificar la integridad de la base de datos de objetos de Git",
+          "danger": false
+        },
+        {
+          "command": "git rm file",
+          "searchDescription": "Eliminar archivo y agregarlo al staging",
+          "codeHtml": "<span class=\"cmd-keyword\">git rm</span> <span class=\"cmd-arg\">&lt;archivo&gt;</span>",
+          "descriptionHtml": "Eliminar un archivo del árbol de trabajo y del índice",
+          "danger": false
+        },
+        {
+          "command": "git mv old new",
+          "searchDescription": "Renombrar o mover archivo",
+          "codeHtml": "<span class=\"cmd-keyword\">git mv</span> <span class=\"cmd-arg\">&lt;viejo&gt;</span> <span class=\"cmd-arg\">&lt;nuevo&gt;</span>",
+          "descriptionHtml": "Renombrar o mover un archivo y preparar el cambio automáticamente",
+          "danger": false
+        },
+        {
+          "command": "git bisect start",
+          "searchDescription": "Iniciar bisección",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect start</span>",
+          "descriptionHtml": "Iniciar búsqueda binaria en el historial para encontrar el commit que introdujo un bug",
+          "danger": false
+        },
+        {
+          "command": "git bisect good",
+          "searchDescription": "Marcar commit como bueno",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect good</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Marcar un commit como funcionando (bueno) durante la búsqueda bisect",
+          "danger": false
+        },
+        {
+          "command": "git bisect bad",
+          "searchDescription": "Marcar commit como malo",
+          "codeHtml": "<span class=\"cmd-keyword\">git bisect bad</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Marcar un commit como roto (malo) durante la búsqueda bisect",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "worktrees",
+      "title": "Worktrees",
+      "icon": "🌲",
+      "color": "#34d399",
+      "commands": [
+        {
+          "command": "git worktree add path branch",
+          "searchDescription": "Agregar nuevo worktree para rama",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span> <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Hacer checkout de una rama existente en un nuevo directorio — permite trabajar en dos ramas simultáneamente",
+          "danger": false
+        },
+        {
+          "command": "git worktree add -b branch path",
+          "searchDescription": "Crear rama y agregar worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree add</span> <span class=\"cmd-flag\">-b</span> <span class=\"cmd-arg\">&lt;rama&gt;</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span>",
+          "descriptionHtml": "Crear una nueva rama y hacerle checkout en un nuevo directorio en un solo paso",
+          "danger": false
+        },
+        {
+          "command": "git worktree list",
+          "searchDescription": "Listar todos los worktrees",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree list</span>",
+          "descriptionHtml": "Mostrar todos los worktrees vinculados y sus ramas activas",
+          "danger": false
+        },
+        {
+          "command": "git worktree remove path",
+          "searchDescription": "Eliminar un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree remove</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span>",
+          "descriptionHtml": "Eliminar un directorio worktree y limpiar sus metadatos",
+          "danger": false
+        },
+        {
+          "command": "git worktree prune",
+          "searchDescription": "Limpiar worktrees obsoletos",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree prune</span>",
+          "descriptionHtml": "Eliminar registros de worktrees obsoletos para directorios que ya no existen",
+          "danger": false
+        },
+        {
+          "command": "git worktree lock path",
+          "searchDescription": "Bloquear un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree lock</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span>",
+          "descriptionHtml": "Bloquear un worktree para evitar que sea eliminado (ej: en una unidad extraíble)",
+          "danger": false
+        },
+        {
+          "command": "git worktree unlock path",
+          "searchDescription": "Desbloquear un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree unlock</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span>",
+          "descriptionHtml": "Desbloquear un worktree previamente bloqueado para que pueda ser eliminado o limpiado",
+          "danger": false
+        },
+        {
+          "command": "git worktree move path newpath",
+          "searchDescription": "Mover un worktree",
+          "codeHtml": "<span class=\"cmd-keyword\">git worktree move</span> <span class=\"cmd-arg\">&lt;ruta&gt;</span> <span class=\"cmd-arg\">&lt;nueva-ruta&gt;</span>",
+          "descriptionHtml": "Reubicar un worktree a un nuevo directorio y actualizar las referencias internas de Git",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "advanced",
+      "title": "Ramas avanzadas & Colaboración",
+      "icon": "🚀",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "git rebase -i HEAD~n",
+          "searchDescription": "Rebase interactivo",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">-i</span> HEAD~<span class=\"cmd-arg\">n</span>",
+          "descriptionHtml": "Reescribir, aplastar, reordenar o eliminar los últimos n commits de forma interactiva",
+          "danger": false
+        },
+        {
+          "command": "git merge --no-ff branch",
+          "searchDescription": "Conservar historial de merge",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--no-ff</span> <span class=\"cmd-arg\">&lt;rama&gt;</span>",
+          "descriptionHtml": "Mergear conservando un commit de merge — mantiene visible el historial de la rama de feature",
+          "danger": false
+        },
+        {
+          "command": "git remote rename origin upstream",
+          "searchDescription": "Renombrar remoto",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote rename</span> origin upstream",
+          "descriptionHtml": "Renombrar una conexión remota (útil al hacer fork de repositorios)",
+          "danger": false
+        },
+        {
+          "command": "git remote set-url origin",
+          "searchDescription": "Cambiar URL del remoto",
+          "codeHtml": "<span class=\"cmd-keyword\">git remote set-url</span> origin <span class=\"cmd-arg\">&lt;nueva-url&gt;</span>",
+          "descriptionHtml": "Actualizar la URL de un remoto existente (útil tras la migración de un repo)",
+          "danger": false
+        },
+        {
+          "command": "git pull --rebase advanced",
+          "searchDescription": "Rebase en lugar de merge",
+          "codeHtml": "<span class=\"cmd-keyword\">git pull</span> <span class=\"cmd-flag\">--rebase</span>",
+          "descriptionHtml": "Integrar cambios remotos con rebase — mantiene un historial lineal y limpio",
+          "danger": false
+        }
+      ]
+    }
+  ]
+}

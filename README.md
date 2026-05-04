@@ -29,7 +29,7 @@
 
 ## ✨ Features
 
-- ✨ **Multilingual** — Switch between English 🇬🇧, Italian 🇮🇹, and French 🇫🇷 with the language switcher; your choice is remembered across visits
+- ✨ **Multilingual** — Switch between English 🇬🇧, Italian 🇮🇹, French 🇫🇷, and Spanish 🇪🇸 with the language switcher; your choice is remembered across visits
 - 🔍 **Instant search** — filter any command or description in real time
 - 📋 **One-click copy** — click any command to copy it to your clipboard
 - 🗂️ **12 categories** — organized from Setup to Advanced Branching
@@ -50,6 +50,7 @@ This project uses a clean static architecture with no framework and no build req
 - **`assets/data/commands.en.json`**: English command data (canonical source of truth)
 - **`assets/data/commands.it.json`**: Italian translations
 - **`assets/data/commands.fr.json`**: French translations
+- **`assets/data/commands.es.json`**: Spanish translations
 - **`assets/data/ui.json`**: all UI strings keyed by locale (`en`, `it`, `fr`)
 - **`assets/js/app.js`**: app bootstrap and orchestration
 - **`assets/js/modules/`**:
