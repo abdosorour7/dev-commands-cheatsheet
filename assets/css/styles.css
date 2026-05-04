@@ -405,6 +405,21 @@ main { position: relative; z-index: 1; padding: 40px 24px 80px; }
   flex-shrink: 0;
 }
 
+.cmd-fallback-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  font-size: .68rem;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: .04em;
+  flex-shrink: 0;
+}
+
 .copy-btn:hover { background: var(--surface2); color: var(--green); border-color: var(--green); }
 .copy-btn.copied { background: rgba(0, 255, 157, .1); color: var(--green); border-color: var(--green); }
 

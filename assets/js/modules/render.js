@@ -14,6 +14,11 @@ function renderCommandCard(category, command, index, strings) {
   const dangerClass = command.danger ? " cmd-danger" : "";
   const copyTitle = strings?.copyTitle ?? "Copy";
   const copyLabel = strings?.copyLabel ?? "Copy command";
+  const fallbackBadge = strings?.fallbackBadge ?? "EN";
+  const fallbackTitle = strings?.fallbackTitle ?? "Not translated yet - shown in English";
+  const fallbackMarkup = command._fallback === "en"
+    ? `<span class="cmd-fallback-badge" title="${fallbackTitle}" aria-label="${fallbackTitle}">${fallbackBadge}</span>`
+    : "";
   return `
     <div
       class="cmd-card"
@@ -25,6 +30,7 @@ function renderCommandCard(category, command, index, strings) {
     >
       <div class="cmd-top">
         <div class="cmd-code">${command.codeHtml}</div>
+        ${fallbackMarkup}
         <button class="copy-btn" title="${copyTitle}" aria-label="${copyLabel}">⧉</button>
       </div>
       <div class="cmd-desc${dangerClass}">${command.descriptionHtml}</div>

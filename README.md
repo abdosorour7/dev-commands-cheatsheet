@@ -8,7 +8,7 @@
 
 <br/>
 
-**100 commands · 12 categories · Data-driven · Fast search · Copy-ready**
+**115 commands · 12 categories · Data-driven · Fast search · Copy-ready**
 
 <br/>
 
@@ -61,7 +61,13 @@ This project uses a clean static architecture with no framework and no build req
 
 This keeps the app easy to maintain, easy to extend, and contributor-friendly.
 
-> **Adding a new language:** create `assets/data/commands.{lang}.json` (translate `title`, `searchDescription`, and `descriptionHtml` fields — leave `command`, `key`, `icon`, `color`, `codeHtml` as-is), add the locale's UI strings to `assets/data/ui.json`, and add a button to the `#lang-switcher` in `index.html`.
+> **Adding a new language:** create `assets/data/commands.{lang}.json` (translate `title`, `searchDescription`, and `descriptionHtml` fields — leave `command`, `key`, `icon`, `color`, `codeHtml` as-is), add the locale's UI strings to `assets/data/ui.json`, and add a button to the `#lang-switcher` in `index.html`. Translation files can be partial: any missing commands automatically fall back to English at runtime.
+
+### ➕ Adding a new command
+
+1. Add the command to `assets/data/commands.en.json` (required, source of truth).
+2. Optionally add translated entries in `assets/data/commands.fr.json` and `assets/data/commands.it.json` in the same PR.
+3. If translations are not added yet, the command still appears in FR/IT with an `EN` badge until translated.
 
 ---
 
@@ -71,13 +77,13 @@ This keeps the app easy to maintain, easy to extend, and contributor-friendly.
 |---|----------|----------|
 | 1 | ⚙️ Setup & Config | 7 |
 | 2 | 📁 Starting a Repo | 4 |
-| 3 | 🔄 Basic Workflow | 10 |
-| 4 | 🌿 Branching | 11 |
-| 5 | ☁️ Remote (GitHub) | 12 |
-| 6 | ↩️ Undo & Fix | 10 |
-| 7 | 📦 Stash | 5 |
-| 8 | 🏷️ Tags | 5 |
-| 9 | 🔍 History & Diff | 15 |
+| 3 | 🔄 Basic Workflow | 11 |
+| 4 | 🌿 Branching | 17 |
+| 5 | ☁️ Remote (GitHub) | 13 |
+| 6 | ↩️ Undo & Fix | 11 |
+| 7 | 📦 Stash | 7 |
+| 8 | 🏷️ Tags | 6 |
+| 9 | 🔍 History & Diff | 18 |
 | 10 | 🧹 Cleanup & Maintenance | 8 |
 | 11 | 🌲 Worktrees | 8 |
 | 12 | 🚀 Advanced Branching | 5 |

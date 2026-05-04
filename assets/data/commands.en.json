@@ -142,6 +142,13 @@
           "danger": false
         },
         {
+          "command": "git add -p",
+          "searchDescription": "Interactively stage hunks",
+          "codeHtml": "<span class=\"cmd-keyword\">git add</span> <span class=\"cmd-flag\">-p</span>",
+          "descriptionHtml": "Interactively choose which hunks to stage — great for splitting changes into focused commits",
+          "danger": false
+        },
+        {
           "command": "git log",
           "searchDescription": "Show commit history",
           "codeHtml": "<span class=\"cmd-keyword\">git log</span>",
@@ -253,6 +260,48 @@
           "codeHtml": "<span class=\"cmd-keyword\">git cherry-pick</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
           "descriptionHtml": "Apply a specific commit from another branch onto the current one",
           "danger": false
+        },
+        {
+          "command": "git cherry-pick --no-commit",
+          "searchDescription": "Cherry-pick without committing",
+          "codeHtml": "<span class=\"cmd-keyword\">git cherry-pick</span> <span class=\"cmd-flag\">--no-commit</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
+          "descriptionHtml": "Apply a commit's changes to the working tree without creating a new commit",
+          "danger": false
+        },
+        {
+          "command": "git branch -r",
+          "searchDescription": "List remote branches",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-r</span>",
+          "descriptionHtml": "List all remote-tracking branches",
+          "danger": false
+        },
+        {
+          "command": "git branch -a",
+          "searchDescription": "List all branches local and remote",
+          "codeHtml": "<span class=\"cmd-keyword\">git branch</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "List all local and remote branches",
+          "danger": false
+        },
+        {
+          "command": "git merge --squash",
+          "searchDescription": "Squash branch into one commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--squash</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Collapse all commits from a branch into a single staged change — then commit manually",
+          "danger": false
+        },
+        {
+          "command": "git rebase --continue",
+          "searchDescription": "Continue rebase after conflict",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">--continue</span>",
+          "descriptionHtml": "Resume a rebase after resolving conflicts",
+          "danger": false
+        },
+        {
+          "command": "git rebase --abort",
+          "searchDescription": "Cancel rebase in progress",
+          "codeHtml": "<span class=\"cmd-keyword\">git rebase</span> <span class=\"cmd-flag\">--abort</span>",
+          "descriptionHtml": "Abort an in-progress rebase and return to the original branch state",
+          "danger": false
         }
       ]
     },
@@ -296,6 +345,13 @@
           "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--force-with-lease</span>",
           "descriptionHtml": "Safer force push — fails if remote has new commits you haven't seen",
           "danger": false
+        },
+        {
+          "command": "git push --force",
+          "searchDescription": "Force push overwrite remote",
+          "codeHtml": "<span class=\"cmd-keyword\">git push</span> <span class=\"cmd-flag\">--force</span>",
+          "descriptionHtml": "⚠️ Force-overwrite the remote branch — can destroy teammates' work; prefer --force-with-lease",
+          "danger": true
         },
         {
           "command": "git push --tags",
@@ -390,6 +446,13 @@
           "danger": false
         },
         {
+          "command": "git reset --mixed HEAD~1",
+          "searchDescription": "Undo last commit unstage changes",
+          "codeHtml": "<span class=\"cmd-keyword\">git reset</span> <span class=\"cmd-flag\">--mixed</span> HEAD~1",
+          "descriptionHtml": "Undo the last commit and unstage changes — files remain modified in the working tree (default reset mode)",
+          "danger": false
+        },
+        {
           "command": "git revert commit",
           "searchDescription": "New commit undoing old one",
           "codeHtml": "<span class=\"cmd-keyword\">git revert</span> <span class=\"cmd-arg\">&lt;commit&gt;</span>",
@@ -466,6 +529,20 @@
           "codeHtml": "<span class=\"cmd-keyword\">git stash drop</span> stash@{<span class=\"cmd-arg\">n</span>}",
           "descriptionHtml": "Delete a specific stash entry from the stack",
           "danger": false
+        },
+        {
+          "command": "git stash push -m",
+          "searchDescription": "Stash with a name",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash push</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Save a stash with a descriptive name so you can identify it in the list later",
+          "danger": false
+        },
+        {
+          "command": "git stash --include-untracked",
+          "searchDescription": "Stash including untracked files",
+          "codeHtml": "<span class=\"cmd-keyword\">git stash</span> <span class=\"cmd-flag\">--include-untracked</span>",
+          "descriptionHtml": "Stash all changes including new untracked files",
+          "danger": false
         }
       ]
     },
@@ -480,6 +557,13 @@
           "searchDescription": "Create tag",
           "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-arg\">&lt;tag&gt;</span>",
           "descriptionHtml": "Create a lightweight tag at the current commit",
+          "danger": false
+        },
+        {
+          "command": "git tag -a",
+          "searchDescription": "Create annotated tag with message",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-a</span> <span class=\"cmd-arg\">&lt;tag&gt;</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Create an annotated tag with a message — recommended for releases as it stores author and date",
           "danger": false
         },
         {
@@ -622,6 +706,27 @@
           "codeHtml": "<span class=\"cmd-keyword\">git diff</span> <span class=\"cmd-arg\">branchB</span>...<span class=\"cmd-arg\">branchA</span>",
           "descriptionHtml": "Show what's in branchA that is not in branchB — useful for reviewing branch changes",
           "danger": false
+        },
+        {
+          "command": "git log --author",
+          "searchDescription": "Filter commits by author",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--author=</span><span class=\"cmd-arg\">\"Name\"</span>",
+          "descriptionHtml": "Show only commits made by a specific author",
+          "danger": false
+        },
+        {
+          "command": "git grep",
+          "searchDescription": "Search tracked files for pattern",
+          "codeHtml": "<span class=\"cmd-keyword\">git grep</span> <span class=\"cmd-arg\">\"pattern\"</span>",
+          "descriptionHtml": "Search for a string or pattern across all tracked files — faster than grep on large repos",
+          "danger": false
+        },
+        {
+          "command": "git describe",
+          "searchDescription": "Describe commit using nearest tag",
+          "codeHtml": "<span class=\"cmd-keyword\">git describe</span> <span class=\"cmd-flag\">--tags</span>",
+          "descriptionHtml": "Generate a human-readable label for a commit based on the nearest tag (e.g. v1.2-3-gabcdef)",
+          "danger": false
         }
       ]
     },
@@ -745,7 +850,7 @@
           "danger": false
         },
         {
-          "command": "git worktree move path new-path",
+          "command": "git worktree move path newpath",
           "searchDescription": "Move a worktree",
           "codeHtml": "<span class=\"cmd-keyword\">git worktree move</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;new-path&gt;</span>",
           "descriptionHtml": "Relocate a worktree to a new directory and update Git's internal references",
