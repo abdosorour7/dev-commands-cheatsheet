@@ -93,17 +93,17 @@
     "pageTitle": "Git Commands Cheatsheet — La Referencia Definitiva",
     "pageDescription": "El cheatsheet de comandos Git más completo. Buscá, copiá y dominá cada comando Git al instante.",
     "badge": "La Referencia Definitiva de Comandos Git",
-    "h1_master": "Dominá los",
-    "h1_commands": "Comandos",
-    "subtitle": "Cada comando Git que vas a necesitar — con búsqueda, listo para copiar y organizado por categoría. Hecho por desarrolladores, para desarrolladores.",
+    "h1_master": "Domina los Comandos de",
+    "h1_commands": "",
+    "subtitle": "Cada comando Git que necesitarás — con búsqueda, listo para copiar y organizado por categoría. Hecho por desarrolladores, para desarrolladores.",
     "viewRepo": "Ver Repositorio en GitHub",
     "stat_commands": "Comandos",
     "stat_categories": "Categorías",
     "stat_hours": "Horas Ahorradas",
-    "searchPlaceholder": "Buscá cualquier comando o descripción...",
+    "searchPlaceholder": "Busca cualquier comando o descripción...",
     "tabAll": "Todos",
     "noResults": "No se encontraron comandos",
-    "noResultsTry": "Probá con otra búsqueda — ",
+    "noResultsTry": "Intenta con otra búsqueda — ",
     "cmdCount": "comandos",
     "copyTitle": "Copiar",
     "copyLabel": "Copiar comando",
@@ -117,6 +117,6 @@
     "backToTop": "Volver arriba",
     "langSelectLabel": "Idioma",
     "searchHint": "/ para buscar",
-    "footerStarAriaLabel": "Abrí el repositorio de GitHub para darle una estrella si te fue útil"
+    "footerStarAriaLabel": "Abre el repositorio de GitHub para darle una estrella si te fue útil"
   }
 }
