@@ -51,7 +51,7 @@ This project uses a clean static architecture with no framework and no build req
 - **`assets/data/commands.it.json`**: Italian translations
 - **`assets/data/commands.fr.json`**: French translations
 - **`assets/data/commands.es.json`**: Spanish translations
-- **`assets/data/ui.json`**: all UI strings keyed by locale (`en`, `it`, `fr`)
+- **`assets/data/ui.json`**: all UI strings keyed by locale (`en`, `it`, `fr`, `es`)
 - **`assets/js/app.js`**: app bootstrap and orchestration
 - **`assets/js/modules/`**:
   - `data-loader.js` for data fetching (accepts a `lang` param, loads `commands.{lang}.json`)
@@ -67,7 +67,7 @@ This keeps the app easy to maintain, easy to extend, and contributor-friendly.
 ### ➕ Adding a new command
 
 1. Add the command to `assets/data/commands.en.json` (required, source of truth).
-2. Optionally add translated entries in `assets/data/commands.fr.json` and `assets/data/commands.it.json` in the same PR.
+2. Optionally add translated entries in `assets/data/commands.fr.json` and `assets/data/commands.it.json` and `assets/data/commands.es.json` in the same PR.
 3. If translations are not added yet, the command still appears in FR/IT with an `EN` badge until translated.
 
 ---
@@ -142,6 +142,7 @@ git-commands-cheatsheet/
 │  │  ├─ commands.en.json   ← English (canonical source of truth)
 │  │  ├─ commands.it.json   ← Italian translations
 │  │  ├─ commands.fr.json   ← French translations
+│  │  ├─ commands.es.json   ← Spanish translations
 │  │  └─ ui.json            ← UI strings for all locales
 │  └─ js/
 │     ├─ app.js
@@ -188,7 +189,7 @@ MIT © [abdosorour7](https://github.com/abdosorour7) — free to use, share, and
 
 If this helped you, please consider giving it a ⭐ — it helps others discover it!
 
-***I’m not primarily a web developer — I just build practical tools that solve real developer problems.***
+***I’m not primarily a web developer — I just build some practical tools that solve real problems.***
 
 Built with thoughtful AI assistance.
 
