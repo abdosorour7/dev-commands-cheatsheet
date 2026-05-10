@@ -1,0 +1,191 @@
+{
+  "categories": [
+    {
+      "key": "setup",
+      "title": "设置与配置",
+      "commands": [
+        { "command": "git config --global user.name", "searchDescription": "设置全局用户名", "descriptionHtml": "为所有仓库设置全局 Git 用户名" },
+        { "command": "git config --global user.email", "searchDescription": "设置全局邮箱", "descriptionHtml": "设置全局 Git 邮箱地址" },
+        { "command": "git config --list", "searchDescription": "列出所有配置", "descriptionHtml": "列出所有 Git 配置项" },
+        { "command": "git help", "searchDescription": "查看 Git 命令帮助", "descriptionHtml": "查看任意 Git 命令的帮助和文档" },
+        { "command": "git config alias.co checkout", "searchDescription": "创建别名", "descriptionHtml": "创建快捷别名，例如 <code style=\"color:var(--green)\">git co</code> → <code style=\"color:var(--green)\">git checkout</code>" },
+        { "command": "git config --global color.ui auto", "searchDescription": "启用彩色输出", "descriptionHtml": "在终端中启用自动彩色输出，方便阅读" },
+        { "command": "git config --global core.excludesfile", "searchDescription": "全局 gitignore 文件", "descriptionHtml": "设置系统级全局 <code style=\"color:var(--green)\">.gitignore</code>，在所有仓库中忽略匹配规则" }
+      ]
+    },
+    {
+      "key": "repo",
+      "title": "开始一个仓库",
+      "commands": [
+        { "command": "git init", "searchDescription": "初始化本地仓库", "descriptionHtml": "初始化一个全新的本地 Git 仓库" },
+        { "command": "git clone", "searchDescription": "从远程克隆仓库", "descriptionHtml": "将远程仓库克隆到本机" },
+        { "command": "git clone --branch", "searchDescription": "克隆指定分支", "descriptionHtml": "只从远程仓库克隆指定分支" },
+        { "command": "git clone --depth=1", "searchDescription": "浅克隆更快下载", "descriptionHtml": "浅克隆，只获取最新快照，下载更快" }
+      ]
+    },
+    {
+      "key": "workflow",
+      "title": "基础工作流",
+      "commands": [
+        { "command": "git status", "searchDescription": "查看仓库状态", "descriptionHtml": "显示工作区状态，包括已暂存、未暂存和未跟踪文件" },
+        { "command": "git add", "searchDescription": "暂存文件", "descriptionHtml": "将指定文件加入下次提交的暂存区" },
+        { "command": "git add -A", "searchDescription": "暂存所有更改", "descriptionHtml": "暂存当前目录中的所有更改" },
+        { "command": "git commit -m", "searchDescription": "带消息提交暂存更改", "descriptionHtml": "使用描述性提交消息提交所有已暂存更改" },
+        { "command": "git commit --amend", "searchDescription": "修改最近一次提交", "descriptionHtml": "修改最近一次提交，可更改提交消息或补充文件" },
+        { "command": "git commit -am", "searchDescription": "暂存并提交已跟踪文件", "descriptionHtml": "用一条命令暂存所有已跟踪文件并提交" },
+        { "command": "git add -p", "searchDescription": "交互式暂存代码块", "descriptionHtml": "交互式选择要暂存的代码块，适合拆分聚焦的提交" },
+        { "command": "git log", "searchDescription": "显示提交历史", "descriptionHtml": "显示完整提交历史，包括作者、日期和提交消息" },
+        { "command": "git log --oneline --graph --decorate", "searchDescription": "美化日志视图", "descriptionHtml": "以可视化提交树查看分支、合并和标签" },
+        { "command": "git diff", "searchDescription": "显示未暂存更改", "descriptionHtml": "显示所有尚未加入暂存区的更改" },
+        { "command": "git diff --staged", "searchDescription": "显示已暂存差异", "descriptionHtml": "显示已暂存并准备提交的更改" }
+      ]
+    },
+    {
+      "key": "branch",
+      "title": "分支",
+      "commands": [
+        { "command": "git branch", "searchDescription": "列出分支", "descriptionHtml": "列出所有本地分支，当前分支会高亮显示" },
+        { "command": "git branch name", "searchDescription": "创建新分支", "descriptionHtml": "创建新分支但不切换过去" },
+        { "command": "git checkout switch name", "searchDescription": "切换到分支", "descriptionHtml": "切换到已有分支" },
+        { "command": "git checkout -b switch -c", "searchDescription": "创建并切换分支", "descriptionHtml": "创建新分支并立即切换过去" },
+        { "command": "git merge branch", "searchDescription": "合并分支到当前分支", "descriptionHtml": "将一个分支合并到当前分支" },
+        { "command": "git rebase branch", "searchDescription": "变基到另一个分支", "descriptionHtml": "把你的提交重新应用到另一个分支顶部" },
+        { "command": "git branch -d name", "searchDescription": "删除本地分支", "descriptionHtml": "删除本地分支（安全模式，未合并时不会删除）" },
+        { "command": "git branch -D name", "searchDescription": "强制删除本地分支", "descriptionHtml": "⚠️ 不管是否已合并，都强制删除分支" },
+        { "command": "git branch -m old new", "searchDescription": "重命名分支", "descriptionHtml": "重命名本地分支" },
+        { "command": "git push --delete origin", "searchDescription": "删除远程分支", "descriptionHtml": "从远程仓库删除一个分支" },
+        { "command": "git cherry-pick", "searchDescription": "应用指定提交", "descriptionHtml": "将另一个分支中的指定提交应用到当前分支" },
+        { "command": "git cherry-pick --no-commit", "searchDescription": "拣选但不提交", "descriptionHtml": "把某个提交的更改应用到工作区，但不创建新提交" },
+        { "command": "git branch -r", "searchDescription": "列出远程分支", "descriptionHtml": "列出所有远程跟踪分支" },
+        { "command": "git branch -a", "searchDescription": "列出本地和远程所有分支", "descriptionHtml": "列出所有本地分支和远程分支" },
+        { "command": "git merge --squash", "searchDescription": "将分支压缩为一个提交", "descriptionHtml": "把一个分支的所有提交压缩成一次已暂存更改，然后手动提交" },
+        { "command": "git rebase --continue", "searchDescription": "冲突解决后继续变基", "descriptionHtml": "解决冲突后继续执行变基" },
+        { "command": "git rebase --abort", "searchDescription": "取消正在进行的变基", "descriptionHtml": "中止正在进行的变基，并回到原始分支状态" }
+      ]
+    },
+    {
+      "key": "remote",
+      "title": "远程仓库 (GitHub)",
+      "commands": [
+        { "command": "git remote -v", "searchDescription": "显示远程仓库", "descriptionHtml": "列出所有远程连接及其 URL" },
+        { "command": "git remote add origin", "searchDescription": "添加 origin 远程仓库", "descriptionHtml": "将本地仓库连接到远程仓库" },
+        { "command": "git push -u origin branch", "searchDescription": "推送分支并设置上游", "descriptionHtml": "将分支推送到远程，并设置为上游跟踪分支" },
+        { "command": "git push", "searchDescription": "推送更改", "descriptionHtml": "将本地提交推送到远程分支" },
+        { "command": "git push --force-with-lease", "searchDescription": "更安全地强制推送", "descriptionHtml": "更安全的强制推送：如果远程有你尚未看到的新提交则失败" },
+        { "command": "git push --force", "searchDescription": "强制推送覆盖远程", "descriptionHtml": "⚠️ 强制覆盖远程分支，可能破坏队友工作；优先使用 --force-with-lease" },
+        { "command": "git push --tags", "searchDescription": "推送所有标签", "descriptionHtml": "将所有本地标签推送到远程仓库" },
+        { "command": "git pull", "searchDescription": "拉取最新更改", "descriptionHtml": "从远程分支获取并合并更改" },
+        { "command": "git pull origin branch", "searchDescription": "拉取指定分支", "descriptionHtml": "从指定远程分支拉取更改" },
+        { "command": "git pull --rebase", "searchDescription": "拉取并变基", "descriptionHtml": "拉取后使用变基而不是合并，保持历史线性" },
+        { "command": "git fetch", "searchDescription": "获取分支和标签", "descriptionHtml": "从远程下载更改，但不自动合并" },
+        { "command": "git fetch --prune", "searchDescription": "移除已删除的远程引用", "descriptionHtml": "获取远程更新，并移除本地已失效的远程分支引用" },
+        { "command": "git merge alias/branch", "searchDescription": "合并远程分支到当前分支", "descriptionHtml": "获取后将远程分支直接合并到当前分支" }
+      ]
+    },
+    {
+      "key": "undo",
+      "title": "撤销与修复",
+      "commands": [
+        { "command": "git restore file", "searchDescription": "丢弃本地更改", "descriptionHtml": "⚠️ 丢弃某个文件的所有更改（无法撤销）" },
+        { "command": "git restore --staged file", "searchDescription": "取消暂存文件", "descriptionHtml": "取消暂存文件，同时保留工作区中的更改" },
+        { "command": "git reset HEAD file", "searchDescription": "取消暂存文件", "descriptionHtml": "从暂存区移除文件（旧语法）" },
+        { "command": "git reset --hard HEAD", "searchDescription": "重置到上次提交", "descriptionHtml": "⚠️ 丢弃所有未提交更改，且无法撤销" },
+        { "command": "git reset --soft HEAD~1", "searchDescription": "撤销上次提交并保留更改", "descriptionHtml": "撤销最近一次提交，但保留所有更改在暂存区" },
+        { "command": "git reset --mixed HEAD~1", "searchDescription": "撤销上次提交并取消暂存", "descriptionHtml": "撤销最近一次提交并取消暂存，更改仍留在工作区（默认 reset 模式）" },
+        { "command": "git revert commit", "searchDescription": "用新提交撤销旧提交", "descriptionHtml": "通过创建反向提交安全地撤销某个提交（适合共享分支）" },
+        { "command": "git reflog", "searchDescription": "查看所有引用安全网", "descriptionHtml": "🛟 终极安全网：查看每次 HEAD 移动并恢复丢失提交" },
+        { "command": "git clean -fd", "searchDescription": "删除未跟踪文件", "descriptionHtml": "⚠️ 删除所有未跟踪文件和目录" },
+        { "command": "git checkout -- file", "searchDescription": "用旧语法丢弃本地更改", "descriptionHtml": "⚠️ 丢弃某个文件的本地更改（旧语法）" },
+        { "command": "git reset file", "searchDescription": "取消暂存文件", "descriptionHtml": "从暂存区移除指定文件" }
+      ]
+    },
+    {
+      "key": "stash",
+      "title": "暂存堆栈",
+      "commands": [
+        { "command": "git stash", "searchDescription": "保存未提交更改", "descriptionHtml": "将所有未提交更改临时保存到 stash 栈中" },
+        { "command": "git stash pop", "searchDescription": "应用最近的 stash", "descriptionHtml": "重新应用最近的 stash，并将其从栈中移除" },
+        { "command": "git stash list", "searchDescription": "显示 stash 列表", "descriptionHtml": "列出所有已暂存的更改集" },
+        { "command": "git stash apply", "searchDescription": "应用指定 stash", "descriptionHtml": "应用指定 stash，但不从栈中移除" },
+        { "command": "git stash drop", "searchDescription": "删除指定 stash", "descriptionHtml": "从栈中删除指定 stash 条目" },
+        { "command": "git stash push -m", "searchDescription": "带名称保存 stash", "descriptionHtml": "用描述性名称保存 stash，方便之后在列表中识别" },
+        { "command": "git stash --include-untracked", "searchDescription": "包含未跟踪文件的 stash", "descriptionHtml": "保存所有更改，包括新的未跟踪文件" }
+      ]
+    },
+    {
+      "key": "tags",
+      "title": "标签",
+      "commands": [
+        { "command": "git tag name", "searchDescription": "创建标签", "descriptionHtml": "在当前提交上创建轻量标签" },
+        { "command": "git tag -a", "searchDescription": "创建带消息的附注标签", "descriptionHtml": "创建带消息的附注标签，推荐用于发布，因为它会保存作者和日期" },
+        { "command": "git tag", "searchDescription": "列出标签", "descriptionHtml": "列出仓库中的所有标签" },
+        { "command": "git tag -d", "searchDescription": "删除标签", "descriptionHtml": "删除本地标签" },
+        { "command": "git push origin tag", "searchDescription": "推送单个标签", "descriptionHtml": "将指定标签推送到远程" },
+        { "command": "git push origin --tags", "searchDescription": "推送所有标签", "descriptionHtml": "一次性将所有本地标签推送到远程" }
+      ]
+    },
+    {
+      "key": "history",
+      "title": "历史与差异",
+      "commands": [
+        { "command": "git diff commit1 commit2", "searchDescription": "比较两个提交", "descriptionHtml": "显示两个指定提交之间的差异" },
+        { "command": "git diff --staged commit", "searchDescription": "比较暂存区与提交", "descriptionHtml": "将已暂存更改与指定提交进行比较" },
+        { "command": "git diff --cached", "searchDescription": "比较所有已暂存更改", "descriptionHtml": "显示所有已暂存更改与上次提交的差异" },
+        { "command": "git show commit", "searchDescription": "显示指定提交", "descriptionHtml": "显示指定提交的详细信息和差异" },
+        { "command": "git blame file", "searchDescription": "查看谁改了什么", "descriptionHtml": "显示文件每一行最后由谁在何时修改" },
+        { "command": "git shortlog -sn", "searchDescription": "按作者显示提交数", "descriptionHtml": "按作者分组并排序的提交摘要" },
+        { "command": "git log --since=\"1 week ago\"", "searchDescription": "按日期筛选提交", "descriptionHtml": "按日期筛选提交，也支持 \"yesterday\"、\"2 days ago\" 等表达" },
+        { "command": "git log -p file", "searchDescription": "显示补丁历史", "descriptionHtml": "显示指定文件的完整差异历史" },
+        { "command": "git log --stat", "searchDescription": "显示每次提交的统计", "descriptionHtml": "显示每次提交中各文件的新增/删除行数" },
+        { "command": "git log --oneline", "searchDescription": "简洁日志", "descriptionHtml": "以每个提交一行的紧凑方式查看历史" },
+        { "command": "git log --graph --decorate --all", "searchDescription": "所有引用的图形视图", "descriptionHtml": "用 ASCII 图显示所有分支、合并和标签" },
+        { "command": "git log -p", "searchDescription": "显示带补丁的提交日志", "descriptionHtml": "在日志中同时显示每次提交的完整补丁差异" },
+        { "command": "git log branchB..branchA", "searchDescription": "branchA 有而 branchB 没有的提交", "descriptionHtml": "显示存在于 branchA 但尚未进入 branchB 的提交，适合 PR 评审" },
+        { "command": "git log --follow file", "searchDescription": "跨重命名查看历史", "descriptionHtml": "显示某个文件的完整提交历史，即使它曾经被重命名" },
+        { "command": "git diff branchB...branchA", "searchDescription": "比较 branchA 与 branchB", "descriptionHtml": "显示 branchA 中有而 branchB 中没有的更改，适合审查分支变更" },
+        { "command": "git log --author", "searchDescription": "按作者筛选提交", "descriptionHtml": "只显示特定作者创建的提交" },
+        { "command": "git grep", "searchDescription": "在已跟踪文件中搜索模式", "descriptionHtml": "在所有已跟踪文件中搜索字符串或模式，在大型仓库中比 grep 更快" },
+        { "command": "git describe", "searchDescription": "用最近标签描述提交", "descriptionHtml": "基于最近的标签为提交生成可读标签，例如 v1.2-3-gabcdef" }
+      ]
+    },
+    {
+      "key": "maintenance",
+      "title": "清理与维护",
+      "commands": [
+        { "command": "git gc", "searchDescription": "清理不必要文件", "descriptionHtml": "运行垃圾回收以优化本地仓库" },
+        { "command": "git prune", "searchDescription": "移除不可达对象", "descriptionHtml": "移除不再被任何提交引用的对象" },
+        { "command": "git fsck", "searchDescription": "检查仓库完整性", "descriptionHtml": "验证 Git 对象数据库的完整性" },
+        { "command": "git rm file", "searchDescription": "删除文件并暂存", "descriptionHtml": "同时从工作区和索引中删除文件" },
+        { "command": "git mv old new", "searchDescription": "重命名或移动文件", "descriptionHtml": "重命名或移动文件，并自动暂存该更改" },
+        { "command": "git bisect start", "searchDescription": "开始二分定位", "descriptionHtml": "开始在历史中二分搜索，定位引入 bug 的提交" },
+        { "command": "git bisect good", "searchDescription": "标记提交为正常", "descriptionHtml": "在二分搜索中将某个提交标记为可用（good）" },
+        { "command": "git bisect bad", "searchDescription": "标记提交为异常", "descriptionHtml": "在二分搜索中将某个提交标记为损坏（bad）" }
+      ]
+    },
+    {
+      "key": "worktrees",
+      "title": "工作树",
+      "commands": [
+        { "command": "git worktree add path branch", "searchDescription": "为分支添加新工作树", "descriptionHtml": "将已有分支检出到新目录，让你可以同时处理两个分支" },
+        { "command": "git worktree add -b branch path", "searchDescription": "创建分支并添加工作树", "descriptionHtml": "一步创建新分支，并在新目录中检出" },
+        { "command": "git worktree list", "searchDescription": "列出所有工作树", "descriptionHtml": "显示所有关联工作树及其检出的分支" },
+        { "command": "git worktree remove path", "searchDescription": "移除工作树", "descriptionHtml": "删除工作树目录并清理其元数据" },
+        { "command": "git worktree prune", "searchDescription": "清理失效工作树", "descriptionHtml": "移除那些目录已不存在的失效工作树记录" },
+        { "command": "git worktree lock path", "searchDescription": "锁定工作树", "descriptionHtml": "锁定工作树，防止被 prune 清理（例如位于可移动硬盘上时）" },
+        { "command": "git worktree unlock path", "searchDescription": "解锁工作树", "descriptionHtml": "解锁之前锁定的工作树，使其可以被移除或清理" },
+        { "command": "git worktree move path newpath", "searchDescription": "移动工作树", "descriptionHtml": "将工作树迁移到新目录，并更新 Git 的内部引用" }
+      ]
+    },
+    {
+      "key": "advanced",
+      "title": "高级分支与协作",
+      "commands": [
+        { "command": "git rebase -i HEAD~n", "searchDescription": "交互式变基", "descriptionHtml": "交互式重写、压缩、重排或删除最近 n 个提交" },
+        { "command": "git merge --no-ff branch", "searchDescription": "保留合并历史", "descriptionHtml": "以保留合并提交的方式合并，让功能分支历史可见" },
+        { "command": "git remote rename origin upstream", "searchDescription": "重命名远程仓库", "descriptionHtml": "重命名远程连接，常用于 fork 仓库场景" },
+        { "command": "git remote set-url origin", "searchDescription": "修改远程 URL", "descriptionHtml": "更新已有远程仓库的 URL，常用于仓库迁移后" },
+        { "command": "git pull --rebase advanced", "searchDescription": "用变基代替合并", "descriptionHtml": "通过变基整合远程更改，保持干净的线性历史" }
+      ]
+    }
+  ]
+}

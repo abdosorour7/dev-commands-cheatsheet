@@ -29,7 +29,7 @@
 
 ## ✨ Features
 
-- ✨ **Multilingual** — Switch between English 🇬🇧, Italian 🇮🇹, French 🇫🇷, and Spanish 🇪🇸 with the language switcher; your choice is remembered across visits
+- ✨ **Multilingual** — Switch between English 🇬🇧, Italian 🇮🇹, French 🇫🇷, Spanish 🇪🇸, and Simplified Chinese 🇨🇳 with the language switcher; your choice is remembered across visits
 - 🔍 **Instant search** — filter any command or description in real time
 - 📋 **One-click copy** — click any command to copy it to your clipboard
 - 🗂️ **12 categories** — organized from Setup to Advanced Branching
@@ -51,6 +51,7 @@ This project uses a clean static architecture with no framework and no build req
 - **`assets/data/commands.it.json`**: Italian translations
 - **`assets/data/commands.fr.json`**: French translations
 - **`assets/data/commands.es.json`**: Spanish translations
+- **`assets/data/commands.zh-CN.json`**: Simplified Chinese translations
 - **`assets/data/ui.json`**: all UI strings keyed by locale (`en`, `it`, `fr`, `es`)
 - **`assets/js/app.js`**: app bootstrap and orchestration
 - **`assets/js/modules/`**:
@@ -62,13 +63,13 @@ This project uses a clean static architecture with no framework and no build req
 
 This keeps the app easy to maintain, easy to extend, and contributor-friendly.
 
-> **Adding a new language:** create `assets/data/commands.{lang}.json` (translate `title`, `searchDescription`, and `descriptionHtml` fields — leave `command`, `key`, `icon`, `color`, `codeHtml` as-is), add the locale's UI strings to `assets/data/ui.json`, and add a button to the `#lang-switcher` in `index.html`. Translation files can be partial: any missing commands automatically fall back to English at runtime.
+> **Adding a new language:** create `assets/data/commands.{lang}.json` (translate `title`, `searchDescription`, and `descriptionHtml` fields — leave `command`, `key`, `icon`, `color`, `codeHtml` as-is), add the locale's UI strings to `assets/data/ui.json`, add the language code to `SUPPORTED_LANGS`, and add a button to the `#lang-switcher` in `index.html`. Translation files can be partial: any missing commands automatically fall back to English at runtime.
 
 ### ➕ Adding a new command
 
 1. Add the command to `assets/data/commands.en.json` (required, source of truth).
-2. Optionally add translated entries in `assets/data/commands.fr.json` and `assets/data/commands.it.json` and `assets/data/commands.es.json` in the same PR.
-3. If translations are not added yet, the command still appears in FR/IT with an `EN` badge until translated.
+2. Optionally add translated entries in `assets/data/commands.fr.json`, `assets/data/commands.it.json`, `assets/data/commands.es.json`, and `assets/data/commands.zh-CN.json` in the same PR.
+3. If translations are not added yet, the command still appears in localized views with an `EN` badge until translated.
 
 ---
 
@@ -143,6 +144,7 @@ git-commands-cheatsheet/
 │  │  ├─ commands.it.json   ← Italian translations
 │  │  ├─ commands.fr.json   ← French translations
 │  │  ├─ commands.es.json   ← Spanish translations
+│  │  ├─ commands.zh-CN.json ← Simplified Chinese translations
 │  │  └─ ui.json            ← UI strings for all locales
 │  └─ js/
 │     ├─ app.js
@@ -198,4 +200,3 @@ Built with thoughtful AI assistance.
 **Made with ❤️ for the developer community**
 
 </div>
-

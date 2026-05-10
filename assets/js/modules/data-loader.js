@@ -9,7 +9,7 @@ function mergeCategoryCommands(baseCategory, localizedCategory) {
 
   return baseCategory.commands.map((baseCommand) => {
     const localizedCommand = localizedByCommand.get(baseCommand.command);
-    if (localizedCommand) return cloneCommand(localizedCommand);
+    if (localizedCommand) return { ...cloneCommand(baseCommand), ...cloneCommand(localizedCommand) };
     return { ...cloneCommand(baseCommand), _fallback: "en" };
   });
 }
