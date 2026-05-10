@@ -97,6 +97,7 @@ h1 {
 
 h1 .accent { color: var(--green); }
 h1 .dim { color: var(--text2); }
+html[lang="zh-CN"] h1 br { display: none; }
 
 .header-sub {
   font-size: 1.1rem;
