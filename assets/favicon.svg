@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Git Commands Cheatsheet">
-  <rect width="32" height="32" rx="8" fill="#0a0e17"/>
-  <!-- branch lines -->
-  <path
-    d="M16 8v6M16 14L10 20M16 14l6 6"
-    fill="none"
-    stroke="#00cfff"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <!-- three commit nodes -->
-  <circle cx="16" cy="8" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
-  <circle cx="10" cy="22" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
-  <circle cx="22" cy="22" r="3.5" fill="#00ff9d" stroke="#0a0e17" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dev Cheatsheets">
+  <defs>
+    <linearGradient id="f-bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#161e2e"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </linearGradient>
+    <linearGradient id="f-panel" x1="0" y1="0" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#243047"/>
+      <stop offset="100%" stop-color="#1a2235"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="9" fill="url(#f-bg)"/>
+  <rect x="5.5" y="5.5" width="21" height="21" rx="6" fill="url(#f-panel)" stroke="#2e3d58" stroke-width="1"/>
+  <!-- Code brackets (readable at 16px) -->
+  <path fill="none" stroke="#00ff9d" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" d="M11.5 10.5 8 16l3.5 5.5"/>
+  <path fill="none" stroke="#00ff9d" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" d="M20.5 10.5 24 16l-3.5 5.5"/>
+  <!-- Center column: reference / sheet cue -->
+  <rect x="14.25" y="11" width="3.5" height="10" rx="1" fill="#00cfff" opacity="0.45"/>
 </svg>

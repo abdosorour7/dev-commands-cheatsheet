@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdosorour7.github.io/git-commands-cheatsheet/sitemap.xml
