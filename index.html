@@ -5,13 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="C947QPoDG0Vn0RXrHNTAlHLidjsQZ8fxWfjq0UL7bho" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-<title>Git Commands Cheatsheet — The Ultimate Reference</title>
-<meta name="description" content="The most beautiful and complete Git commands cheatsheet. Search, copy, and master every Git command instantly." />
+<title>Dev Cheatsheets — Git, Docker & more</title>
+<meta name="description" content="Comprehensive, searchable cheatsheets for developers — Git, Docker, and more. Copy-ready commands, organized by category." />
+<meta name="keywords" content="git, docker, cheatsheet, commands, developer, workflow, reference, programming, software engineering" />
+<meta name="author" content="abdosorour7" />
+<link rel="canonical" href="https://abdosorour7.github.io/git-commands-cheatsheet/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://abdosorour7.github.io/git-commands-cheatsheet/" />
+<meta property="og:title" content="Dev Cheatsheets — Git, Docker & more" />
+<meta property="og:description" content="Comprehensive, searchable cheatsheets for developers. Copy-ready Git and Docker commands organized by category." />
+<meta property="og:image" content="https://abdosorour7.github.io/git-commands-cheatsheet/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://abdosorour7.github.io/git-commands-cheatsheet/" />
+<meta property="twitter:title" content="Dev Cheatsheets — Git, Docker & more" />
+<meta property="twitter:description" content="Comprehensive, searchable cheatsheets for developers. Copy-ready Git and Docker commands organized by category." />
+<meta property="twitter:image" content="https://abdosorour7.github.io/git-commands-cheatsheet/preview.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dev Cheatsheets",
+  "url": "https://abdosorour7.github.io/git-commands-cheatsheet/",
+  "description": "Comprehensive, searchable cheatsheets for developers — Git, Docker, and more.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "author": {
+    "@type": "Person",
+    "name": "abdosorour7"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0a0e17" />
 <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+<div id="load-error" class="load-error" role="alert" hidden>
+  <strong class="load-error-title">Could not load cheatsheet data</strong>
+  <p class="load-error-detail" id="load-error-detail"></p>
+  <p class="load-error-hint">Check the browser console (F12). Serve this folder from the repo root (e.g. <code>python -m http.server 8000</code>). If the page used to work, try a hard refresh (Ctrl+Shift+R) or unregister the site's service worker under Application → Service Workers.</p>
+</div>
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
@@ -26,14 +68,15 @@
     </div>
     <div class="header-badge">
       <span class="badge-dot"></span>
-      <span data-i18n="badge">The Ultimate Reference for Git Commands</span>
+      <span data-i18n="badge">The Ultimate Reference for Developers</span>
     </div>
     <h1>
-      <span class="dim" data-i18n="h1_master">Master</span> <span class="accent">Git</span><br />
+      <span class="dim" data-i18n="h1_master">Master</span>
+      <span class="accent" id="h1-section">Git</span><br />
       <span class="dim" data-i18n="h1_commands">Commands</span>
     </h1>
     <p class="header-sub" data-i18n="subtitle">
-      Every Git command you'll ever need — searchable, copy-ready, and organized by category.
+      Every command you'll ever need — searchable, copy-ready, and organized by category.
       Built for developers, by developers.
     </p>
     <div class="header-actions">
@@ -76,6 +119,10 @@
   </div>
 </header>
 
+<div class="sections-wrap">
+  <div class="sections-bar" id="sections-bar" role="tablist" aria-label="Cheatsheet section" data-i18n-aria-label="sectionsLabel"></div>
+</div>
+
 <div class="tabs-wrap">
   <div class="tabs" id="tabs"></div>
 </div>
@@ -95,15 +142,20 @@
     <p class="footer-text">
       <span data-i18n="footerMade">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footerCommunity">for the developer community</span> &nbsp;·&nbsp;
       <span data-i18n="footerCreated">Created by</span> <a href="https://github.com/abdosorour7" target="_blank" rel="noopener noreferrer">@abdosorour7</a> &nbsp;·&nbsp;
-      <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer" data-i18n="footerDocs">Official Git Docs</a> &nbsp;·&nbsp;
+      <a id="footer-docs-link" href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">Official Docs</a> &nbsp;·&nbsp;
       <a class="footer-star-btn" href="https://github.com/abdosorour7/git-commands-cheatsheet" target="_blank" rel="noopener noreferrer" aria-label="Open the GitHub repository to star it if it helped you" data-i18n-aria-label="footerStarAriaLabel" data-i18n="footerStar">Star ⭐ this repo if it helped you!</a>
     </p>
   </div>
 </footer>
 
-<button id="scrollTop" title="Back to top" data-i18n-title="backToTop">↑</button>
+<button id="scrollTop" type="button" title="Back to top" data-i18n-title="backToTop">↑</button>
 
-<script type="module" src="assets/js/app.js"></script>
+<script defer src="assets/js/modules/paths.js"></script>
+<script defer src="assets/js/modules/state.js"></script>
+<script defer src="assets/js/modules/interactions.js"></script>
+<script defer src="assets/js/modules/render.js"></script>
+<script defer src="assets/js/modules/data-loader.js"></script>
+<script defer src="assets/js/modules/i18n.js"></script>
+<script defer src="assets/js/app.js"></script>
 </body>
 </html>
-
