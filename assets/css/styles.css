@@ -30,6 +30,52 @@ body {
   overflow-x: hidden;
 }
 
+.load-error {
+  position: relative;
+  z-index: 50;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 95, 95, 0.45);
+  background: rgba(255, 95, 95, 0.08);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.load-error[hidden] {
+  display: none !important;
+}
+
+.load-error-title {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.05rem;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.load-error-detail {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--text2);
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.load-error-hint {
+  font-size: 0.82rem;
+  color: var(--text3);
+  margin: 0;
+}
+
+.load-error-hint code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--yellow);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -225,6 +271,81 @@ h1 .dim { color: var(--text2); }
   border: 1px solid var(--border);
   padding: 3px 8px;
   border-radius: 6px;
+}
+
+.sections-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+  margin-top: 36px;
+  animation: fadeUp .7s .35s ease both;
+}
+
+.sections-bar {
+  display: flex;
+  gap: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-pill {
+  --sec-color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.section-pill:hover:not(:disabled) {
+  border-color: var(--sec-color);
+  color: var(--text);
+  background: var(--surface2);
+  transform: translateY(-1px);
+}
+
+.section-pill.active {
+  border-color: var(--sec-color);
+  color: var(--sec-color);
+  background: color-mix(in srgb, var(--sec-color) 10%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sec-color) 12%, transparent);
+}
+
+.section-pill:disabled {
+  opacity: .55;
+  cursor: progress;
+}
+
+.section-pill-logo {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
+.section-pill-label {
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .section-pill {
+    padding: 9px 14px;
+    font-size: .82rem;
+  }
 }
 
 .tabs-wrap {

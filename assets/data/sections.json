@@ -1,0 +1,20 @@
+{
+  "sections": [
+    {
+      "key": "git",
+      "title": "Git",
+      "logo": "assets/brands/git.svg",
+      "color": "#00ff9d",
+      "docsUrl": "https://git-scm.com/docs",
+      "docsLabelKey": "footerDocsGit"
+    },
+    {
+      "key": "docker",
+      "title": "Docker",
+      "logo": "assets/brands/docker.svg",
+      "color": "#2496ed",
+      "docsUrl": "https://docs.docker.com/reference/",
+      "docsLabelKey": "footerDocsDocker"
+    }
+  ]
+}

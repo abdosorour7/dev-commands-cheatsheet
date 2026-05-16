@@ -1,0 +1,1086 @@
+{
+  "categories": [
+    {
+      "key": "setup",
+      "title": "Setup & Info",
+      "icon": "⚙️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "docker version",
+          "searchDescription": "Show Docker version client server",
+          "codeHtml": "<span class=\"cmd-keyword\">docker version</span>",
+          "descriptionHtml": "Show the Docker client and engine versions",
+          "danger": false
+        },
+        {
+          "command": "docker info",
+          "searchDescription": "System wide info engine",
+          "codeHtml": "<span class=\"cmd-keyword\">docker info</span>",
+          "descriptionHtml": "Display system-wide info about the Docker engine, storage driver, and resources",
+          "danger": false
+        },
+        {
+          "command": "docker help",
+          "searchDescription": "Get help on a Docker command",
+          "codeHtml": "<span class=\"cmd-keyword\">docker</span> <span class=\"cmd-arg\">&lt;command&gt;</span> <span class=\"cmd-flag\">--help</span>",
+          "descriptionHtml": "Show help and available flags for any Docker command",
+          "danger": false
+        },
+        {
+          "command": "docker login",
+          "searchDescription": "Authenticate to a Docker registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker login</span>",
+          "descriptionHtml": "Sign in to Docker Hub so you can push and pull private images",
+          "danger": false
+        },
+        {
+          "command": "docker login registry",
+          "searchDescription": "Login to a custom registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker login</span> <span class=\"cmd-arg\">&lt;registry-url&gt;</span>",
+          "descriptionHtml": "Authenticate against a private registry (e.g. <code style=\"color:var(--green)\">ghcr.io</code>, <code style=\"color:var(--green)\">registry.gitlab.com</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker logout",
+          "searchDescription": "Sign out of registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logout</span>",
+          "descriptionHtml": "Remove stored credentials for Docker Hub from the local config",
+          "danger": false
+        },
+        {
+          "command": "docker system df",
+          "searchDescription": "Show disk usage by Docker",
+          "codeHtml": "<span class=\"cmd-keyword\">docker system df</span>",
+          "descriptionHtml": "Show how much disk space images, containers, volumes, and build cache are using",
+          "danger": false
+        },
+        {
+          "command": "docker context ls",
+          "searchDescription": "List Docker contexts engines",
+          "codeHtml": "<span class=\"cmd-keyword\">docker context ls</span>",
+          "descriptionHtml": "List all configured Docker contexts (local, remote, swarm)",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "images",
+      "title": "Images",
+      "icon": "🐳",
+      "color": "#2496ed",
+      "commands": [
+        {
+          "command": "docker pull",
+          "searchDescription": "Download image from registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker pull</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Download an image from a registry (defaults to Docker Hub and the <code style=\"color:var(--green)\">latest</code> tag)",
+          "danger": false
+        },
+        {
+          "command": "docker pull image tag",
+          "searchDescription": "Pull specific tag version",
+          "codeHtml": "<span class=\"cmd-keyword\">docker pull</span> <span class=\"cmd-arg\">&lt;image&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Pull a specific image tag — e.g. <code style=\"color:var(--green)\">node:20-alpine</code>",
+          "danger": false
+        },
+        {
+          "command": "docker images",
+          "searchDescription": "List local images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker images</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">docker image ls</span>",
+          "descriptionHtml": "List all images stored locally with their size and tags",
+          "danger": false
+        },
+        {
+          "command": "docker images --filter dangling",
+          "searchDescription": "List dangling untagged images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker images</span> <span class=\"cmd-flag\">--filter</span> <span class=\"cmd-arg\">dangling=true</span>",
+          "descriptionHtml": "List only dangling (untagged) images that can usually be removed safely",
+          "danger": false
+        },
+        {
+          "command": "docker build",
+          "searchDescription": "Build image from current directory",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Build an image from the <code style=\"color:var(--green)\">Dockerfile</code> in the current directory",
+          "danger": false
+        },
+        {
+          "command": "docker build -t",
+          "searchDescription": "Build and tag image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-flag\">-t</span> <span class=\"cmd-arg\">&lt;name&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Build an image and tag it with a name and version",
+          "danger": false
+        },
+        {
+          "command": "docker build -f",
+          "searchDescription": "Build with custom Dockerfile path",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;path/to/Dockerfile&gt;</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Build using a Dockerfile at a custom path (useful for monorepos or <code style=\"color:var(--green)\">Dockerfile.dev</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker build --no-cache",
+          "searchDescription": "Build without cache fresh",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-flag\">--no-cache</span> <span class=\"cmd-flag\">-t</span> <span class=\"cmd-arg\">&lt;name&gt;</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Build from scratch ignoring all cached layers — use when dependencies look stale",
+          "danger": false
+        },
+        {
+          "command": "docker build --build-arg",
+          "searchDescription": "Pass build argument to image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-flag\">--build-arg</span> <span class=\"cmd-arg\">KEY=value</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Pass a build-time variable (matches an <code style=\"color:var(--green)\">ARG</code> in the Dockerfile)",
+          "danger": false
+        },
+        {
+          "command": "docker build --target",
+          "searchDescription": "Build specific multi stage target",
+          "codeHtml": "<span class=\"cmd-keyword\">docker build</span> <span class=\"cmd-flag\">--target</span> <span class=\"cmd-arg\">&lt;stage&gt;</span> <span class=\"cmd-flag\">-t</span> <span class=\"cmd-arg\">&lt;name&gt;</span> <span class=\"cmd-arg\">.</span>",
+          "descriptionHtml": "Build only up to a named stage in a multi-stage Dockerfile",
+          "danger": false
+        },
+        {
+          "command": "docker tag",
+          "searchDescription": "Add new tag to image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker tag</span> <span class=\"cmd-arg\">&lt;image&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span> <span class=\"cmd-arg\">&lt;new-name&gt;</span>:<span class=\"cmd-arg\">&lt;new-tag&gt;</span>",
+          "descriptionHtml": "Create an additional tag for an existing image (e.g. tag for a registry before push)",
+          "danger": false
+        },
+        {
+          "command": "docker push",
+          "searchDescription": "Upload image to registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker push</span> <span class=\"cmd-arg\">&lt;name&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Push a tagged image to a registry — must be logged in",
+          "danger": false
+        },
+        {
+          "command": "docker rmi",
+          "searchDescription": "Remove a local image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rmi</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "⚠️ Remove a local image — fails if any container still uses it",
+          "danger": true
+        },
+        {
+          "command": "docker rmi -f",
+          "searchDescription": "Force remove image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rmi</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "⚠️ Force-remove an image even if containers reference it",
+          "danger": true
+        },
+        {
+          "command": "docker image inspect",
+          "searchDescription": "Show image metadata",
+          "codeHtml": "<span class=\"cmd-keyword\">docker image inspect</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Show low-level metadata for an image as JSON (layers, env, entrypoint, labels)",
+          "danger": false
+        },
+        {
+          "command": "docker history",
+          "searchDescription": "Show image layer history",
+          "codeHtml": "<span class=\"cmd-keyword\">docker history</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Show the layer-by-layer build history of an image (great for debugging size)",
+          "danger": false
+        },
+        {
+          "command": "docker save",
+          "searchDescription": "Export image to tar archive",
+          "codeHtml": "<span class=\"cmd-keyword\">docker save</span> <span class=\"cmd-flag\">-o</span> <span class=\"cmd-arg\">&lt;file.tar&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Save one or more images to a tar archive (useful for offline transfer)",
+          "danger": false
+        },
+        {
+          "command": "docker load",
+          "searchDescription": "Import image from tar archive",
+          "codeHtml": "<span class=\"cmd-keyword\">docker load</span> <span class=\"cmd-flag\">-i</span> <span class=\"cmd-arg\">&lt;file.tar&gt;</span>",
+          "descriptionHtml": "Load images from a tar archive previously created with <code style=\"color:var(--green)\">docker save</code>",
+          "danger": false
+        },
+        {
+          "command": "docker search",
+          "searchDescription": "Search Docker Hub for images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker search</span> <span class=\"cmd-arg\">&lt;term&gt;</span>",
+          "descriptionHtml": "Search Docker Hub for images matching a term",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "run",
+      "title": "Run Containers",
+      "icon": "🚀",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "docker run",
+          "searchDescription": "Run a new container from image",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Create and start a new container from an image (foreground)",
+          "danger": false
+        },
+        {
+          "command": "docker run -d",
+          "searchDescription": "Run container in background detached",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-d</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Run a container detached, in the background",
+          "danger": false
+        },
+        {
+          "command": "docker run -it",
+          "searchDescription": "Interactive shell inside container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-it</span> <span class=\"cmd-arg\">&lt;image&gt;</span> <span class=\"cmd-arg\">/bin/bash</span>",
+          "descriptionHtml": "Open an interactive TTY shell inside a new container",
+          "danger": false
+        },
+        {
+          "command": "docker run --rm",
+          "searchDescription": "Auto remove on exit",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--rm</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Automatically remove the container when it exits (great for one-off jobs)",
+          "danger": false
+        },
+        {
+          "command": "docker run --name",
+          "searchDescription": "Give container a name",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--name</span> <span class=\"cmd-arg\">&lt;name&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Assign a friendly name to the container instead of the random one",
+          "danger": false
+        },
+        {
+          "command": "docker run -p",
+          "searchDescription": "Map host port to container port",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-p</span> <span class=\"cmd-arg\">&lt;host&gt;</span>:<span class=\"cmd-arg\">&lt;container&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Publish a container port to a host port — e.g. <code style=\"color:var(--green)\">-p 8080:80</code>",
+          "danger": false
+        },
+        {
+          "command": "docker run -P",
+          "searchDescription": "Publish all exposed ports randomly",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-P</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Publish all <code style=\"color:var(--green)\">EXPOSE</code>d ports to random host ports",
+          "danger": false
+        },
+        {
+          "command": "docker run -v",
+          "searchDescription": "Mount volume or bind mount",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-v</span> <span class=\"cmd-arg\">&lt;host-or-volume&gt;</span>:<span class=\"cmd-arg\">&lt;container-path&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Mount a volume or a host directory into the container",
+          "danger": false
+        },
+        {
+          "command": "docker run --mount",
+          "searchDescription": "Explicit volume bind mount syntax",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--mount</span> <span class=\"cmd-arg\">type=bind,src=&lt;host&gt;,dst=&lt;container&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Modern, explicit syntax for bind mounts and volume mounts",
+          "danger": false
+        },
+        {
+          "command": "docker run -e",
+          "searchDescription": "Set environment variable",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-e</span> <span class=\"cmd-arg\">KEY=value</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Set an environment variable inside the container",
+          "danger": false
+        },
+        {
+          "command": "docker run --env-file",
+          "searchDescription": "Load env vars from file",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--env-file</span> <span class=\"cmd-arg\">&lt;file&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Load environment variables from a file (one <code style=\"color:var(--green)\">KEY=value</code> per line)",
+          "danger": false
+        },
+        {
+          "command": "docker run --network",
+          "searchDescription": "Attach container to network",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--network</span> <span class=\"cmd-arg\">&lt;network&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Connect the container to a specific user-defined network",
+          "danger": false
+        },
+        {
+          "command": "docker run --restart",
+          "searchDescription": "Restart policy on failure",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--restart</span> <span class=\"cmd-arg\">unless-stopped</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Set a restart policy: <code style=\"color:var(--green)\">no</code>, <code style=\"color:var(--green)\">on-failure</code>, <code style=\"color:var(--green)\">always</code>, or <code style=\"color:var(--green)\">unless-stopped</code>",
+          "danger": false
+        },
+        {
+          "command": "docker run -w",
+          "searchDescription": "Set working directory in container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-w</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Set the working directory inside the container",
+          "danger": false
+        },
+        {
+          "command": "docker run -u",
+          "searchDescription": "Run container as specific user",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;uid&gt;</span>:<span class=\"cmd-arg\">&lt;gid&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Run as a specific user / group instead of the image default (often root)",
+          "danger": false
+        },
+        {
+          "command": "docker run --memory --cpus",
+          "searchDescription": "Limit memory and CPU usage",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--memory=512m</span> <span class=\"cmd-flag\">--cpus=1.5</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Cap container resource usage — memory and CPU shares",
+          "danger": false
+        },
+        {
+          "command": "docker run command override",
+          "searchDescription": "Run with custom command override",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-arg\">&lt;image&gt;</span> <span class=\"cmd-arg\">&lt;command&gt;</span> <span class=\"cmd-arg\">&lt;args...&gt;</span>",
+          "descriptionHtml": "Override the image's default <code style=\"color:var(--green)\">CMD</code> with a custom command",
+          "danger": false
+        },
+        {
+          "command": "docker create",
+          "searchDescription": "Create container without starting",
+          "codeHtml": "<span class=\"cmd-keyword\">docker create</span> <span class=\"cmd-flag\">--name</span> <span class=\"cmd-arg\">&lt;name&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Create a container but don't start it (use <code style=\"color:var(--green)\">docker start</code> later)",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "lifecycle",
+      "title": "Container Lifecycle",
+      "icon": "🔁",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "docker ps",
+          "searchDescription": "List running containers",
+          "codeHtml": "<span class=\"cmd-keyword\">docker ps</span>",
+          "descriptionHtml": "List running containers with their IDs, ports, and status",
+          "danger": false
+        },
+        {
+          "command": "docker ps -a",
+          "searchDescription": "List all containers including stopped",
+          "codeHtml": "<span class=\"cmd-keyword\">docker ps</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "List all containers — running and stopped",
+          "danger": false
+        },
+        {
+          "command": "docker ps -q",
+          "searchDescription": "List only container IDs",
+          "codeHtml": "<span class=\"cmd-keyword\">docker ps</span> <span class=\"cmd-flag\">-aq</span>",
+          "descriptionHtml": "Print only container IDs (great for scripting — <code style=\"color:var(--green)\">docker rm $(docker ps -aq)</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker start",
+          "searchDescription": "Start a stopped container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker start</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Start one or more stopped containers",
+          "danger": false
+        },
+        {
+          "command": "docker stop",
+          "searchDescription": "Stop a running container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker stop</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Gracefully stop a running container (sends SIGTERM, then SIGKILL after grace period)",
+          "danger": false
+        },
+        {
+          "command": "docker restart",
+          "searchDescription": "Restart a container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker restart</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Stop and then start a container",
+          "danger": false
+        },
+        {
+          "command": "docker pause",
+          "searchDescription": "Freeze container processes",
+          "codeHtml": "<span class=\"cmd-keyword\">docker pause</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Pause all processes inside the container (SIGSTOP)",
+          "danger": false
+        },
+        {
+          "command": "docker unpause",
+          "searchDescription": "Resume paused container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker unpause</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Resume processes inside a paused container",
+          "danger": false
+        },
+        {
+          "command": "docker kill",
+          "searchDescription": "Force kill container immediately",
+          "codeHtml": "<span class=\"cmd-keyword\">docker kill</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "⚠️ Send SIGKILL — terminate a container immediately without graceful shutdown",
+          "danger": true
+        },
+        {
+          "command": "docker rm",
+          "searchDescription": "Remove a stopped container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rm</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Remove a stopped container — frees the name and metadata",
+          "danger": false
+        },
+        {
+          "command": "docker rm -f",
+          "searchDescription": "Force remove running container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rm</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "⚠️ Force-remove a running container (kills then removes)",
+          "danger": true
+        },
+        {
+          "command": "docker rm all stopped",
+          "searchDescription": "Remove all stopped containers",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rm</span> <span class=\"cmd-arg\">$(docker ps -aq)</span>",
+          "descriptionHtml": "⚠️ Remove every stopped container in one shot",
+          "danger": true
+        },
+        {
+          "command": "docker rename",
+          "searchDescription": "Rename a container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker rename</span> <span class=\"cmd-arg\">&lt;old&gt;</span> <span class=\"cmd-arg\">&lt;new&gt;</span>",
+          "descriptionHtml": "Rename an existing container",
+          "danger": false
+        },
+        {
+          "command": "docker wait",
+          "searchDescription": "Wait container exit return code",
+          "codeHtml": "<span class=\"cmd-keyword\">docker wait</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Block until a container stops, then print its exit code",
+          "danger": false
+        },
+        {
+          "command": "docker container prune",
+          "searchDescription": "Remove all stopped containers",
+          "codeHtml": "<span class=\"cmd-keyword\">docker container prune</span>",
+          "descriptionHtml": "⚠️ Remove all stopped containers — asks for confirmation",
+          "danger": true
+        }
+      ]
+    },
+    {
+      "key": "inspect",
+      "title": "Inspect & Logs",
+      "icon": "🔍",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "docker logs",
+          "searchDescription": "Show container logs",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logs</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Print all stdout / stderr emitted by a container",
+          "danger": false
+        },
+        {
+          "command": "docker logs -f",
+          "searchDescription": "Follow container logs live",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logs</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Follow logs live as they are emitted (like <code style=\"color:var(--green)\">tail -f</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker logs --tail",
+          "searchDescription": "Show last N lines of logs",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logs</span> <span class=\"cmd-flag\">--tail</span> <span class=\"cmd-arg\">100</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Show only the last <em>N</em> lines of the container's logs",
+          "danger": false
+        },
+        {
+          "command": "docker logs --since",
+          "searchDescription": "Filter logs by time",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logs</span> <span class=\"cmd-flag\">--since</span> <span class=\"cmd-arg\">10m</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Show only log lines newer than a duration (e.g. <code style=\"color:var(--green)\">10m</code>, <code style=\"color:var(--green)\">1h</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker exec -it",
+          "searchDescription": "Open shell inside running container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker exec</span> <span class=\"cmd-flag\">-it</span> <span class=\"cmd-arg\">&lt;container&gt;</span> <span class=\"cmd-arg\">/bin/bash</span>",
+          "descriptionHtml": "Open an interactive shell inside a running container",
+          "danger": false
+        },
+        {
+          "command": "docker exec command",
+          "searchDescription": "Run command in running container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker exec</span> <span class=\"cmd-arg\">&lt;container&gt;</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Run a one-off command inside a running container",
+          "danger": false
+        },
+        {
+          "command": "docker attach",
+          "searchDescription": "Attach to running container output",
+          "codeHtml": "<span class=\"cmd-keyword\">docker attach</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Attach your terminal to the main process of a running container (Ctrl+P Ctrl+Q to detach)",
+          "danger": false
+        },
+        {
+          "command": "docker inspect",
+          "searchDescription": "Show low level container details",
+          "codeHtml": "<span class=\"cmd-keyword\">docker inspect</span> <span class=\"cmd-arg\">&lt;container-or-image&gt;</span>",
+          "descriptionHtml": "Dump full JSON metadata for a container, image, network, or volume",
+          "danger": false
+        },
+        {
+          "command": "docker inspect --format",
+          "searchDescription": "Inspect with custom output template",
+          "codeHtml": "<span class=\"cmd-keyword\">docker inspect</span> <span class=\"cmd-flag\">--format</span> <span class=\"cmd-arg\">'{{.NetworkSettings.IPAddress}}'</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Extract a single field from inspect output using a Go template",
+          "danger": false
+        },
+        {
+          "command": "docker stats",
+          "searchDescription": "Live CPU memory IO stats",
+          "codeHtml": "<span class=\"cmd-keyword\">docker stats</span>",
+          "descriptionHtml": "Live CPU, memory, network, and IO stats for all running containers",
+          "danger": false
+        },
+        {
+          "command": "docker top",
+          "searchDescription": "Show processes inside container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker top</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Show the running processes inside a container",
+          "danger": false
+        },
+        {
+          "command": "docker port",
+          "searchDescription": "Show container port mappings",
+          "codeHtml": "<span class=\"cmd-keyword\">docker port</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "List the port mappings for a container",
+          "danger": false
+        },
+        {
+          "command": "docker diff",
+          "searchDescription": "Show file changes inside container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker diff</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Show files added, changed, or deleted inside a container vs. its image",
+          "danger": false
+        },
+        {
+          "command": "docker cp to container",
+          "searchDescription": "Copy file from host to container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker cp</span> <span class=\"cmd-arg\">&lt;host-path&gt;</span> <span class=\"cmd-arg\">&lt;container&gt;</span>:<span class=\"cmd-arg\">&lt;container-path&gt;</span>",
+          "descriptionHtml": "Copy a file or directory from the host into a container",
+          "danger": false
+        },
+        {
+          "command": "docker cp from container",
+          "searchDescription": "Copy file from container to host",
+          "codeHtml": "<span class=\"cmd-keyword\">docker cp</span> <span class=\"cmd-arg\">&lt;container&gt;</span>:<span class=\"cmd-arg\">&lt;container-path&gt;</span> <span class=\"cmd-arg\">&lt;host-path&gt;</span>",
+          "descriptionHtml": "Copy a file or directory from a container back to the host",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "volumes",
+      "title": "Volumes",
+      "icon": "💾",
+      "color": "#ff9f43",
+      "commands": [
+        {
+          "command": "docker volume create",
+          "searchDescription": "Create a named volume",
+          "codeHtml": "<span class=\"cmd-keyword\">docker volume create</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Create a named volume managed by Docker",
+          "danger": false
+        },
+        {
+          "command": "docker volume ls",
+          "searchDescription": "List all volumes",
+          "codeHtml": "<span class=\"cmd-keyword\">docker volume ls</span>",
+          "descriptionHtml": "List all volumes on the host",
+          "danger": false
+        },
+        {
+          "command": "docker volume inspect",
+          "searchDescription": "Show volume details mountpoint",
+          "codeHtml": "<span class=\"cmd-keyword\">docker volume inspect</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Show details about a volume — including the mountpoint on the host",
+          "danger": false
+        },
+        {
+          "command": "docker volume rm",
+          "searchDescription": "Remove a named volume",
+          "codeHtml": "<span class=\"cmd-keyword\">docker volume rm</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "⚠️ Remove a named volume — only works if no container is using it",
+          "danger": true
+        },
+        {
+          "command": "docker volume prune",
+          "searchDescription": "Remove all unused volumes",
+          "codeHtml": "<span class=\"cmd-keyword\">docker volume prune</span>",
+          "descriptionHtml": "⚠️ Remove all unused (dangling) volumes — data loss if a volume is unintentionally orphaned",
+          "danger": true
+        },
+        {
+          "command": "docker run -v named volume",
+          "searchDescription": "Mount named volume into container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-v</span> <span class=\"cmd-arg\">&lt;volume-name&gt;</span>:<span class=\"cmd-arg\">&lt;container-path&gt;</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Mount a named volume into the container — data persists across restarts",
+          "danger": false
+        },
+        {
+          "command": "docker run -v bind mount",
+          "searchDescription": "Bind mount host directory",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">-v</span> <span class=\"cmd-arg\">$(pwd)</span>:<span class=\"cmd-arg\">/app</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Bind-mount a host directory into the container (live edits show up inside)",
+          "danger": false
+        },
+        {
+          "command": "docker run --tmpfs",
+          "searchDescription": "Mount in memory tmpfs filesystem",
+          "codeHtml": "<span class=\"cmd-keyword\">docker run</span> <span class=\"cmd-flag\">--tmpfs</span> <span class=\"cmd-arg\">/tmp</span> <span class=\"cmd-arg\">&lt;image&gt;</span>",
+          "descriptionHtml": "Mount an in-memory tmpfs filesystem inside the container — wiped on stop",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "networks",
+      "title": "Networks",
+      "icon": "🌐",
+      "color": "#22c55e",
+      "commands": [
+        {
+          "command": "docker network create",
+          "searchDescription": "Create user defined network",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network create</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Create a user-defined bridge network — containers on it can talk by name",
+          "danger": false
+        },
+        {
+          "command": "docker network create driver",
+          "searchDescription": "Create network with specific driver",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network create</span> <span class=\"cmd-flag\">--driver</span> <span class=\"cmd-arg\">bridge</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Create a network with a specific driver (<code style=\"color:var(--green)\">bridge</code>, <code style=\"color:var(--green)\">overlay</code>, <code style=\"color:var(--green)\">macvlan</code>, …)",
+          "danger": false
+        },
+        {
+          "command": "docker network ls",
+          "searchDescription": "List all networks",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network ls</span>",
+          "descriptionHtml": "List all Docker networks",
+          "danger": false
+        },
+        {
+          "command": "docker network inspect",
+          "searchDescription": "Show network details containers",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network inspect</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Show details of a network — connected containers, subnet, gateway",
+          "danger": false
+        },
+        {
+          "command": "docker network connect",
+          "searchDescription": "Attach container to network",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network connect</span> <span class=\"cmd-arg\">&lt;network&gt;</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Connect a running container to an additional network",
+          "danger": false
+        },
+        {
+          "command": "docker network disconnect",
+          "searchDescription": "Detach container from network",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network disconnect</span> <span class=\"cmd-arg\">&lt;network&gt;</span> <span class=\"cmd-arg\">&lt;container&gt;</span>",
+          "descriptionHtml": "Disconnect a container from a network",
+          "danger": false
+        },
+        {
+          "command": "docker network rm",
+          "searchDescription": "Remove a user network",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network rm</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Remove a user-defined network (must have no attached containers)",
+          "danger": false
+        },
+        {
+          "command": "docker network prune",
+          "searchDescription": "Remove all unused networks",
+          "codeHtml": "<span class=\"cmd-keyword\">docker network prune</span>",
+          "descriptionHtml": "⚠️ Remove all unused user-defined networks",
+          "danger": true
+        }
+      ]
+    },
+    {
+      "key": "compose",
+      "title": "Docker Compose",
+      "icon": "🐙",
+      "color": "#ec4899",
+      "commands": [
+        {
+          "command": "docker compose up",
+          "searchDescription": "Start all services in compose file",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose up</span>",
+          "descriptionHtml": "Build (if needed) and start all services defined in <code style=\"color:var(--green)\">compose.yaml</code>",
+          "danger": false
+        },
+        {
+          "command": "docker compose up -d",
+          "searchDescription": "Start compose services detached",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose up</span> <span class=\"cmd-flag\">-d</span>",
+          "descriptionHtml": "Start the stack detached, in the background",
+          "danger": false
+        },
+        {
+          "command": "docker compose up --build",
+          "searchDescription": "Rebuild images then start",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose up</span> <span class=\"cmd-flag\">--build</span>",
+          "descriptionHtml": "Force a rebuild of all images before starting services",
+          "danger": false
+        },
+        {
+          "command": "docker compose up service",
+          "searchDescription": "Start a specific service only",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose up</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Start only a named service (and its dependencies)",
+          "danger": false
+        },
+        {
+          "command": "docker compose down",
+          "searchDescription": "Stop and remove compose stack",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose down</span>",
+          "descriptionHtml": "Stop and remove containers and the default network created by compose",
+          "danger": false
+        },
+        {
+          "command": "docker compose down -v",
+          "searchDescription": "Down with volume deletion",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose down</span> <span class=\"cmd-flag\">-v</span>",
+          "descriptionHtml": "⚠️ Tear down the stack <em>and</em> delete its named volumes — destroys persisted data",
+          "danger": true
+        },
+        {
+          "command": "docker compose build",
+          "searchDescription": "Build compose service images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose build</span>",
+          "descriptionHtml": "Build (or rebuild) all images defined in the compose file",
+          "danger": false
+        },
+        {
+          "command": "docker compose ps",
+          "searchDescription": "List compose services",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose ps</span>",
+          "descriptionHtml": "List containers managed by the current compose project",
+          "danger": false
+        },
+        {
+          "command": "docker compose logs",
+          "searchDescription": "Show compose service logs",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose logs</span>",
+          "descriptionHtml": "Show logs from all services in the compose project",
+          "danger": false
+        },
+        {
+          "command": "docker compose logs -f",
+          "searchDescription": "Follow logs of compose service",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose logs</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Follow live logs from a specific service",
+          "danger": false
+        },
+        {
+          "command": "docker compose exec",
+          "searchDescription": "Run command in service container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose exec</span> <span class=\"cmd-arg\">&lt;service&gt;</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Run a command inside a running service (e.g. <code style=\"color:var(--green)\">bash</code>, <code style=\"color:var(--green)\">npm test</code>)",
+          "danger": false
+        },
+        {
+          "command": "docker compose run",
+          "searchDescription": "Run one off command in new service container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose run</span> <span class=\"cmd-flag\">--rm</span> <span class=\"cmd-arg\">&lt;service&gt;</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Spin up a new one-off container from a service definition (auto-removed)",
+          "danger": false
+        },
+        {
+          "command": "docker compose restart",
+          "searchDescription": "Restart compose services",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose restart</span>",
+          "descriptionHtml": "Restart all services in the project",
+          "danger": false
+        },
+        {
+          "command": "docker compose stop",
+          "searchDescription": "Stop compose services without remove",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose stop</span>",
+          "descriptionHtml": "Stop services without removing the containers",
+          "danger": false
+        },
+        {
+          "command": "docker compose pull",
+          "searchDescription": "Pull latest images for services",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose pull</span>",
+          "descriptionHtml": "Pull the latest version of every image referenced in the compose file",
+          "danger": false
+        },
+        {
+          "command": "docker compose config",
+          "searchDescription": "Validate render compose file",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose config</span>",
+          "descriptionHtml": "Validate the compose file and print the fully-rendered, merged configuration",
+          "danger": false
+        },
+        {
+          "command": "docker compose -f file",
+          "searchDescription": "Use specific compose file",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;file.yml&gt;</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Use a custom or override compose file (repeat <code style=\"color:var(--green)\">-f</code> to merge several)",
+          "danger": false
+        },
+        {
+          "command": "docker compose --profile",
+          "searchDescription": "Activate a service profile",
+          "codeHtml": "<span class=\"cmd-keyword\">docker compose</span> <span class=\"cmd-flag\">--profile</span> <span class=\"cmd-arg\">&lt;name&gt;</span> <span class=\"cmd-keyword\">up</span>",
+          "descriptionHtml": "Enable a named profile so its services are included in the run",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "dockerfile",
+      "title": "Dockerfile Instructions",
+      "icon": "📝",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "FROM",
+          "searchDescription": "Base image instruction",
+          "codeHtml": "<span class=\"cmd-keyword\">FROM</span> <span class=\"cmd-arg\">&lt;image&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Set the base image for the build (must be the first instruction)",
+          "danger": false
+        },
+        {
+          "command": "FROM AS stage",
+          "searchDescription": "Multi stage build named stage",
+          "codeHtml": "<span class=\"cmd-keyword\">FROM</span> <span class=\"cmd-arg\">&lt;image&gt;</span> <span class=\"cmd-keyword\">AS</span> <span class=\"cmd-arg\">&lt;stage&gt;</span>",
+          "descriptionHtml": "Start a named stage in a multi-stage build (great for tiny final images)",
+          "danger": false
+        },
+        {
+          "command": "RUN",
+          "searchDescription": "Execute command at build time",
+          "codeHtml": "<span class=\"cmd-keyword\">RUN</span> <span class=\"cmd-arg\">&lt;shell-command&gt;</span>",
+          "descriptionHtml": "Run a command in a new layer at build time (e.g. install packages)",
+          "danger": false
+        },
+        {
+          "command": "COPY",
+          "searchDescription": "Copy files into image",
+          "codeHtml": "<span class=\"cmd-keyword\">COPY</span> <span class=\"cmd-arg\">&lt;src&gt;</span> <span class=\"cmd-arg\">&lt;dst&gt;</span>",
+          "descriptionHtml": "Copy files or directories from the build context into the image",
+          "danger": false
+        },
+        {
+          "command": "COPY --from",
+          "searchDescription": "Copy from another build stage",
+          "codeHtml": "<span class=\"cmd-keyword\">COPY</span> <span class=\"cmd-flag\">--from=&lt;stage&gt;</span> <span class=\"cmd-arg\">&lt;src&gt;</span> <span class=\"cmd-arg\">&lt;dst&gt;</span>",
+          "descriptionHtml": "Copy artifacts from an earlier build stage (multi-stage builds)",
+          "danger": false
+        },
+        {
+          "command": "ADD",
+          "searchDescription": "Add files supports URLs and tar",
+          "codeHtml": "<span class=\"cmd-keyword\">ADD</span> <span class=\"cmd-arg\">&lt;src&gt;</span> <span class=\"cmd-arg\">&lt;dst&gt;</span>",
+          "descriptionHtml": "Like <code style=\"color:var(--green)\">COPY</code> but also supports URLs and auto-extracts tarballs (prefer COPY when possible)",
+          "danger": false
+        },
+        {
+          "command": "WORKDIR",
+          "searchDescription": "Set working directory in image",
+          "codeHtml": "<span class=\"cmd-keyword\">WORKDIR</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Set the working directory for following <code style=\"color:var(--green)\">RUN</code>, <code style=\"color:var(--green)\">CMD</code>, <code style=\"color:var(--green)\">COPY</code> instructions",
+          "danger": false
+        },
+        {
+          "command": "ENV",
+          "searchDescription": "Define environment variable",
+          "codeHtml": "<span class=\"cmd-keyword\">ENV</span> <span class=\"cmd-arg\">KEY=value</span>",
+          "descriptionHtml": "Set an environment variable available at build and run time",
+          "danger": false
+        },
+        {
+          "command": "ARG",
+          "searchDescription": "Define build time argument",
+          "codeHtml": "<span class=\"cmd-keyword\">ARG</span> <span class=\"cmd-arg\">KEY=default</span>",
+          "descriptionHtml": "Define a build-time argument (passed via <code style=\"color:var(--green)\">--build-arg</code>)",
+          "danger": false
+        },
+        {
+          "command": "EXPOSE",
+          "searchDescription": "Document container listening port",
+          "codeHtml": "<span class=\"cmd-keyword\">EXPOSE</span> <span class=\"cmd-arg\">&lt;port&gt;</span>",
+          "descriptionHtml": "Document the port the container listens on (does not publish — use <code style=\"color:var(--green)\">-p</code> for that)",
+          "danger": false
+        },
+        {
+          "command": "CMD",
+          "searchDescription": "Default command for container",
+          "codeHtml": "<span class=\"cmd-keyword\">CMD</span> <span class=\"cmd-arg\">[\"executable\", \"arg\"]</span>",
+          "descriptionHtml": "Set the default command for the container (overridable on <code style=\"color:var(--green)\">docker run</code>)",
+          "danger": false
+        },
+        {
+          "command": "ENTRYPOINT",
+          "searchDescription": "Configure container as executable",
+          "codeHtml": "<span class=\"cmd-keyword\">ENTRYPOINT</span> <span class=\"cmd-arg\">[\"executable\"]</span>",
+          "descriptionHtml": "Set the executable that always runs — arguments come from <code style=\"color:var(--green)\">CMD</code> or run args",
+          "danger": false
+        },
+        {
+          "command": "VOLUME",
+          "searchDescription": "Declare volume mount point",
+          "codeHtml": "<span class=\"cmd-keyword\">VOLUME</span> <span class=\"cmd-arg\">[\"/data\"]</span>",
+          "descriptionHtml": "Declare a mount point that should be persisted as a volume",
+          "danger": false
+        },
+        {
+          "command": "USER",
+          "searchDescription": "Switch user for following instructions",
+          "codeHtml": "<span class=\"cmd-keyword\">USER</span> <span class=\"cmd-arg\">&lt;name-or-uid&gt;</span>",
+          "descriptionHtml": "Switch the user for following instructions and the running container (avoid root in production)",
+          "danger": false
+        },
+        {
+          "command": "HEALTHCHECK",
+          "searchDescription": "Define container health check",
+          "codeHtml": "<span class=\"cmd-keyword\">HEALTHCHECK</span> <span class=\"cmd-flag\">--interval=30s</span> <span class=\"cmd-keyword\">CMD</span> <span class=\"cmd-arg\">curl -f http://localhost/ || exit 1</span>",
+          "descriptionHtml": "Define how Docker should check that the container is healthy",
+          "danger": false
+        },
+        {
+          "command": "LABEL",
+          "searchDescription": "Add image metadata label",
+          "codeHtml": "<span class=\"cmd-keyword\">LABEL</span> <span class=\"cmd-arg\">key=value</span>",
+          "descriptionHtml": "Add metadata to the image (maintainer, version, source URL, …)",
+          "danger": false
+        },
+        {
+          "command": "SHELL",
+          "searchDescription": "Override default shell for RUN",
+          "codeHtml": "<span class=\"cmd-keyword\">SHELL</span> <span class=\"cmd-arg\">[\"/bin/bash\", \"-c\"]</span>",
+          "descriptionHtml": "Override the shell used by following <code style=\"color:var(--green)\">RUN</code>, <code style=\"color:var(--green)\">CMD</code>, <code style=\"color:var(--green)\">ENTRYPOINT</code> in shell form",
+          "danger": false
+        },
+        {
+          "command": "STOPSIGNAL",
+          "searchDescription": "Set signal sent on stop",
+          "codeHtml": "<span class=\"cmd-keyword\">STOPSIGNAL</span> <span class=\"cmd-arg\">SIGTERM</span>",
+          "descriptionHtml": "Set the system call signal sent to the container to stop it",
+          "danger": false
+        },
+        {
+          "command": "ONBUILD",
+          "searchDescription": "Trigger instruction in child builds",
+          "codeHtml": "<span class=\"cmd-keyword\">ONBUILD</span> <span class=\"cmd-arg\">&lt;instruction&gt;</span>",
+          "descriptionHtml": "Add a trigger that runs when this image is used as a base for another build",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "registry",
+      "title": "Registry & Sharing",
+      "icon": "🏷️",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "docker login hub",
+          "searchDescription": "Login to Docker Hub",
+          "codeHtml": "<span class=\"cmd-keyword\">docker login</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;username&gt;</span>",
+          "descriptionHtml": "Authenticate against Docker Hub with a specific username",
+          "danger": false
+        },
+        {
+          "command": "docker login private",
+          "searchDescription": "Login to private registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker login</span> <span class=\"cmd-arg\">&lt;registry&gt;</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;user&gt;</span>",
+          "descriptionHtml": "Authenticate against a private registry — e.g. GHCR, GitLab, Harbor",
+          "danger": false
+        },
+        {
+          "command": "docker tag for registry",
+          "searchDescription": "Tag image for remote registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker tag</span> <span class=\"cmd-arg\">&lt;image&gt;</span> <span class=\"cmd-arg\">&lt;registry&gt;</span>/<span class=\"cmd-arg\">&lt;user&gt;</span>/<span class=\"cmd-arg\">&lt;name&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Tag a local image with the full path required by a remote registry before pushing",
+          "danger": false
+        },
+        {
+          "command": "docker push tag",
+          "searchDescription": "Push tagged image to registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker push</span> <span class=\"cmd-arg\">&lt;registry&gt;</span>/<span class=\"cmd-arg\">&lt;user&gt;</span>/<span class=\"cmd-arg\">&lt;name&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Push a tagged image to a registry — must be logged in first",
+          "danger": false
+        },
+        {
+          "command": "docker pull from registry",
+          "searchDescription": "Pull image from a registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker pull</span> <span class=\"cmd-arg\">&lt;registry&gt;</span>/<span class=\"cmd-arg\">&lt;user&gt;</span>/<span class=\"cmd-arg\">&lt;name&gt;</span>:<span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Pull an image from a private or third-party registry",
+          "danger": false
+        },
+        {
+          "command": "docker logout registry",
+          "searchDescription": "Logout from a private registry",
+          "codeHtml": "<span class=\"cmd-keyword\">docker logout</span> <span class=\"cmd-arg\">&lt;registry&gt;</span>",
+          "descriptionHtml": "Remove stored credentials for a specific registry",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "cleanup",
+      "title": "Cleanup & Maintenance",
+      "icon": "🧹",
+      "color": "#ff5f5f",
+      "commands": [
+        {
+          "command": "docker system prune",
+          "searchDescription": "Remove unused data containers networks",
+          "codeHtml": "<span class=\"cmd-keyword\">docker system prune</span>",
+          "descriptionHtml": "⚠️ Remove all stopped containers, unused networks, dangling images, and build cache",
+          "danger": true
+        },
+        {
+          "command": "docker system prune -a",
+          "searchDescription": "Remove all unused images too",
+          "codeHtml": "<span class=\"cmd-keyword\">docker system prune</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "⚠️ Same as <code style=\"color:var(--green)\">prune</code> but also removes <em>all</em> images not used by any container",
+          "danger": true
+        },
+        {
+          "command": "docker system prune --volumes",
+          "searchDescription": "Prune volumes too data loss",
+          "codeHtml": "<span class=\"cmd-keyword\">docker system prune</span> <span class=\"cmd-flag\">-a</span> <span class=\"cmd-flag\">--volumes</span>",
+          "descriptionHtml": "⚠️ Nuclear cleanup — also deletes unused volumes (potential data loss)",
+          "danger": true
+        },
+        {
+          "command": "docker image prune",
+          "searchDescription": "Remove dangling images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker image prune</span>",
+          "descriptionHtml": "⚠️ Remove dangling (untagged) images",
+          "danger": true
+        },
+        {
+          "command": "docker image prune -a",
+          "searchDescription": "Remove all unused images",
+          "codeHtml": "<span class=\"cmd-keyword\">docker image prune</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "⚠️ Remove every image not currently used by any container",
+          "danger": true
+        },
+        {
+          "command": "docker container prune all",
+          "searchDescription": "Remove all stopped containers cleanup",
+          "codeHtml": "<span class=\"cmd-keyword\">docker container prune</span>",
+          "descriptionHtml": "⚠️ Remove all stopped containers",
+          "danger": true
+        },
+        {
+          "command": "docker builder prune",
+          "searchDescription": "Remove BuildKit build cache",
+          "codeHtml": "<span class=\"cmd-keyword\">docker builder prune</span>",
+          "descriptionHtml": "Remove the BuildKit build cache (frees disk after lots of builds)",
+          "danger": false
+        },
+        {
+          "command": "docker stop all running",
+          "searchDescription": "Stop every running container",
+          "codeHtml": "<span class=\"cmd-keyword\">docker stop</span> <span class=\"cmd-arg\">$(docker ps -q)</span>",
+          "descriptionHtml": "Stop every currently running container in one shot",
+          "danger": false
+        }
+      ]
+    }
+  ]
+}
