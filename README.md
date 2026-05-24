@@ -4,7 +4,7 @@
 
 ### A fast, searchable, professional reference for everyday developer commands
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-00ff9d?style=for-the-badge&labelColor=0a0e17)](https://abdosorour7.github.io/git-commands-cheatsheet) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00cfff?style=for-the-badge&labelColor=0a0e17)](https://github.com/abdosorour7/git-commands-cheatsheet/issues)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-00ff9d?style=for-the-badge&labelColor=0a0e17)](https://abdosorour7.github.io/dev-commands-cheatsheet) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00cfff?style=for-the-badge&labelColor=0a0e17)](https://github.com/abdosorour7/dev-commands-cheatsheet/issues)
 
 <br/>
 
@@ -14,7 +14,7 @@
 
 <br/>
 
-![Preview of the cheatsheet UI](https://raw.githubusercontent.com/abdosorour7/git-commands-cheatsheet/main/preview.png)
+![Preview of the cheatsheet UI](https://raw.githubusercontent.com/abdosorour7/dev-commands-cheatsheet/main/preview.png)
 
 </div>
 
@@ -124,12 +124,12 @@ No JavaScript changes are required for a new section beyond listing new files in
 ## 🚀 Quick Start
 
 ### Option 1 — Use the live website
-Just visit: **[abdosorour7.github.io/git-commands-cheatsheet](https://abdosorour7.github.io/git-commands-cheatsheet)**
+Just visit: **[abdosorour7.github.io/dev-commands-cheatsheet](https://abdosorour7.github.io/dev-commands-cheatsheet)**
 
 ### Option 2 — Run locally
 ```bash
-git clone https://github.com/abdosorour7/git-commands-cheatsheet.git
-cd git-commands-cheatsheet
+git clone https://github.com/abdosorour7/dev-commands-cheatsheet.git
+cd dev-commands-cheatsheet
 ```
 
 Open `index.html` first (double-click it, or open it in your browser).
@@ -161,7 +161,7 @@ No build tools required for local development.
 ## 🧱 Project Structure
 
 ```text
-git-commands-cheatsheet/
+dev-commands-cheatsheet/
 ├─ index.html
 ├─ manifest.json
 ├─ sw.js
