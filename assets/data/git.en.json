@@ -597,6 +597,98 @@
       ]
     },
     {
+      "key": "signing",
+      "title": "Signing & Verification",
+      "icon": "🔏",
+      "color": "#38bdf8",
+      "commands": [
+        {
+          "command": "gpg --list-keys",
+          "searchDescription": "List available GPG public keys",
+          "codeHtml": "<span class=\"cmd-keyword\">gpg</span> <span class=\"cmd-flag\">--list-keys</span>",
+          "descriptionHtml": "List GPG keys in your keyring before selecting a key for Git signing",
+          "danger": false
+        },
+        {
+          "command": "gpg --gen-key",
+          "searchDescription": "Generate a GPG signing key",
+          "codeHtml": "<span class=\"cmd-keyword\">gpg</span> <span class=\"cmd-flag\">--gen-key</span>",
+          "descriptionHtml": "Generate a new GPG key pair if you do not already have a private key to sign with",
+          "danger": false
+        },
+        {
+          "command": "git config --global user.signingkey",
+          "searchDescription": "Configure Git GPG signing key",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> <span class=\"cmd-flag\">--global</span> user.signingkey <span class=\"cmd-arg\">&lt;key-id&gt;!</span>",
+          "descriptionHtml": "Tell Git which GPG private key to use when signing tags and commits",
+          "danger": false
+        },
+        {
+          "command": "git tag -s",
+          "searchDescription": "Create a signed tag",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-s</span> <span class=\"cmd-arg\">&lt;tag&gt;</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Create a GPG-signed annotated tag for a release or other trusted reference",
+          "danger": false
+        },
+        {
+          "command": "git show signed-tag",
+          "searchDescription": "Show signature attached to tag",
+          "codeHtml": "<span class=\"cmd-keyword\">git show</span> <span class=\"cmd-arg\">&lt;signed-tag&gt;</span>",
+          "descriptionHtml": "Display a signed tag and the attached PGP signature block",
+          "danger": false
+        },
+        {
+          "command": "git tag -v",
+          "searchDescription": "Verify signed tag",
+          "codeHtml": "<span class=\"cmd-keyword\">git tag</span> <span class=\"cmd-flag\">-v</span> <span class=\"cmd-arg\">&lt;tag&gt;</span>",
+          "descriptionHtml": "Verify a tag signature using the signer's public key in your GPG keyring",
+          "danger": false
+        },
+        {
+          "command": "git commit -S -m",
+          "searchDescription": "Create a signed commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git commit</span> <span class=\"cmd-flag\">-S -m</span> <span class=\"cmd-arg\">\"message\"</span>",
+          "descriptionHtml": "Create a commit with a GPG signature from your configured signing key",
+          "danger": false
+        },
+        {
+          "command": "git log --show-signature -1",
+          "searchDescription": "Verify latest commit signature",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--show-signature -1</span>",
+          "descriptionHtml": "Show the latest commit and ask GPG to validate any signature it carries",
+          "danger": false
+        },
+        {
+          "command": "git log --pretty=format:%h %G? %aN %s",
+          "searchDescription": "List signature status in commit log",
+          "codeHtml": "<span class=\"cmd-keyword\">git log</span> <span class=\"cmd-flag\">--pretty=</span><span class=\"cmd-arg\">\"format:%h %G? %aN %s\"</span>",
+          "descriptionHtml": "Add signature status to the log output; <code style=\"color:var(--green)\">G</code> indicates a good valid signature and <code style=\"color:var(--green)\">N</code> no signature",
+          "danger": false
+        },
+        {
+          "command": "git merge --verify-signatures",
+          "searchDescription": "Reject merge without valid signatures",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--verify-signatures</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Verify signatures while merging and reject a branch tip commit that is not trusted",
+          "danger": false
+        },
+        {
+          "command": "git merge --verify-signatures -S",
+          "searchDescription": "Verify branch and sign merge commit",
+          "codeHtml": "<span class=\"cmd-keyword\">git merge</span> <span class=\"cmd-flag\">--verify-signatures -S</span> <span class=\"cmd-arg\">&lt;branch&gt;</span>",
+          "descriptionHtml": "Verify the commit being merged and sign the resulting merge commit yourself",
+          "danger": false
+        },
+        {
+          "command": "git config --local commit.gpgsign true",
+          "searchDescription": "Always sign commits in repository",
+          "codeHtml": "<span class=\"cmd-keyword\">git config</span> <span class=\"cmd-flag\">--local</span> commit.gpgsign true",
+          "descriptionHtml": "Automatically sign every commit created in the current repository",
+          "danger": false
+        }
+      ]
+    },
+    {
       "key": "history",
       "title": "History & Diff",
       "icon": "🔍",

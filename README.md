@@ -110,11 +110,11 @@ No JavaScript changes are required for a new section beyond listing new files in
 
 | Section | Categories | Commands |
 |---------|-----------:|---------:|
-| 🔱 Git | 12 | 115 |
+| 🔱 Git | 13 | 127 |
 | 🐳 Docker | 11 | 142 |
 
 ### Git categories
-⚙️ Setup & Config · 📁 Starting a Repo · 🔄 Basic Workflow · 🌿 Branching · ☁️ Remote (GitHub) · ↩️ Undo & Fix · 📦 Stash · 🏷️ Tags · 🔍 History & Diff · 🧹 Cleanup & Maintenance · 🌲 Worktrees · 🚀 Advanced Branching
+⚙️ Setup & Config · 📁 Starting a Repo · 🔄 Basic Workflow · 🌿 Branching · ☁️ Remote (GitHub) · ↩️ Undo & Fix · 📦 Stash · 🏷️ Tags · 🔏 Signing & Verification · 🔍 History & Diff · 🧹 Cleanup & Maintenance · 🌲 Worktrees · 🚀 Advanced Branching
 
 ### Docker categories
 ⚙️ Setup & Info · 🐳 Images · 🚀 Run Containers · 🔁 Container Lifecycle · 🔍 Inspect & Logs · 💾 Volumes · 🌐 Networks · 🐙 Docker Compose · 📝 Dockerfile Instructions · 🏷️ Registry & Sharing · 🧹 Cleanup & Maintenance
