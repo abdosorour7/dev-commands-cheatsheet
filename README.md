@@ -8,7 +8,7 @@
 
 <br/>
 
-**Sections:** Git · Docker — and growing
+**Sections:** Git · Docker · Linux — and growing
 
 **Data-driven · Fast search · Copy-ready · Multilingual**
 
@@ -24,7 +24,7 @@
 
 - Built for speed: open, search, copy, and move on
 - Covers real daily workflows for the tools developers use most
-- Easy to extend with **new sections** (Git, Docker, …) without touching the rendering code
+- Easy to extend with **new sections** (Git, Docker,Linux, …) without touching the rendering code
 - Designed to be contributor-friendly
 - Clean UI that is readable for long sessions
 
@@ -32,7 +32,7 @@
 
 ## ✨ Features
 
-- 🗂️ **Multiple sections** — switch between **Git** and **Docker** cheatsheets with a single click; new sections drop in via a JSON manifest
+- 🗂️ **Multiple sections** — switch between **Git** , **Docker** and **Linux** cheatsheets with a single click; new sections drop in via a JSON manifest
 - ✨ **Multilingual** — switch between English 🇬🇧, Italian 🇮🇹, French 🇫🇷, and Spanish 🇪🇸; your choice is remembered across visits
 - 🔍 **Instant search** — filter any command or description in real time, scoped to the active section
 - 📋 **One-click copy** — click any command to copy it to your clipboard
@@ -68,7 +68,7 @@ Scripts are loaded as **classic** `<script defer>` files (not ES modules) so the
 
 This keeps the app easy to maintain, easy to extend, and contributor-friendly.
 
-### ➕ Adding a new section (e.g. Linux, Kubernetes)
+### ➕ Adding a new section (e.g. Kubernetes)
 
 1. Add an entry in `assets/data/sections.json` (each section needs a stable `key`, human `title`, `logo` path under `assets/brands/` or `assets/`, theme `color` as `#RRGGBB`, docs link, and `docsLabelKey` matching a key in `ui.json`):
 
@@ -112,12 +112,17 @@ No JavaScript changes are required for a new section beyond listing new files in
 |---------|-----------:|---------:|
 | 🔱 Git | 13 | 127 |
 | 🐳 Docker | 11 | 142 |
+| 🐧 Linux | 14  | 162 |
 
 ### Git categories
 ⚙️ Setup & Config · 📁 Starting a Repo · 🔄 Basic Workflow · 🌿 Branching · ☁️ Remote (GitHub) · ↩️ Undo & Fix · 📦 Stash · 🏷️ Tags · 🔏 Signing & Verification · 🔍 History & Diff · 🧹 Cleanup & Maintenance · 🌲 Worktrees · 🚀 Advanced Branching
 
 ### Docker categories
 ⚙️ Setup & Info · 🐳 Images · 🚀 Run Containers · 🔁 Container Lifecycle · 🔍 Inspect & Logs · 💾 Volumes · 🌐 Networks · 🐙 Docker Compose · 📝 Dockerfile Instructions · 🏷️ Registry & Sharing · 🧹 Cleanup & Maintenance
+
+### Linux categories
+📁 File & Directory Navigation · 📝 File & Directory Operations · 🔍 File Viewing & Text Search · ✂️ Text Processing & Editing · 🔐 Permissions & Ownership ·
+⚡ Process Management · 📊 System Info & Resources · 🌐 Networking & Transfer · 📦 Archives & Compression · 👥 User & Group Management · ⚙️ System Services & Logs  🚀 Package Management  · 💾 Disk, Filesystem & Hardware · ⚡ Shell, Variables & Shortcuts
 
 ---
 
@@ -162,34 +167,47 @@ No build tools required for local development.
 
 ```text
 dev-commands-cheatsheet/
-├─ index.html
-├─ manifest.json
-├─ sw.js
+├─ .github/
+│  └─ ISSUE_TEMPLATE/
+│     ├─ bug_report.md
+│     └─ feature_request.md
 ├─ assets/
 │  ├─ brands/
 │  │  ├─ README.md
 │  │  ├─ git.svg
-│  │  └─ docker.svg
+│  │  ├─ docker.svg
+│  │  └─ linux.svg
 │  ├─ css/
 │  │  └─ styles.css
 │  ├─ data/
-│  │  ├─ sections.json       ← list of sections (Git, Docker, …)
+│  │  ├─ sections.json       ← list of sections (Git, Docker, Linux, …)
 │  │  ├─ git.en.json         ← Git — English (canonical source)
 │  │  ├─ git.it.json         ← Git — Italian
 │  │  ├─ git.fr.json         ← Git — French
 │  │  ├─ git.es.json         ← Git — Spanish
-│  │  ├─ docker.en.json      ← Docker — English (canonical source)
+│  │  ├─ docker.en.json      ← Docker — English
+│  │  ├─ linux.en.json       ← Linux — English
 │  │  └─ ui.json             ← UI strings for all locales
-│  └─ js/
-│     ├─ README.md
-│     ├─ app.js
-│     └─ modules/
-│        ├─ paths.js
-│        ├─ data-loader.js
-│        ├─ i18n.js
-│        ├─ interactions.js
-│        ├─ render.js
-│        └─ state.js
+│  ├─ icons/
+│  │  ├─ icon-192x192.png
+│  │  └─ icon-512x512.png
+│  ├─ js/
+│  │  ├─ README.md
+│  │  ├─ app.js
+│  │  └─ modules/
+│  │     ├─ paths.js
+│  │     ├─ data-loader.js
+│  │     ├─ i18n.js
+│  │     ├─ interactions.js
+│  │     ├─ render.js
+│  │     └─ state.js
+│  └─ favicon.svg
+├─ index.html
+├─ manifest.json
+├─ preview.png
+├─ robots.txt
+├─ sitemap.xml
+├─ sw.js
 └─ README.md
 ```
 

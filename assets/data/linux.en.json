@@ -424,11 +424,11 @@
           "danger": false
         },
         {
-          "command": "chmod -R 644 directory",
-          "searchDescription": "Recursively set file permissions for directory",
-          "codeHtml": "<span class=\"cmd-keyword\">chmod</span> <span class=\"cmd-flag\">-R 644</span> <span class=\"cmd-arg\">&lt;directory&gt;</span>",
-          "descriptionHtml": "Recursively set rw-r--r-- permissions across directory contents",
-          "danger": false
+          "command": "find <directory> -type f -exec chmod 644 {} +",
+          "searchDescription": "Recursively set permissions to 644 for regular files only",
+          "codeHtml": "<span class=\"cmd-keyword\">find</span> <span class=\"cmd-arg\">&lt;directory&gt;</span> <span class=\"cmd-flag\">-type f -exec chmod 644 {} +</span>",
+          "descriptionHtml": "Recursively set rw-r--r-- permissions on regular files only, leaving directory permissions unchanged. This preserves directory traversal permissions but removes execute permissions from executable files.",
+          "danger": true
         },
         {
           "command": "chown user:group file",

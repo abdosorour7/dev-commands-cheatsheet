@@ -17,11 +17,11 @@
       "docsLabelKey": "footerDocsDocker"
     },
     { "key":"linux",
-      "title":"linux",
+      "title":"Linux",
       "logo":"assets/brands/linux.svg",
       "color":"#F4BC00",
       "docsUrl":"https://docs.kernel.org/",
-      "docsLabelKey":"footerDocssLinux"
+      "docsLabelKey":"footerDocsLinux"
     }
   ]
 }

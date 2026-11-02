@@ -14,6 +14,7 @@ const ASSETS = [
   './assets/js/modules/state.js',
   './assets/brands/git.svg',
   './assets/brands/docker.svg',
+  './assets/brands/linux.svg',
   './assets/data/sections.json',
   './assets/data/git.en.json',
   './assets/data/git.es.json',
