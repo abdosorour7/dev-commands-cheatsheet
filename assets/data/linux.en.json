@@ -1,0 +1,1250 @@
+{
+  "categories": [
+    {
+      "key": "file_navigation",
+      "title": "File & Directory Navigation",
+      "icon": "📁",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "ls -la",
+          "searchDescription": "List all files including hidden with details",
+          "codeHtml": "<span class=\"cmd-keyword\">ls</span> <span class=\"cmd-flag\">-la</span>",
+          "descriptionHtml": "List all files and directories including hidden ones (<code style=\"color:var(--green)\">.</code>) with permissions and sizes",
+          "danger": false
+        },
+        {
+          "command": "ls -lh",
+          "searchDescription": "List files with human readable sizes",
+          "codeHtml": "<span class=\"cmd-keyword\">ls</span> <span class=\"cmd-flag\">-lh</span>",
+          "descriptionHtml": "List files displaying file sizes in human-readable format (KB, MB, GB)",
+          "danger": false
+        },
+        {
+          "command": "ls -lt",
+          "searchDescription": "List files sorted by modification time",
+          "codeHtml": "<span class=\"cmd-keyword\">ls</span> <span class=\"cmd-flag\">-lt</span>",
+          "descriptionHtml": "List files sorted by modification date, newest first",
+          "danger": false
+        },
+        {
+          "command": "cd directory",
+          "searchDescription": "Change current directory",
+          "codeHtml": "<span class=\"cmd-keyword\">cd</span> <span class=\"cmd-arg\">&lt;directory&gt;</span>",
+          "descriptionHtml": "Navigate to a specified directory (<code style=\"color:var(--green)\">cd ..</code> to move up one level)",
+          "danger": false
+        },
+        {
+          "command": "cd -",
+          "searchDescription": "Switch to previous working directory",
+          "codeHtml": "<span class=\"cmd-keyword\">cd</span> -",
+          "descriptionHtml": "Toggle back to the previous directory path",
+          "danger": false
+        },
+        {
+          "command": "cd ~",
+          "searchDescription": "Change to home directory",
+          "codeHtml": "<span class=\"cmd-keyword\">cd</span> ~",
+          "descriptionHtml": "Navigate directly to the current user's home directory",
+          "danger": false
+        },
+        {
+          "command": "pwd",
+          "searchDescription": "Print working directory path",
+          "codeHtml": "<span class=\"cmd-keyword\">pwd</span>",
+          "descriptionHtml": "Print absolute path of the current working directory",
+          "danger": false
+        },
+        {
+          "command": "tree -L 2",
+          "searchDescription": "Display directory tree structure",
+          "codeHtml": "<span class=\"cmd-keyword\">tree</span> <span class=\"cmd-flag\">-L 2</span>",
+          "descriptionHtml": "Display a visual tree of files and directories up to 2 levels deep",
+          "danger": false
+        },
+        {
+          "command": "tree -d",
+          "searchDescription": "Display directory tree only",
+          "codeHtml": "<span class=\"cmd-keyword\">tree</span> <span class=\"cmd-flag\">-d</span>",
+          "descriptionHtml": "List directories only in a tree structure, omitting individual files",
+          "danger": false
+        },
+        {
+          "command": "pushd path",
+          "searchDescription": "Push directory onto stack and navigate to it",
+          "codeHtml": "<span class=\"cmd-keyword\">pushd</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Save the current directory onto a stack and navigate to the target path",
+          "danger": false
+        },
+        {
+          "command": "popd",
+          "searchDescription": "Pop top directory from stack and navigate to it",
+          "codeHtml": "<span class=\"cmd-keyword\">popd</span>",
+          "descriptionHtml": "Remove top directory from the directory stack and jump back to it",
+          "danger": false
+        },
+        {
+          "command": "dirs -v",
+          "searchDescription": "Display current directory stack with indices",
+          "codeHtml": "<span class=\"cmd-keyword\">dirs</span> <span class=\"cmd-flag\">-v</span>",
+          "descriptionHtml": "Display the numbered list of remembered directories in the directory stack",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "file_ops",
+      "title": "File & Directory Operations",
+      "icon": "📝",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "mkdir -p path",
+          "searchDescription": "Create directory and nested parent directories",
+          "codeHtml": "<span class=\"cmd-keyword\">mkdir</span> <span class=\"cmd-flag\">-p</span> <span class=\"cmd-arg\">&lt;path/to/dir&gt;</span>",
+          "descriptionHtml": "Create a directory along with any necessary parent directories",
+          "danger": false
+        },
+        {
+          "command": "cp -r source dest",
+          "searchDescription": "Copy file or directory recursively",
+          "codeHtml": "<span class=\"cmd-keyword\">cp</span> <span class=\"cmd-flag\">-r</span> <span class=\"cmd-arg\">&lt;source&gt;</span> <span class=\"cmd-arg\">&lt;dest&gt;</span>",
+          "descriptionHtml": "Copy files or directories recursively to target destination",
+          "danger": false
+        },
+        {
+          "command": "cp -u source dest",
+          "searchDescription": "Copy files only if modified or new",
+          "codeHtml": "<span class=\"cmd-keyword\">cp</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;source&gt;</span> <span class=\"cmd-arg\">&lt;dest&gt;</span>",
+          "descriptionHtml": "Copy only when source file is newer than destination or missing",
+          "danger": false
+        },
+        {
+          "command": "mv source dest",
+          "searchDescription": "Move or rename file or directory",
+          "codeHtml": "<span class=\"cmd-keyword\">mv</span> <span class=\"cmd-arg\">&lt;source&gt;</span> <span class=\"cmd-arg\">&lt;dest&gt;</span>",
+          "descriptionHtml": "Move or rename a file or directory",
+          "danger": false
+        },
+        {
+          "command": "mv -n source dest",
+          "searchDescription": "Move file without overwriting existing files",
+          "codeHtml": "<span class=\"cmd-keyword\">mv</span> <span class=\"cmd-flag\">-n</span> <span class=\"cmd-arg\">&lt;source&gt;</span> <span class=\"cmd-arg\">&lt;dest&gt;</span>",
+          "descriptionHtml": "Do not overwrite an existing destination file when moving",
+          "danger": false
+        },
+        {
+          "command": "rm -rf path",
+          "searchDescription": "Force delete directory recursively",
+          "codeHtml": "<span class=\"cmd-keyword\">rm</span> <span class=\"cmd-flag\">-rf</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "⚠️ Forcefully and recursively delete files/directories — cannot be undone",
+          "danger": true
+        },
+        {
+          "command": "rm -i file",
+          "searchDescription": "Remove file with interactive confirmation prompt",
+          "codeHtml": "<span class=\"cmd-keyword\">rm</span> <span class=\"cmd-flag\">-i</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Prompt for confirmation before removing each file",
+          "danger": false
+        },
+        {
+          "command": "rmdir directory",
+          "searchDescription": "Remove empty directory",
+          "codeHtml": "<span class=\"cmd-keyword\">rmdir</span> <span class=\"cmd-arg\">&lt;directory&gt;</span>",
+          "descriptionHtml": "Delete an empty directory (fails if directory contains files)",
+          "danger": false
+        },
+        {
+          "command": "touch filename",
+          "searchDescription": "Create empty file or update timestamp",
+          "codeHtml": "<span class=\"cmd-keyword\">touch</span> <span class=\"cmd-arg\">&lt;filename&gt;</span>",
+          "descriptionHtml": "Create an empty file or update the access/modification time of an existing file",
+          "danger": false
+        },
+        {
+          "command": "ln -s target link_name",
+          "searchDescription": "Create symbolic link to file or directory",
+          "codeHtml": "<span class=\"cmd-keyword\">ln</span> <span class=\"cmd-flag\">-s</span> <span class=\"cmd-arg\">&lt;target&gt;</span> <span class=\"cmd-arg\">&lt;link_name&gt;</span>",
+          "descriptionHtml": "Create a soft symbolic link pointing to a file or directory",
+          "danger": false
+        },
+        {
+          "command": "ln target link_name",
+          "searchDescription": "Create hard link to a file",
+          "codeHtml": "<span class=\"cmd-keyword\">ln</span> <span class=\"cmd-arg\">&lt;target&gt;</span> <span class=\"cmd-arg\">&lt;link_name&gt;</span>",
+          "descriptionHtml": "Create a hard link pointing directly to the file inode",
+          "danger": false
+        },
+        {
+          "command": "stat file",
+          "searchDescription": "Show detailed file or filesystem status",
+          "codeHtml": "<span class=\"cmd-keyword\">stat</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Display full inode metadata, access times, permissions, and size",
+          "danger": false
+        },
+        {
+          "command": "file filename",
+          "searchDescription": "Determine file content type and format",
+          "codeHtml": "<span class=\"cmd-keyword\">file</span> <span class=\"cmd-arg\">&lt;filename&gt;</span>",
+          "descriptionHtml": "Analyze and print the actual file type and encoding independent of extension",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "file_viewing",
+      "title": "File Viewing & Text Search",
+      "icon": "🔍",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "cat filename",
+          "searchDescription": "Print file content to terminal",
+          "codeHtml": "<span class=\"cmd-keyword\">cat</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Concatenate and display the full content of a file",
+          "danger": false
+        },
+        {
+          "command": "less filename",
+          "searchDescription": "View file page by page interactively",
+          "codeHtml": "<span class=\"cmd-keyword\">less</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Open file in an interactive scrollable viewer (<code style=\"color:var(--green)\">q</code> to exit)",
+          "danger": false
+        },
+        {
+          "command": "head -n 20 filename",
+          "searchDescription": "Show first N lines of file",
+          "codeHtml": "<span class=\"cmd-keyword\">head</span> <span class=\"cmd-flag\">-n 20</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Output the first 20 lines of a file",
+          "danger": false
+        },
+        {
+          "command": "tail -f logfile",
+          "searchDescription": "Follow log file output live",
+          "codeHtml": "<span class=\"cmd-keyword\">tail</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Display the last lines of a file and monitor new additions in real time",
+          "danger": false
+        },
+        {
+          "command": "tail -n 50 logfile",
+          "searchDescription": "Show last N lines of file",
+          "codeHtml": "<span class=\"cmd-keyword\">tail</span> <span class=\"cmd-flag\">-n 50</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Output the final 50 lines of a file",
+          "danger": false
+        },
+        {
+          "command": "grep -rnI pattern path",
+          "searchDescription": "Search text recursively in directory",
+          "codeHtml": "<span class=\"cmd-keyword\">grep</span> <span class=\"cmd-flag\">-rnI</span> <span class=\"cmd-arg\">\"pattern\"</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Search recursively for string matching pattern, showing line numbers while ignoring binary files",
+          "danger": false
+        },
+        {
+          "command": "grep -i pattern file",
+          "searchDescription": "Case insensitive text search in file",
+          "codeHtml": "<span class=\"cmd-keyword\">grep</span> <span class=\"cmd-flag\">-i</span> <span class=\"cmd-arg\">\"pattern\"</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Perform case-insensitive match search for pattern in file",
+          "danger": false
+        },
+        {
+          "command": "grep -v pattern file",
+          "searchDescription": "Invert match search in file",
+          "codeHtml": "<span class=\"cmd-keyword\">grep</span> <span class=\"cmd-flag\">-v</span> <span class=\"cmd-arg\">\"pattern\"</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Invert match to display lines that do not match the specified pattern",
+          "danger": false
+        },
+        {
+          "command": "find path -name pattern",
+          "searchDescription": "Find files by name in tree",
+          "codeHtml": "<span class=\"cmd-keyword\">find</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-flag\">-name</span> <span class=\"cmd-arg\">\"*.txt\"</span>",
+          "descriptionHtml": "Search directory tree for files matching a pattern",
+          "danger": false
+        },
+        {
+          "command": "find path -type f -mtime -7",
+          "searchDescription": "Find files modified in the last 7 days",
+          "codeHtml": "<span class=\"cmd-keyword\">find</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-flag\">-type f -mtime -7</span>",
+          "descriptionHtml": "Find all regular files modified within the last 7 days",
+          "danger": false
+        },
+        {
+          "command": "find path -type f -size +100M",
+          "searchDescription": "Find files larger than specified size",
+          "codeHtml": "<span class=\"cmd-keyword\">find</span> <span class=\"cmd-arg\">&lt;path&gt;</span> <span class=\"cmd-flag\">-type f -size +100M</span>",
+          "descriptionHtml": "Search for regular files larger than 100 megabytes",
+          "danger": false
+        },
+        {
+          "command": "locate filename",
+          "searchDescription": "Quickly find file path using index database",
+          "codeHtml": "<span class=\"cmd-keyword\">locate</span> <span class=\"cmd-arg\">&lt;filename&gt;</span>",
+          "descriptionHtml": "Search file system index database for fast filename lookups",
+          "danger": false
+        },
+        {
+          "command": "which command",
+          "searchDescription": "Locate executable binary path in PATH",
+          "codeHtml": "<span class=\"cmd-keyword\">which</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Print the full path of executable binaries in current PATH",
+          "danger": false
+        },
+        {
+          "command": "whereis command",
+          "searchDescription": "Locate binary manual and source files",
+          "codeHtml": "<span class=\"cmd-keyword\">whereis</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Display location of executable binary, source code, and manual pages",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "text_processing",
+      "title": "Text Processing & Editing",
+      "icon": "✂️",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "sed 's/old/new/g' file",
+          "searchDescription": "Replace text in stream or output",
+          "codeHtml": "<span class=\"cmd-keyword\">sed</span> <span class=\"cmd-arg\">'s/old/new/g'</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Stream editor: replace all occurrences of 'old' with 'new' in output",
+          "danger": false
+        },
+        {
+          "command": "sed -i 's/old/new/g' file",
+          "searchDescription": "Replace text in file in-place",
+          "codeHtml": "<span class=\"cmd-keyword\">sed</span> <span class=\"cmd-flag\">-i</span> <span class=\"cmd-arg\">'s/old/new/g'</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "⚠️ Perform in-place search and replace directly inside the target file",
+          "danger": true
+        },
+        {
+          "command": "awk '{print $1}' file",
+          "searchDescription": "Print specific field column from file",
+          "codeHtml": "<span class=\"cmd-keyword\">awk</span> <span class=\"cmd-arg\">'{print $1}'</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Process text file line by line and print the first column/field",
+          "danger": false
+        },
+        {
+          "command": "awk -F',' '{print $1, $3}' file.csv",
+          "searchDescription": "Process CSV columns using custom delimiter",
+          "codeHtml": "<span class=\"cmd-keyword\">awk</span> <span class=\"cmd-flag\">-F','</span> <span class=\"cmd-arg\">'{print $1, $3}'</span> <span class=\"cmd-arg\">&lt;file.csv&gt;</span>",
+          "descriptionHtml": "Parse CSV file using comma separator and extract specified columns",
+          "danger": false
+        },
+        {
+          "command": "cut -d',' -f1 file.csv",
+          "searchDescription": "Cut out selected fields from file lines",
+          "codeHtml": "<span class=\"cmd-keyword\">cut</span> <span class=\"cmd-flag\">-d',' -f1</span> <span class=\"cmd-arg\">&lt;file.csv&gt;</span>",
+          "descriptionHtml": "Extract specific delimited fields from each line of a text file",
+          "danger": false
+        },
+        {
+          "command": "sort file",
+          "searchDescription": "Sort lines of text file alphabetically",
+          "codeHtml": "<span class=\"cmd-keyword\">sort</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Sort lines in a text file alphabetically",
+          "danger": false
+        },
+        {
+          "command": "sort -n -r file",
+          "searchDescription": "Sort numerical lines in reverse order",
+          "codeHtml": "<span class=\"cmd-keyword\">sort</span> <span class=\"cmd-flag\">-n -r</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Sort text lines numerically in descending reverse order",
+          "danger": false
+        },
+        {
+          "command": "uniq -c file",
+          "searchDescription": "Filter duplicate lines and count occurrences",
+          "codeHtml": "<span class=\"cmd-keyword\">uniq</span> <span class=\"cmd-flag\">-c</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Prefix lines with the number of duplicate occurrences (requires sorted input)",
+          "danger": false
+        },
+        {
+          "command": "wc -l file",
+          "searchDescription": "Count lines words and characters in file",
+          "codeHtml": "<span class=\"cmd-keyword\">wc</span> <span class=\"cmd-flag\">-l</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Count total number of lines in a file (<code style=\"color:var(--green)\">wc -w</code> for word count)",
+          "danger": false
+        },
+        {
+          "command": "tr 'a-z' 'A-Z'",
+          "searchDescription": "Translate or delete characters from standard input",
+          "codeHtml": "<span class=\"cmd-keyword\">tr</span> <span class=\"cmd-arg\">'a-z' 'A-Z'</span>",
+          "descriptionHtml": "Transform text standard input from lowercase to uppercase",
+          "danger": false
+        },
+        {
+          "command": "diff file1 file2",
+          "searchDescription": "Compare files line by line",
+          "codeHtml": "<span class=\"cmd-keyword\">diff</span> <span class=\"cmd-arg\">&lt;file1&gt;</span> <span class=\"cmd-arg\">&lt;file2&gt;</span>",
+          "descriptionHtml": "Display line-by-line differences between two files",
+          "danger": false
+        },
+        {
+          "command": "diff -u file1 file2",
+          "searchDescription": "Compare files in unified diff format",
+          "codeHtml": "<span class=\"cmd-keyword\">diff</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;file1&gt;</span> <span class=\"cmd-arg\">&lt;file2&gt;</span>",
+          "descriptionHtml": "Generate unified diff output ideal for code review patches",
+          "danger": false
+        },
+        {
+          "command": "nano filename",
+          "searchDescription": "Simple command line text editor",
+          "codeHtml": "<span class=\"cmd-keyword\">nano</span> <span class=\"cmd-arg\">&lt;filename&gt;</span>",
+          "descriptionHtml": "Edit file in a user-friendly terminal text editor",
+          "danger": false
+        },
+        {
+          "command": "vim filename",
+          "searchDescription": "Advanced modal command line text editor",
+          "codeHtml": "<span class=\"cmd-keyword\">vim</span> <span class=\"cmd-arg\">&lt;filename&gt;</span>",
+          "descriptionHtml": "Open file in Vim modal text editor (<code style=\"color:var(--green)\">:wq</code> save & exit)",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "permissions",
+      "title": "Permissions & Ownership",
+      "icon": "🔐",
+      "color": "#ffd166",
+      "commands": [
+        {
+          "command": "chmod 755 file",
+          "searchDescription": "Change file read write execute permissions",
+          "codeHtml": "<span class=\"cmd-keyword\">chmod</span> <span class=\"cmd-flag\">755</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Set file permissions to rwxr-xr-x (Owner: full, Group/Others: read/execute)",
+          "danger": false
+        },
+        {
+          "command": "chmod +x script.sh",
+          "searchDescription": "Make file executable",
+          "codeHtml": "<span class=\"cmd-keyword\">chmod</span> <span class=\"cmd-flag\">+x</span> <span class=\"cmd-arg\">&lt;script.sh&gt;</span>",
+          "descriptionHtml": "Grant execution permissions to a script or binary file",
+          "danger": false
+        },
+        {
+          "command": "find <directory> -type f -exec chmod 644 {} +",
+          "searchDescription": "Recursively set permissions to 644 for regular files only",
+          "codeHtml": "<span class=\"cmd-keyword\">find</span> <span class=\"cmd-arg\">&lt;directory&gt;</span> <span class=\"cmd-flag\">-type f -exec chmod 644 {} +</span>",
+          "descriptionHtml": "Recursively set rw-r--r-- permissions on regular files only, leaving directory permissions unchanged. This preserves directory traversal permissions but removes execute permissions from executable files.",
+          "danger": true
+        },
+        {
+          "command": "chown user:group file",
+          "searchDescription": "Change file owner and group",
+          "codeHtml": "<span class=\"cmd-keyword\">chown</span> <span class=\"cmd-arg\">&lt;user&gt;:&lt;group&gt;</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Change user owner and group owner of a file or directory",
+          "danger": false
+        },
+        {
+          "command": "chown -R user:group directory",
+          "searchDescription": "Recursively change directory ownership",
+          "codeHtml": "<span class=\"cmd-keyword\">chown</span> <span class=\"cmd-flag\">-R</span> <span class=\"cmd-arg\">&lt;user&gt;:&lt;group&gt;</span> <span class=\"cmd-arg\">&lt;directory&gt;</span>",
+          "descriptionHtml": "Recursively update user and group ownership for all directory contents",
+          "danger": false
+        },
+        {
+          "command": "chgrp group file",
+          "searchDescription": "Change group ownership of file",
+          "codeHtml": "<span class=\"cmd-keyword\">chgrp</span> <span class=\"cmd-arg\">&lt;group&gt;</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Change only the group owner of a file or directory",
+          "danger": false
+        },
+        {
+          "command": "umask 022",
+          "searchDescription": "Set default file creation permission mask",
+          "codeHtml": "<span class=\"cmd-keyword\">umask</span> <span class=\"cmd-arg\">022</span>",
+          "descriptionHtml": "Set file mode creation mask determining default permissions for new files",
+          "danger": false
+        },
+        {
+          "command": "sudo command",
+          "searchDescription": "Execute command as superuser root",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Execute a command with administrative (root) privileges",
+          "danger": false
+        },
+        {
+          "command": "sudo -i",
+          "searchDescription": "Switch to root superuser login shell",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo</span> <span class=\"cmd-flag\">-i</span>",
+          "descriptionHtml": "Start an interactive root environment login shell",
+          "danger": false
+        },
+        {
+          "command": "su - user",
+          "searchDescription": "Switch user account in terminal",
+          "codeHtml": "<span class=\"cmd-keyword\">su</span> - <span class=\"cmd-arg\">&lt;user&gt;</span>",
+          "descriptionHtml": "Switch user environment to another account with full login setup",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "process_management",
+      "title": "Process Management",
+      "icon": "⚡",
+      "color": "#ff5f5f",
+      "commands": [
+        {
+          "command": "ps aux",
+          "searchDescription": "List all running processes detailed",
+          "codeHtml": "<span class=\"cmd-keyword\">ps</span> <span class=\"cmd-flag\">aux</span>",
+          "descriptionHtml": "Display snapshot of all active processes across all users",
+          "danger": false
+        },
+        {
+          "command": "ps -ef",
+          "searchDescription": "List full standard format process list",
+          "codeHtml": "<span class=\"cmd-keyword\">ps</span> <span class=\"cmd-flag\">-ef</span>",
+          "descriptionHtml": "Display all processes with parent process IDs (PPID)",
+          "danger": false
+        },
+        {
+          "command": "top",
+          "searchDescription": "Real-time process monitor",
+          "codeHtml": "<span class=\"cmd-keyword\">top</span> &nbsp;/&nbsp; <span class=\"cmd-keyword\">htop</span>",
+          "descriptionHtml": "Display real-time system tasks and resource usage",
+          "danger": false
+        },
+        {
+          "command": "kill -9 pid",
+          "searchDescription": "Force kill process by PID",
+          "codeHtml": "<span class=\"cmd-keyword\">kill</span> <span class=\"cmd-flag\">-9</span> <span class=\"cmd-arg\">&lt;pid&gt;</span>",
+          "descriptionHtml": "⚠️ Forcefully terminate a process immediately using SIGKILL",
+          "danger": true
+        },
+        {
+          "command": "kill -15 pid",
+          "searchDescription": "Gracefully request process termination",
+          "codeHtml": "<span class=\"cmd-keyword\">kill</span> <span class=\"cmd-flag\">-15</span> <span class=\"cmd-arg\">&lt;pid&gt;</span>",
+          "descriptionHtml": "Send SIGTERM signal to allow process to clean up resources before closing",
+          "danger": false
+        },
+        {
+          "command": "killall process_name",
+          "searchDescription": "Kill all processes by name",
+          "codeHtml": "<span class=\"cmd-keyword\">killall</span> <span class=\"cmd-arg\">&lt;process_name&gt;</span>",
+          "descriptionHtml": "Terminate all running instances of a process by name",
+          "danger": false
+        },
+        {
+          "command": "pkill -f process_name",
+          "searchDescription": "Kill process matching full command line string",
+          "codeHtml": "<span class=\"cmd-keyword\">pkill</span> <span class=\"cmd-flag\">-f</span> <span class=\"cmd-arg\">&lt;process_name&gt;</span>",
+          "descriptionHtml": "Send signal to process matching string anywhere in command line arguments",
+          "danger": false
+        },
+        {
+          "command": "pgrep -l process_name",
+          "searchDescription": "Find PID of process by name",
+          "codeHtml": "<span class=\"cmd-keyword\">pgrep</span> <span class=\"cmd-flag\">-l</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Look up and list process IDs matching a name pattern",
+          "danger": false
+        },
+        {
+          "command": "nohup command &",
+          "searchDescription": "Run process in background immune to hangups",
+          "codeHtml": "<span class=\"cmd-keyword\">nohup</span> <span class=\"cmd-arg\">&lt;command&gt;</span> &amp;",
+          "descriptionHtml": "Run process in background that persists even after closing shell session",
+          "danger": false
+        },
+        {
+          "command": "jobs -l",
+          "searchDescription": "List current shell active background jobs",
+          "codeHtml": "<span class=\"cmd-keyword\">jobs</span> <span class=\"cmd-flag\">-l</span>",
+          "descriptionHtml": "List active background jobs in current terminal session with process IDs",
+          "danger": false
+        },
+        {
+          "command": "fg %1",
+          "searchDescription": "Bring background job to foreground",
+          "codeHtml": "<span class=\"cmd-keyword\">fg</span> <span class=\"cmd-arg\">%1</span>",
+          "descriptionHtml": "Bring specified background job into active terminal foreground",
+          "danger": false
+        },
+        {
+          "command": "bg %1",
+          "searchDescription": "Resume suspended job in background",
+          "codeHtml": "<span class=\"cmd-keyword\">bg</span> <span class=\"cmd-arg\">%1</span>",
+          "descriptionHtml": "Resume paused job execution running silently in background",
+          "danger": false
+        },
+        {
+          "command": "nice -n 10 command",
+          "searchDescription": "Start process with custom scheduling priority",
+          "codeHtml": "<span class=\"cmd-keyword\">nice</span> <span class=\"cmd-flag\">-n 10</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Run command with modified priority niceness value (-20 highest to 19 lowest)",
+          "danger": false
+        },
+        {
+          "command": "renice 5 -p pid",
+          "searchDescription": "Change priority of running process",
+          "codeHtml": "<span class=\"cmd-keyword\">renice</span> <span class=\"cmd-arg\">5</span> <span class=\"cmd-flag\">-p</span> <span class=\"cmd-arg\">&lt;pid&gt;</span>",
+          "descriptionHtml": "Alter scheduling priority niceness value of an active running process",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "system_info",
+      "title": "System Info & Resources",
+      "icon": "📊",
+      "color": "#38bdf8",
+      "commands": [
+        {
+          "command": "df -h",
+          "searchDescription": "Check disk space usage human readable",
+          "codeHtml": "<span class=\"cmd-keyword\">df</span> <span class=\"cmd-flag\">-h</span>",
+          "descriptionHtml": "Display mounted filesystems disk space usage in human-readable format",
+          "danger": false
+        },
+        {
+          "command": "du -sh path",
+          "searchDescription": "Check size of folder or file",
+          "codeHtml": "<span class=\"cmd-keyword\">du</span> <span class=\"cmd-flag\">-sh</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Display total disk usage summary of a specific directory or file",
+          "danger": false
+        },
+        {
+          "command": "du -h --max-depth=1 path",
+          "searchDescription": "Check directory size distribution up to one level",
+          "codeHtml": "<span class=\"cmd-keyword\">du</span> <span class=\"cmd-flag\">-h --max-depth=1</span> <span class=\"cmd-arg\">&lt;path&gt;</span>",
+          "descriptionHtml": "Show disk space consumption of top-level subdirectories inside path",
+          "danger": false
+        },
+        {
+          "command": "free -h",
+          "searchDescription": "Check RAM memory usage",
+          "codeHtml": "<span class=\"cmd-keyword\">free</span> <span class=\"cmd-flag\">-h</span>",
+          "descriptionHtml": "Display total, used, and available RAM/Swap memory in human-readable units",
+          "danger": false
+        },
+        {
+          "command": "uname -a",
+          "searchDescription": "Show kernel version and OS info",
+          "codeHtml": "<span class=\"cmd-keyword\">uname</span> <span class=\"cmd-flag\">-a</span>",
+          "descriptionHtml": "Print system architecture, kernel version, and operating system info",
+          "danger": false
+        },
+        {
+          "command": "hostnamectl",
+          "searchDescription": "View or set system hostname and OS details",
+          "codeHtml": "<span class=\"cmd-keyword\">hostnamectl</span>",
+          "descriptionHtml": "Query system hostname architecture, kernel, and operating system release",
+          "danger": false
+        },
+        {
+          "command": "uptime",
+          "searchDescription": "Check running system uptime and load average",
+          "codeHtml": "<span class=\"cmd-keyword\">uptime</span>",
+          "descriptionHtml": "Show how long the system has been running along with CPU load averages",
+          "danger": false
+        },
+        {
+          "command": "lscpu",
+          "searchDescription": "Display CPU architecture and hardware info",
+          "codeHtml": "<span class=\"cmd-keyword\">lscpu</span>",
+          "descriptionHtml": "Display detailed CPU cores, sockets, cache sizes, and architecture specifications",
+          "danger": false
+        },
+        {
+          "command": "lsblk",
+          "searchDescription": "List block storage devices and partitions",
+          "codeHtml": "<span class=\"cmd-keyword\">lsblk</span>",
+          "descriptionHtml": "List block storage devices, drives, mount points, and partition trees",
+          "danger": false
+        },
+        {
+          "command": "lspci",
+          "searchDescription": "List PCI devices graphics cards network controllers",
+          "codeHtml": "<span class=\"cmd-keyword\">lspci</span>",
+          "descriptionHtml": "List all PCI hardware buses, GPUs, and connected expansion hardware",
+          "danger": false
+        },
+        {
+          "command": "lsusb",
+          "searchDescription": "List connected USB devices",
+          "codeHtml": "<span class=\"cmd-keyword\">lsusb</span>",
+          "descriptionHtml": "Display attached USB buses and connected USB hardware peripherals",
+          "danger": false
+        },
+        {
+          "command": "vmstat 1 5",
+          "searchDescription": "Report virtual memory statistics periodically",
+          "codeHtml": "<span class=\"cmd-keyword\">vmstat</span> <span class=\"cmd-arg\">1 5</span>",
+          "descriptionHtml": "Report virtual memory usage, processes, traps, IO, and CPU activity 5 times",
+          "danger": false
+        },
+        {
+          "command": "iostat",
+          "searchDescription": "Report CPU and storage IO disk performance",
+          "codeHtml": "<span class=\"cmd-keyword\">iostat</span>",
+          "descriptionHtml": "Report storage input/output throughput rates and disk performance stats",
+          "danger": false
+        },
+        {
+          "command": "dmesg -T | tail -n 30",
+          "searchDescription": "View kernel ring buffer messages with timestamps",
+          "codeHtml": "<span class=\"cmd-keyword\">dmesg</span> <span class=\"cmd-flag\">-T</span> | <span class=\"cmd-keyword\">tail</span> <span class=\"cmd-flag\">-n 30</span>",
+          "descriptionHtml": "Print recent kernel log events, hardware discoveries, and driver warnings",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "networking",
+      "title": "Networking & Transfer",
+      "icon": "🌐",
+      "color": "#ff9f43",
+      "commands": [
+        {
+          "command": "curl -I url",
+          "searchDescription": "Fetch HTTP response headers or download data",
+          "codeHtml": "<span class=\"cmd-keyword\">curl</span> <span class=\"cmd-flag\">-I</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Fetch HTTP response headers from a web server",
+          "danger": false
+        },
+        {
+          "command": "curl -O url",
+          "searchDescription": "Download file keeping remote name",
+          "codeHtml": "<span class=\"cmd-keyword\">curl</span> <span class=\"cmd-flag\">-O</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Download remote file saving it under its original remote filename",
+          "danger": false
+        },
+        {
+          "command": "wget url",
+          "searchDescription": "Download file from URL",
+          "codeHtml": "<span class=\"cmd-keyword\">wget</span> <span class=\"cmd-arg\">&lt;url&gt;</span>",
+          "descriptionHtml": "Download files directly from the web to the local terminal directory",
+          "danger": false
+        },
+        {
+          "command": "ip a",
+          "searchDescription": "Show IP addresses and network interfaces",
+          "codeHtml": "<span class=\"cmd-keyword\">ip</span> <span class=\"cmd-flag\">a</span>",
+          "descriptionHtml": "Display all network interfaces and assigned IP addresses",
+          "danger": false
+        },
+        {
+          "command": "ip route",
+          "searchDescription": "Show IP routing table",
+          "codeHtml": "<span class=\"cmd-keyword\">ip</span> <span class=\"cmd-arg\">route</span>",
+          "descriptionHtml": "Display network gateway and routing table rules",
+          "danger": false
+        },
+        {
+          "command": "ping host",
+          "searchDescription": "Test network connectivity to host",
+          "codeHtml": "<span class=\"cmd-keyword\">ping</span> <span class=\"cmd-arg\">&lt;host&gt;</span>",
+          "descriptionHtml": "Send ICMP ECHO_REQUEST packets to verify host connectivity",
+          "danger": false
+        },
+        {
+          "command": "ss -tulpn",
+          "searchDescription": "List listening ports and active sockets",
+          "codeHtml": "<span class=\"cmd-keyword\">ss</span> <span class=\"cmd-flag\">-tulpn</span>",
+          "descriptionHtml": "List open listening TCP/UDP ports and associated running services/PIDs",
+          "danger": false
+        },
+        {
+          "command": "netstat -tulpn",
+          "searchDescription": "List listening sockets legacy syntax",
+          "codeHtml": "<span class=\"cmd-keyword\">netstat</span> <span class=\"cmd-flag\">-tulpn</span>",
+          "descriptionHtml": "Display active TCP/UDP connections and listening ports (legacy tool)",
+          "danger": false
+        },
+        {
+          "command": "traceroute host",
+          "searchDescription": "Trace network packet hop route to host",
+          "codeHtml": "<span class=\"cmd-keyword\">traceroute</span> <span class=\"cmd-arg\">&lt;host&gt;</span>",
+          "descriptionHtml": "Trace packet routing path hops from local host to remote destination server",
+          "danger": false
+        },
+        {
+          "command": "dig domain",
+          "searchDescription": "Perform DNS lookup for domain records",
+          "codeHtml": "<span class=\"cmd-keyword\">dig</span> <span class=\"cmd-arg\">&lt;domain&gt;</span>",
+          "descriptionHtml": "Query DNS name servers for detailed A, AAAA, MX, and TXT records",
+          "danger": false
+        },
+        {
+          "command": "nslookup domain",
+          "searchDescription": "Query Internet name servers for domain IP",
+          "codeHtml": "<span class=\"cmd-keyword\">nslookup</span> <span class=\"cmd-arg\">&lt;domain&gt;</span>",
+          "descriptionHtml": "Lookup IP address corresponding to a hostname or domain",
+          "danger": false
+        },
+        {
+          "command": "ssh user@host",
+          "searchDescription": "Connect remote machine via SSH",
+          "codeHtml": "<span class=\"cmd-keyword\">ssh</span> <span class=\"cmd-arg\">&lt;user&gt;@&lt;host&gt;</span>",
+          "descriptionHtml": "Open a secure shell connection to a remote server",
+          "danger": false
+        },
+        {
+          "command": "ssh -i key.pem user@host",
+          "searchDescription": "Connect remote machine using SSH private key",
+          "codeHtml": "<span class=\"cmd-keyword\">ssh</span> <span class=\"cmd-flag\">-i</span> <span class=\"cmd-arg\">&lt;key.pem&gt;</span> <span class=\"cmd-arg\">&lt;user&gt;@&lt;host&gt;</span>",
+          "descriptionHtml": "Connect securely to SSH server using a specific private key file",
+          "danger": false
+        },
+        {
+          "command": "scp source user@host:dest",
+          "searchDescription": "Securely copy file to remote server",
+          "codeHtml": "<span class=\"cmd-keyword\">scp</span> <span class=\"cmd-arg\">&lt;file&gt;</span> <span class=\"cmd-arg\">&lt;user&gt;@&lt;host&gt;:&lt;path&gt;</span>",
+          "descriptionHtml": "Copy local file to a remote server over SSH protocol",
+          "danger": false
+        },
+        {
+          "command": "rsync -avz source dest",
+          "searchDescription": "Sync files efficiently remote or local",
+          "codeHtml": "<span class=\"cmd-keyword\">rsync</span> <span class=\"cmd-flag\">-avz</span> <span class=\"cmd-arg\">&lt;source&gt;</span> <span class=\"cmd-arg\">&lt;dest&gt;</span>",
+          "descriptionHtml": "Transfer and sync files securely with archive mode, verbose output, and compression",
+          "danger": false
+        },
+        {
+          "command": "nc -zv host port",
+          "searchDescription": "Scan port or test TCP connection",
+          "codeHtml": "<span class=\"cmd-keyword\">nc</span> <span class=\"cmd-flag\">-zv</span> <span class=\"cmd-arg\">&lt;host&gt; &lt;port&gt;</span>",
+          "descriptionHtml": "Netcat: test if a specific port is reachable and open on remote host",
+          "danger": false
+        },
+        {
+          "command": "lsof -i :8080",
+          "searchDescription": "List processes running on specific port",
+          "codeHtml": "<span class=\"cmd-keyword\">lsof</span> <span class=\"cmd-flag\">-i :8080</span>",
+          "descriptionHtml": "Display active process using a specific network port",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "compression",
+      "title": "Archives & Compression",
+      "icon": "📦",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "tar -czvf archive.tar.gz folder",
+          "searchDescription": "Compress folder to tar gz archive",
+          "codeHtml": "<span class=\"cmd-keyword\">tar</span> <span class=\"cmd-flag\">-czvf</span> <span class=\"cmd-arg\">&lt;archive.tar.gz&gt;</span> <span class=\"cmd-arg\">&lt;folder&gt;</span>",
+          "descriptionHtml": "Create a gzipped tar archive from a folder",
+          "danger": false
+        },
+        {
+          "command": "tar -xzvf archive.tar.gz",
+          "searchDescription": "Extract tar gz archive",
+          "codeHtml": "<span class=\"cmd-keyword\">tar</span> <span class=\"cmd-flag\">-xzvf</span> <span class=\"cmd-arg\">&lt;archive.tar.gz&gt;</span>",
+          "descriptionHtml": "Extract files from a gzipped tar archive",
+          "danger": false
+        },
+        {
+          "command": "tar -cjvf archive.tar.bz2 folder",
+          "searchDescription": "Compress folder to tar bz2 high compression archive",
+          "codeHtml": "<span class=\"cmd-keyword\">tar</span> <span class=\"cmd-flag\">-cjvf</span> <span class=\"cmd-arg\">&lt;archive.tar.bz2&gt;</span> <span class=\"cmd-arg\">&lt;folder&gt;</span>",
+          "descriptionHtml": "Create bzip2 compressed archive offering higher compression ratio",
+          "danger": false
+        },
+        {
+          "command": "tar -tf archive.tar.gz",
+          "searchDescription": "List contents of tar archive without extracting",
+          "codeHtml": "<span class=\"cmd-keyword\">tar</span> <span class=\"cmd-flag\">-tf</span> <span class=\"cmd-arg\">&lt;archive.tar.gz&gt;</span>",
+          "descriptionHtml": "Inspect and list all file contents inside a compressed tar archive",
+          "danger": false
+        },
+        {
+          "command": "zip -r archive.zip folder",
+          "searchDescription": "Compress directory to zip archive recursively",
+          "codeHtml": "<span class=\"cmd-keyword\">zip</span> <span class=\"cmd-flag\">-r</span> <span class=\"cmd-arg\">&lt;archive.zip&gt;</span> <span class=\"cmd-arg\">&lt;folder&gt;</span>",
+          "descriptionHtml": "Create a standard compressed ZIP archive from target folder",
+          "danger": false
+        },
+        {
+          "command": "unzip file.zip",
+          "searchDescription": "Extract zip file",
+          "codeHtml": "<span class=\"cmd-keyword\">unzip</span> <span class=\"cmd-arg\">&lt;file.zip&gt;</span>",
+          "descriptionHtml": "Extract compressed files from a standard ZIP archive",
+          "danger": false
+        },
+        {
+          "command": "gzip file",
+          "searchDescription": "Compress single file with gzip",
+          "codeHtml": "<span class=\"cmd-keyword\">gzip</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Compress single file into <code style=\"color:var(--green)\">file.gz</code>, removing original",
+          "danger": false
+        },
+        {
+          "command": "gunzip file.gz",
+          "searchDescription": "Decompress gzip file",
+          "codeHtml": "<span class=\"cmd-keyword\">gunzip</span> <span class=\"cmd-arg\">&lt;file.gz&gt;</span>",
+          "descriptionHtml": "Decompress gzipped archive file back to uncompressed format",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "users_groups",
+      "title": "User & Group Management",
+      "icon": "👥",
+      "color": "#38bdf8",
+      "commands": [
+        {
+          "command": "whoami",
+          "searchDescription": "Display current logged in username",
+          "codeHtml": "<span class=\"cmd-keyword\">whoami</span>",
+          "descriptionHtml": "Print the effective username associated with the active terminal shell",
+          "danger": false
+        },
+        {
+          "command": "id",
+          "searchDescription": "Show user ID group ID and user group memberships",
+          "codeHtml": "<span class=\"cmd-keyword\">id</span>",
+          "descriptionHtml": "Display active user UID, primary GID, and supplemental groups",
+          "danger": false
+        },
+        {
+          "command": "sudo useradd -m username",
+          "searchDescription": "Create new system user with home directory",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo useradd</span> <span class=\"cmd-flag\">-m</span> <span class=\"cmd-arg\">&lt;username&gt;</span>",
+          "descriptionHtml": "Create a new local system user along with default home directory",
+          "danger": false
+        },
+        {
+          "command": "sudo passwd username",
+          "searchDescription": "Set or change user password",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo passwd</span> <span class=\"cmd-arg\">&lt;username&gt;</span>",
+          "descriptionHtml": "Set or update authentication password for a specified account",
+          "danger": false
+        },
+        {
+          "command": "sudo userdel -r username",
+          "searchDescription": "Delete user account and remove home directory",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo userdel</span> <span class=\"cmd-flag\">-r</span> <span class=\"cmd-arg\">&lt;username&gt;</span>",
+          "descriptionHtml": "⚠️ Remove user account and permanently purge home directory files",
+          "danger": true
+        },
+        {
+          "command": "sudo usermod -aG group username",
+          "searchDescription": "Add user to secondary group",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo usermod</span> <span class=\"cmd-flag\">-aG</span> <span class=\"cmd-arg\">&lt;group&gt; &lt;username&gt;</span>",
+          "descriptionHtml": "Append user to additional supplemental group (e.g., sudo or docker)",
+          "danger": false
+        },
+        {
+          "command": "sudo groupadd groupname",
+          "searchDescription": "Create new user group",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo groupadd</span> <span class=\"cmd-arg\">&lt;groupname&gt;</span>",
+          "descriptionHtml": "Create a new local group entity",
+          "danger": false
+        },
+        {
+          "command": "w",
+          "searchDescription": "Show who is logged in and current activity",
+          "codeHtml": "<span class=\"cmd-keyword\">w</span>",
+          "descriptionHtml": "Display currently logged-in system users and their active running jobs",
+          "danger": false
+        },
+        {
+          "command": "last",
+          "searchDescription": "Show history of last logged in users",
+          "codeHtml": "<span class=\"cmd-keyword\">last</span>",
+          "descriptionHtml": "Display reboot logs and historical user login sessions",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "systemd_services",
+      "title": "System Services & Logs",
+      "icon": "⚙️",
+      "color": "#00cfff",
+      "commands": [
+        {
+          "command": "sudo systemctl start service",
+          "searchDescription": "Start systemd service",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo systemctl start</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Start a background system service immediately",
+          "danger": false
+        },
+        {
+          "command": "sudo systemctl stop service",
+          "searchDescription": "Stop systemd service",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo systemctl stop</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Stop an active running system service immediately",
+          "danger": false
+        },
+        {
+          "command": "sudo systemctl restart service",
+          "searchDescription": "Restart running service",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo systemctl restart</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Restart a running system service",
+          "danger": false
+        },
+        {
+          "command": "systemctl status service",
+          "searchDescription": "Check running state of system service",
+          "codeHtml": "<span class=\"cmd-keyword\">systemctl status</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Display status summary, runtime logs, and execution state of service",
+          "danger": false
+        },
+        {
+          "command": "sudo systemctl enable service",
+          "searchDescription": "Enable service to auto start on boot",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo systemctl enable</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Configure service to launch automatically upon system bootup",
+          "danger": false
+        },
+        {
+          "command": "sudo systemctl disable service",
+          "searchDescription": "Disable service auto start on boot",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo systemctl disable</span> <span class=\"cmd-arg\">&lt;service&gt;</span>",
+          "descriptionHtml": "Prevent service from starting automatically during system bootup",
+          "danger": false
+        },
+        {
+          "command": "journalctl -u service -f",
+          "searchDescription": "Follow live logs for specific systemd service",
+          "codeHtml": "<span class=\"cmd-keyword\">journalctl</span> <span class=\"cmd-flag\">-u</span> <span class=\"cmd-arg\">&lt;service&gt;</span> <span class=\"cmd-flag\">-f</span>",
+          "descriptionHtml": "Stream and tail systemd log journal entries for a service in real time",
+          "danger": false
+        },
+        {
+          "command": "journalctl -p err -b",
+          "searchDescription": "Show error severity logs from current boot",
+          "codeHtml": "<span class=\"cmd-keyword\">journalctl</span> <span class=\"cmd-flag\">-p err -b</span>",
+          "descriptionHtml": "Filter system logs for errors and critical messages since last boot",
+          "danger": false
+        },
+        {
+          "command": "sudo crontab -e",
+          "searchDescription": "Edit scheduled cron jobs for current user or root",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo crontab</span> <span class=\"cmd-flag\">-e</span>",
+          "descriptionHtml": "Edit scheduled automated recurring cron job tasks file",
+          "danger": false
+        },
+        {
+          "command": "crontab -l",
+          "searchDescription": "List all scheduled cron jobs for active user",
+          "codeHtml": "<span class=\"cmd-keyword\">crontab</span> <span class=\"cmd-flag\">-l</span>",
+          "descriptionHtml": "Display active user scheduled automated task entries",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "pkg_management",
+      "title": "Package Management",
+      "icon": "🚀",
+      "color": "#34d399",
+      "commands": [
+        {
+          "command": "sudo apt update",
+          "searchDescription": "Update package repository list",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">update</span>",
+          "descriptionHtml": "Refresh local index of available software packages (Debian/Ubuntu)",
+          "danger": false
+        },
+        {
+          "command": "sudo apt upgrade -y",
+          "searchDescription": "Upgrade all installed package updates",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">upgrade</span> <span class=\"cmd-flag\">-y</span>",
+          "descriptionHtml": "Upgrade all installed system packages to latest versions",
+          "danger": false
+        },
+        {
+          "command": "sudo apt install package",
+          "searchDescription": "Install new package",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">install</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "Download and install a new software package",
+          "danger": false
+        },
+        {
+          "command": "sudo apt remove package",
+          "searchDescription": "Remove installed package",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">remove</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "Uninstall a package while leaving configuration files intact",
+          "danger": false
+        },
+        {
+          "command": "sudo apt purge package",
+          "searchDescription": "Completely remove package and configuration files",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">purge</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "⚠️ Completely remove a package along with all stored configuration files",
+          "danger": true
+        },
+        {
+          "command": "sudo apt autoremove",
+          "searchDescription": "Clean unused leftover dependencies",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo apt</span> <span class=\"cmd-arg\">autoremove</span>",
+          "descriptionHtml": "Automatically remove orphan packages no longer needed by any installed software",
+          "danger": false
+        },
+        {
+          "command": "apt search package",
+          "searchDescription": "Search repository packages matching keyword",
+          "codeHtml": "<span class=\"cmd-keyword\">apt search</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "Search remote package repositories for a software title or description keyword",
+          "danger": false
+        },
+        {
+          "command": "sudo dnf install package",
+          "searchDescription": "Install package using DNF RedHat Fedora RHEL",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo dnf</span> <span class=\"cmd-arg\">install</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "Install software using DNF package manager (Fedora/RHEL/CentOS)",
+          "danger": false
+        },
+        {
+          "command": "sudo pacman -S package",
+          "searchDescription": "Install package using Pacman Arch Linux",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo pacman</span> <span class=\"cmd-flag\">-S</span> <span class=\"cmd-arg\">&lt;package&gt;</span>",
+          "descriptionHtml": "Install software using Pacman package manager (Arch Linux)",
+          "danger": false
+        }
+      ]
+    },
+    {
+      "key": "disk_mounting",
+      "title": "Disk, Filesystem & Hardware",
+      "icon": "💾",
+      "color": "#a78bfa",
+      "commands": [
+        {
+          "command": "sudo mount device mountpoint",
+          "searchDescription": "Mount disk partition or filesystem",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo mount</span> <span class=\"cmd-arg\">&lt;device&gt; &lt;mountpoint&gt;</span>",
+          "descriptionHtml": "Attach storage drive device partition to directory tree mount point",
+          "danger": false
+        },
+        {
+          "command": "sudo umount mountpoint",
+          "searchDescription": "Unmount mounted drive device or partition",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo umount</span> <span class=\"cmd-arg\">&lt;mountpoint&gt;</span>",
+          "descriptionHtml": "Safely detach storage drive or filesystem partition from mount point",
+          "danger": false
+        },
+        {
+          "command": "sudo fdisk -l",
+          "searchDescription": "List all connected disk partition tables",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo fdisk</span> <span class=\"cmd-flag\">-l</span>",
+          "descriptionHtml": "Display detailed partition tables for all local attached drives",
+          "danger": false
+        },
+        {
+          "command": "sudo mkfs.ext4 device",
+          "searchDescription": "Format drive device with ext4 filesystem",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo mkfs.ext4</span> <span class=\"cmd-arg\">&lt;device&gt;</span>",
+          "descriptionHtml": "⚠️ Format drive partition with ext4 filesystem (wipes all existing data)",
+          "danger": true
+        },
+        {
+          "command": "sudo fsck device",
+          "searchDescription": "Check and repair filesystem errors",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo fsck</span> <span class=\"cmd-arg\">&lt;device&gt;</span>",
+          "descriptionHtml": "Inspect and repair integrity errors on an unmounted filesystem",
+          "danger": false
+        },
+        {
+          "command": "blkid",
+          "searchDescription": "Print block device attributes and UUIDs",
+          "codeHtml": "<span class=\"cmd-keyword\">blkid</span>",
+          "descriptionHtml": "Print UUID, filesystem type, and volume labels for all block storage devices",
+          "danger": false
+        },
+        {
+          "command": "sudo dd if=source of=dest bs=4M status=progress",
+          "searchDescription": "Low level raw data disk copy or ISO writing",
+          "codeHtml": "<span class=\"cmd-keyword\">sudo dd</span> <span class=\"cmd-arg\">if=&lt;source&gt; of=&lt;dest&gt; bs=4M status=progress</span>",
+          "descriptionHtml": "⚠️ Copy raw bitstream data directly (e.g., flash bootable ISO to USB drive)",
+          "danger": true
+        }
+      ]
+    },
+    {
+      "key": "shell_utility",
+      "title": "Shell, Variables & Shortcuts",
+      "icon": "⚡",
+      "color": "#00ff9d",
+      "commands": [
+        {
+          "command": "alias name='command'",
+          "searchDescription": "Create custom command alias shortcut",
+          "codeHtml": "<span class=\"cmd-keyword\">alias</span> <span class=\"cmd-arg\">ll='ls -la'</span>",
+          "descriptionHtml": "Create a shortcut alias command in current terminal session",
+          "danger": false
+        },
+        {
+          "command": "unalias name",
+          "searchDescription": "Remove custom command alias shortcut",
+          "codeHtml": "<span class=\"cmd-keyword\">unalias</span> <span class=\"cmd-arg\">&lt;name&gt;</span>",
+          "descriptionHtml": "Remove a previously defined command alias",
+          "danger": false
+        },
+        {
+          "command": "export VAR='value'",
+          "searchDescription": "Set environment variable for shell",
+          "codeHtml": "<span class=\"cmd-keyword\">export</span> <span class=\"cmd-arg\">VAR='value'</span>",
+          "descriptionHtml": "Set an environment variable for current shell session and child processes",
+          "danger": false
+        },
+        {
+          "command": "echo $VAR",
+          "searchDescription": "Print value of environment variable",
+          "codeHtml": "<span class=\"cmd-keyword\">echo</span> <span class=\"cmd-arg\">$VAR</span>",
+          "descriptionHtml": "Display stored value of an environment variable in terminal",
+          "danger": false
+        },
+        {
+          "command": "env",
+          "searchDescription": "List all active environment variables",
+          "codeHtml": "<span class=\"cmd-keyword\">env</span>",
+          "descriptionHtml": "Print full list of active environment variables",
+          "danger": false
+        },
+        {
+          "command": "history",
+          "searchDescription": "View terminal command history list",
+          "codeHtml": "<span class=\"cmd-keyword\">history</span>",
+          "descriptionHtml": "Display numbered list of previously executed shell commands",
+          "danger": false
+        },
+        {
+          "command": "history | grep command",
+          "searchDescription": "Search past executed commands history",
+          "codeHtml": "<span class=\"cmd-keyword\">history</span> | <span class=\"cmd-keyword\">grep</span> <span class=\"cmd-arg\">&lt;keyword&gt;</span>",
+          "descriptionHtml": "Search through previous command history for specific keyword matches",
+          "danger": false
+        },
+        {
+          "command": "clear",
+          "searchDescription": "Clear terminal screen output window",
+          "codeHtml": "<span class=\"cmd-keyword\">clear</span>",
+          "descriptionHtml": "Wipe current terminal screen display",
+          "danger": false
+        },
+        {
+          "command": "source file",
+          "searchDescription": "Execute and reload shell script or profile settings",
+          "codeHtml": "<span class=\"cmd-keyword\">source</span> <span class=\"cmd-arg\">~/.bashrc</span>",
+          "descriptionHtml": "Read and execute commands from file in the current shell environment",
+          "danger": false
+        },
+        {
+          "command": "xargs command",
+          "searchDescription": "Build and execute commands from standard input",
+          "codeHtml": "<span class=\"cmd-keyword\">xargs</span> <span class=\"cmd-arg\">&lt;command&gt;</span>",
+          "descriptionHtml": "Read items from standard input and construct/execute command lines",
+          "danger": false
+        },
+        {
+          "command": "tee file",
+          "searchDescription": "Read standard input and write to stdout and file",
+          "codeHtml": "<span class=\"cmd-keyword\">tee</span> <span class=\"cmd-arg\">&lt;file&gt;</span>",
+          "descriptionHtml": "Redirect command output to both screen and file simultaneously",
+          "danger": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dev-cheatsheets-v7';
+const CACHE_NAME = 'dev-cheatsheets-v8';
 
 const ASSETS = [
   './',
@@ -14,12 +14,14 @@ const ASSETS = [
   './assets/js/modules/state.js',
   './assets/brands/git.svg',
   './assets/brands/docker.svg',
+  './assets/brands/linux.svg',
   './assets/data/sections.json',
   './assets/data/git.en.json',
   './assets/data/git.es.json',
   './assets/data/git.fr.json',
   './assets/data/git.it.json',
   './assets/data/docker.en.json',
+  './assets/data/linux.en.json',
   './assets/data/ui.json',
   './assets/favicon.svg',
   './assets/icons/icon-192x192.png',
